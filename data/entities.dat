@@ -235,10 +235,8 @@
 0147	N
 0148	n
 0149	n
-# 014A	<LATIN CAPITAL LETTER ENG> (TODO)
-#014A	ENG
-# 014A	<LATIN SMALL LETTER ENG> (TODO)
-#014B	eng
+014A	M
+014B	n
 014C	O
 014D	o
 014E	O
@@ -1445,6 +1443,8 @@
 2309	]
 230A	[
 230B	]
+# 230C  <BOTTOM RIGHT CROP> (remove)
+230C	
 # ...
 # 2313	<SEGMENT> (appears to be misused as "range" dash)
 2313	-
@@ -1631,6 +1631,8 @@
 2285	not-superset
 2286	subset/equal
 2287	superset/equal
+2288	not-subset/equal
+2289	not-superset/equal
 # ...
 2291	[=
 2292	=]
@@ -1869,6 +1871,7 @@
 # ...
 2550	=
 2551	||
+256B	#
 # 2580-259F: Block Elements (rough approximations)
 2580	"
 2581	_
@@ -2023,6 +2026,9 @@
 2A7D	>=
 2A7E	<=
 # ...
+2AAF	<=
+2AB0	>=
+# ...
 22B8	multimap
 # ...
 22BF	|>
@@ -2048,9 +2054,10 @@
 22BA	intercal
 2293	intersection
 2294	union
-#22D4	pitchfork
 2329	<
 232A	>
+22D4	pitchfork
+22D5	#
 22D6	<
 22D7	>
 22D8	<<<
@@ -2256,6 +2263,8 @@
 2606	*
 2607	<
 2609	(.)
+# ...
+260D	*
 # ...
 2610	[]
 # ...

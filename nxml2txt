@@ -34,6 +34,7 @@ fi
 
 cat $nxmlfn |
     python $SRC/rewritetex.py - -s -v |
+    python $SRC/rewritemmla.py - -s -v |
     python $SRC/respace.py - -s |
     python $SRC/rewriteu2a.py - -s |
     python $SRC/standoff.py - $textfn $sofn
