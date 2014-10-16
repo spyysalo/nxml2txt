@@ -1,0 +1,2890 @@
+<!DOCTYPE article PUBLIC "-//NLM//DTD Journal Archiving and Interchange DTD v2.2 20060430//EN" "archivearticle.dtd">
+<article xmlns="http://dtd.nlm.nih.gov/2.0/xsd/archivearticle" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jats.nlm.nih.gov/archiving/1.0/xsd/JATS-archivearticle1.xsd" article-type="research-article">
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="nlm-ta">AoB Plants</journal-id>
+      <journal-id journal-id-type="iso-abbrev">AoB Plants</journal-id>
+      <journal-id journal-id-type="publisher-id">aobpla</journal-id>
+      <journal-id journal-id-type="hwp">aobpla</journal-id>
+      <journal-title-group>
+        <journal-title>AoB Plants</journal-title>
+      </journal-title-group>
+      <issn pub-type="epub">2041-2851</issn>
+      <publisher>
+        <publisher-name>Oxford University Press</publisher-name>
+      </publisher>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="pmc">3357053</article-id>
+      <article-id pub-id-type="pmid">22616023</article-id>
+      <article-id pub-id-type="doi">10.1093/aobpla/pls011</article-id>
+      <article-id pub-id-type="publisher-id">pls011</article-id>
+      <article-categories>
+        <subj-group subj-group-type="heading">
+          <subject>Research Articles</subject>
+        </subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>Transcription factor OsHsfC1b regulates salt tolerance and development in <italic>Oryza sativa</italic> ssp. <italic>japonica</italic></article-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Schmidt</surname>
+            <given-names>Romy</given-names>
+          </name>
+          <xref ref-type="aff" rid="af1">1</xref>
+          <xref ref-type="aff" rid="af2">2</xref>
+          <xref ref-type="author-notes" rid="AN1">†</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Schippers</surname>
+            <given-names>Jos H.M.</given-names>
+          </name>
+          <xref ref-type="aff" rid="af1">1</xref>
+          <xref ref-type="aff" rid="af2">2</xref>
+          <xref ref-type="author-notes" rid="AN1">†</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Welker</surname>
+            <given-names>Annelie</given-names>
+          </name>
+          <xref ref-type="aff" rid="af1">1</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Mieulet</surname>
+            <given-names>Delphine</given-names>
+          </name>
+          <xref ref-type="aff" rid="af3">3</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Guiderdoni</surname>
+            <given-names>Emmanuel</given-names>
+          </name>
+          <xref ref-type="aff" rid="af3">3</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Mueller-Roeber</surname>
+            <given-names>Bernd</given-names>
+          </name>
+          <xref ref-type="aff" rid="af1">1</xref>
+          <xref ref-type="aff" rid="af2">2</xref>
+          <xref ref-type="corresp" rid="cor1">*</xref>
+        </contrib>
+      </contrib-group>
+      <aff id="af1"><label>1</label><institution>Institute of Biochemistry and Biology</institution>, <institution>University of Potsdam</institution>, <addr-line>Karl-Liebknecht-Str. 24–25, 14476 Potsdam</addr-line>, <country>Germany</country></aff>
+      <aff id="af2"><label>2</label><institution>Max Planck Institute of Molecular Plant Physiology</institution>, <addr-line>Am Muehlenberg 1, 14476 Potsdam</addr-line>, <country>Germany</country></aff>
+      <aff id="af3"><label>3</label><addr-line>CIRAD, UMR AGAP, Avenue Agropolis, 34398 Montpellier, Cedex 5</addr-line>, <country>France</country></aff>
+      <author-notes>
+        <corresp id="cor1"><label>*</label>Corresponding author's e-mail address: <email>bmr@uni-potsdam.de</email></corresp>
+        <fn id="AN1">
+          <label>†</label>
+          <p>These two authors have contributed equally to this work.</p>
+        </fn>
+      </author-notes>
+      <pub-date pub-type="ppub">
+        <year>2012</year>
+      </pub-date>
+      <pub-date pub-type="epub">
+        <day>21</day>
+        <month>5</month>
+        <year>2012</year>
+      </pub-date>
+      <pub-date pub-type="collection">
+        <year>2012</year>
+      </pub-date>
+      <volume>2012</volume>
+      <elocation-id>pls011</elocation-id>
+      <history>
+        <date date-type="received">
+          <day>29</day>
+          <month>12</month>
+          <year>2011</year>
+        </date>
+        <date date-type="rev-request">
+          <day>24</day>
+          <month>2</month>
+          <year>2012</year>
+        </date>
+        <date date-type="accepted">
+          <day>8</day>
+          <month>4</month>
+          <year>2012</year>
+        </date>
+      </history>
+      <permissions>
+        <copyright-statement>Published by Oxford University Press</copyright-statement>
+        <copyright-year>2012</copyright-year>
+        <license license-type="creative-commons" xlink:href="http://creativecommons.org/licenses/by-nc/3.0/">
+          <license-p><!--CREATIVE COMMONS-->This is an Open Access article distributed under the terms of the Creative Commons Attribution Non-Commercial License (<ext-link ext-link-type="uri" xlink:href="http://creativecommons.org/licenses/by-nc/3.0/">http://creativecommons.org/licenses/by-nc/3.0/</ext-link>) which permits unrestricted non-commercial use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p>
+        </license>
+      </permissions>
+      <self-uri content-type="pdf" xlink:type="simple" xlink:href="pls011.pdf"/>
+      <abstract abstract-type="precis">
+        <p>The paper describes the functional analysis of a class C heat shock transcription factor from rice (<italic>Oryza sativa</italic>). OsHsfC1b is shown to play a role in ABA-mediated salt stress tolerance and is required for plant growth under non-stress conditions.</p>
+      </abstract>
+      <abstract>
+        <sec>
+          <title>Background and aims</title>
+          <p>Salt stress leads to attenuated growth and productivity in rice. Transcription factors like heat shock factors (HSFs) represent central regulators of stress adaptation. Heat shock factors of the classes A and B are well established as regulators of thermal and non-thermal stress responses in plants; however, the role of class C HSFs is unknown. Here we characterized the function of the OsHsfC1b (Os01g53220) transcription factor from rice.</p>
+        </sec>
+        <sec>
+          <title>Methodology</title>
+          <p>We analysed the expression of <italic>OsHsfC1b</italic> in the rice <italic>japonica</italic> cultivars Dongjin and Nipponbare exposed to salt stress as well as after mannitol, abscisic acid (ABA) and H<sub>2</sub>O<sub>2</sub> treatment. For functional characterization of OsHsfC1b, we analysed the physiological response of a T-DNA insertion line (<italic>hsfc1b</italic>) and two <italic>artificial micro</italic>-RNA (<italic>ami</italic>RNA) knock-down lines to salt, mannitol and ABA treatment. In addition, we quantified the expression of <italic>small Heat Shock Protein</italic> (<italic>sHSP</italic>) genes and those related to signalling and ion homeostasis by quantitative real-time polymerase chain reaction in roots exposed to salt. The subcellular localization of OsHsfC1b protein fused to green fluorescent protein (GFP) was determined in <italic>Arabidopsis</italic> mesophyll cell protoplasts.</p>
+        </sec>
+        <sec>
+          <title>Principal results</title>
+          <p>Expression of <italic>OsHsfC1b</italic> was induced by salt, mannitol and ABA, but not by H<sub>2</sub>O<sub>2</sub>. Impaired function of <italic>OsHsfC1b</italic> in the <italic>hsfc1b</italic> mutant and the <italic>ami</italic>RNA lines led to decreased salt and osmotic stress tolerance, increased sensitivity to ABA, and temporal misregulation of salt-responsive genes involved in signalling and ion homeostasis. Furthermore, <italic>sHSP</italic> genes showed enhanced expression in knock-down plants under salt stress. We observed retarded growth of <italic>hsfc1b</italic> and knock-down lines in comparison with control plants under non-stress conditions. Transient expression of OsHsfC1b fused to GFP in protoplasts revealed nuclear localization of the transcription factor.</p>
+        </sec>
+        <sec>
+          <title>Conclusions</title>
+          <p>OsHsfC1b plays a role in ABA-mediated salt stress tolerance in rice. Furthermore, OsHsfC1b is involved in the response to osmotic stress and is required for plant growth under non-stress conditions.</p>
+        </sec>
+      </abstract>
+      <counts>
+        <page-count count="17"/>
+      </counts>
+    </article-meta>
+  </front>
+  <body>
+    <sec id="s1">
+      <title>Introduction</title>
+      <p>Rice represents a major food source for more than half of the world's population. Among crops, rice exhibits the least, wheat a moderate and barley the strongest tolerance to salt stress (<xref ref-type="bibr" rid="PLS011C37">Munns and Tester 2008</xref>). One reason for the low tolerance of rice to salinity is the high permeability of its roots to sodium ions. Sodium ions can easily enter the apoplast and subsequently rapidly lead to toxic intracellular concentrations. Since an increasing land area is affected by high salinity, understanding the molecular mechanisms underlying salt tolerance of crops is of great societal and economic interest (<xref ref-type="bibr" rid="PLS011C62">Yan <italic>et al.</italic> 2005</xref>; <xref ref-type="bibr" rid="PLS011C40">Obata <italic>et al.</italic> 2007</xref>; <xref ref-type="bibr" rid="PLS011C14">Hadiarto and Tran 2011</xref>). The response to salt stress includes expressional changes of stress-related genes, which among others encode protein kinases, ion transporters and transcription factors. In rice, several transcription factor families (e.g. MYB, NAC, bZIP and AP2/ERF) contribute to stress adaptation by regulating the expression of stress-responsive genes (<xref ref-type="bibr" rid="PLS011C17">Hu <italic>et al.</italic> 2006</xref>, <xref ref-type="bibr" rid="PLS011C18">2008</xref>; <xref ref-type="bibr" rid="PLS011C31">Ma <italic>et al.</italic> 2009</xref>; <xref ref-type="bibr" rid="PLS011C58">Wang <italic>et al.</italic> 2009</xref>; <xref ref-type="bibr" rid="PLS011C16">Hossain <italic>et al.</italic> 2010</xref>; <xref ref-type="bibr" rid="PLS011C45">Park <italic>et al.</italic> 2010</xref>; <xref ref-type="bibr" rid="PLS011C56">Takasaki <italic>et al.</italic> 2010</xref>; <xref ref-type="bibr" rid="PLS011C32">Mallikarjuna <italic>et al.</italic> 2011</xref>; <xref ref-type="bibr" rid="PLS011C54">Song <italic>et al.</italic> 2011</xref>).</p>
+      <p>Heat shock factors (HSFs) are transcription factors that can structurally be classified into three classes: A, B and C. They consist of an N-terminal DNA-binding domain, an adjacent oligomerization domain (HR-A/B) and an additional class A-specific C-terminal activation domain containing aromatic, hydrophobic and acidic amino acid residues (AHA motif). In the HR-A/B domain, HSFs of the classes A and C harbour an inserted sequence of 21 and seven amino acid residues, respectively, which is absent from class B HSFs (<xref ref-type="bibr" rid="PLS011C39">Nover <italic>et al.</italic> 2001</xref>). In contrast to class A HSFs, class B HSFs act as transcriptional repressors while no clear activation or repression has been shown for class C HSFs (<xref ref-type="bibr" rid="PLS011C20">Ikeda <italic>et al</italic>. 2011</xref>). The number of HSF-encoding genes varies between plant species. The genome of the green alga <italic>Chlamydomonas reinhardtii</italic> contains two, <italic>Arabidopsis thaliana</italic> 21 and rice 25 <italic>HSF</italic> genes (<xref ref-type="bibr" rid="PLS011C39">Nover <italic>et al.</italic> 2001</xref>; <xref ref-type="bibr" rid="PLS011C53">Schulz-Raffelt <italic>et al.</italic> 2007</xref>; <xref ref-type="bibr" rid="PLS011C13">Guo <italic>et al.</italic> 2008</xref>). In rice, 13 HSFs can be assigned to class A (including the subclasses A1, A2 and A4), eight HSFs to class B and four HSFs to class C (<xref ref-type="bibr" rid="PLS011C13">Guo <italic>et al.</italic> 2008</xref>). Heat shock factors control gene expression by binding to the heat shock element, an inverted 5-bp repeat of the sequence ‘nGAAn’, found in the promoter regions of many heat-inducible genes (<xref ref-type="bibr" rid="PLS011C3">Barros <italic>et al.</italic> 1992</xref>; <xref ref-type="bibr" rid="PLS011C55">Sun <italic>et al.</italic> 2002</xref>). Heat shock factors also function as regulators of other <italic>HSF</italic> genes, demonstrated by HsfA1d and HsfA1e from <italic>A. thaliana</italic>, which are involved in the expressional control of <italic>HsfA2</italic> (<xref ref-type="bibr" rid="PLS011C38">Nishizawa-Yokoi <italic>et al.</italic> 2011</xref>). Several HSFs of the classes A and B have been shown to play a role in the response to abiotic and biotic stresses. In <italic>Arabidopsis</italic>, next to heat stress adaptation, HsfA2 controls the response to salt, osmotic stress, anoxia and submergence (<xref ref-type="bibr" rid="PLS011C41">Ogawa <italic>et al.</italic> 2007</xref>; <xref ref-type="bibr" rid="PLS011C2">Banti <italic>et al.</italic> 2010</xref>). HsfA1 in tomato functions as a master regulator of induced thermotolerance that cannot be replaced by any other HSF (<xref ref-type="bibr" rid="PLS011C34">Mishra <italic>et al.</italic> 2002</xref>). HsfB1 and HsfB2 from <italic>Arabidopsis</italic> demonstrate the relevance of class B members in stress tolerance, as the knock-out of <italic>HsfB2</italic> and the double knock-out of both <italic>HSF</italic> genes result in improved pathogen resistance (<xref ref-type="bibr" rid="PLS011C27">Kumar <italic>et al.</italic> 2009</xref>). The role of rice HSFs in stress adaptation is poorly understood. To date, two class A HSFs, i.e. OsHsfA2e and OsHsf7, have been functionally characterized <italic>in vivo</italic>. Transgenic <italic>Arabidopsis</italic> plants overexpressing <italic>OsHsfA2e</italic> are more tolerant to heat and salt stress than control plants (<xref ref-type="bibr" rid="PLS011C63">Yokotani <italic>et al.</italic> 2008</xref>), and overexpression of <italic>OsHsf7</italic> in <italic>Arabidopsis</italic> results in an increased thermotolerance (<xref ref-type="bibr" rid="PLS011C30">Liu <italic>et al.</italic> 2009</xref>). The role of class C HSFs in stress response is currently unknown; however, expression patterns of class C <italic>HSF</italic> genes from rice suggest, in addition to a role in the heat shock response, a participation in non-thermal stress responses such as salt, drought and oxidative stress (<xref ref-type="bibr" rid="PLS011C19">Hu <italic>et al.</italic> 2009</xref>; <xref ref-type="bibr" rid="PLS011C35">Mittal <italic>et al.</italic> 2009</xref>; <xref ref-type="bibr" rid="PLS011C58">Wang <italic>et al.</italic> 2009</xref>). In particular, <italic>OsHsfC1b</italic> and <italic>OsHsf2b</italic> are highly responsive to salt and drought stress (<xref ref-type="bibr" rid="PLS011C19">Hu <italic>et al</italic>. 2009</xref>).</p>
+      <p>Besides stress, there is evidence for a role of HSFs in development. In animals and yeast, HSFs are involved in various non-stress processes, e.g. cell cycle progression, embryo development, cell differentiation and spermatogenesis (<xref ref-type="bibr" rid="PLS011C46">Pirkkala <italic>et al.</italic> 2001</xref>). Loss of the transcriptional activator HSF1 in mice results in increased prenatal lethality, retarded growth and female sterility (<xref ref-type="bibr" rid="PLS011C61">Xiao <italic>et al.</italic> 1999</xref>). The corresponding homologue in <italic>Schizosaccharomyces pombe</italic> is required for growth under control conditions (<xref ref-type="bibr" rid="PLS011C10">Gallo <italic>et al.</italic> 1993</xref>), whereas in <italic>Drosophila melanogaster</italic> HSF regulates oogenesis and larva development (<xref ref-type="bibr" rid="PLS011C22">Jedlicka <italic>et al.</italic> 1997</xref>). Transgenic <italic>Arabidopsis</italic> plants overexpressing <italic>HsfA2</italic> exhibit increased cell proliferation (<xref ref-type="bibr" rid="PLS011C41">Ogawa <italic>et al.</italic> 2007</xref>), which demonstrates the function of HSFs in plant growth control.</p>
+      <p>In this study, we functionally characterized the class C <italic>HSF</italic> gene <italic>OsHsfC1b</italic> from rice, which has been shown to be salt-responsive (<xref ref-type="bibr" rid="PLS011C19">Hu <italic>et al</italic>. 2009</xref>). By using transgenic lines we show that it plays a dual role in both growth and tolerance to non-thermal stresses.</p>
+    </sec>
+    <sec sec-type="materials|methods" id="s2">
+      <title>Materials and methods</title>
+      <sec id="s2a">
+        <title>BLAST search and multiple sequence alignment</title>
+        <p>Proteins homologous to OsHsfC1b were identified by BLAST searches on <uri xlink:type="simple" xlink:href="http://www.phytozome.net/">http://www.phytozome.net/</uri>. Multiple sequence alignment was done with Clustal X 2.0 (<xref ref-type="bibr" rid="PLS011C28">Larkin <italic>et al.</italic> 2007</xref>).</p>
+      </sec>
+      <sec id="s2b">
+        <title>Plant growth conditions and stress treatments</title>
+        <p>Seeds of transgenic rice lines (<italic>hsfc1b</italic>, <italic>ami</italic>-7.1, <italic>ami</italic>-13.3 and empty-vector control) and wild-type (Dongjin) plants were placed on hydroponic boxes with full-strength Yoshida medium (<xref ref-type="bibr" rid="PLS011C64">Yoshida <italic>et al.</italic> 1971</xref>) using styrofoam adaptors. Plants grown for 3 or 4 weeks at (day/night) 26/22 °C, 75/70 % relative humidity with a day length of 12 h and a light intensity of 700 µmol m<sup>−2</sup> s<sup>–1</sup> were subjected to salt stress by adding either 50 or 100 mM NaCl (final concentration) to the growth medium. Furthermore, hydroponically grown plants were treated with 100 mM mannitol, 5 µM abscisic acid (ABA) or 5 mM H<sub>2</sub>O<sub>2</sub>. T<sub>1</sub> seeds of <italic>ami</italic>RNA and empty-vector lines were selected on 40 mg/L hygromycin. Leaves and roots were harvested separately. For estimation of biomass accumulation, fresh and dry weights of shoots and roots of five replicates each (from four plants in each experiment) were measured. After measurement, tissues were oven dried at 70 °C for 3 days, and the dry weight of each sample was measured. Subsequently, the relative biomass of the samples was calculated as the percentage of non-stressed plants.</p>
+      </sec>
+      <sec id="s2c">
+        <title>Germination assays</title>
+        <p>Dehulled seeds were surface sterilized with 12 % NaOCl for 5 min and washed five times with distilled water. Subsequently, seeds were sown on vertical plates with Murashige–Skoog (MS) medium (3 % sucrose) containing NaCl (50 or 100 mM), ABA (1 or 5 µM) or mannitol (100 mM). Plates were incubated at (day/night) 26/22 °C, 75/70 % relative humidity with a day length of 12 h. Light intensity was set to 700 µmol m<sup>–2</sup> s<sup>–1</sup>.</p>
+      </sec>
+      <sec id="s2d">
+        <title>Isolation of T-DNA insertion line</title>
+        <p>The T-DNA insertion line 1B-09127.R (rice ssp. <italic>japonica</italic> cv. Dongjin) was ordered from the POSTECH RISD database (<xref ref-type="bibr" rid="PLS011C23">Jeon <italic>et al.</italic> 2000</xref>; <uri xlink:type="simple" xlink:href="http://www.postech.ac.kr/life/pfg/risd/">http://www.postech.ac.kr/life/pfg/risd/</uri>). Homozygous T<sub>2</sub> plants were confirmed by polymerase chain reaction (PCR) using the primers 5′-CTCCTCCATGCCCCTCTG-3′ and 5′-TTGGGGTTTCTACAGGACGTAAC-3′ for detection of the mutant allele, and the primers 5′-CTGCTCTCATACGGAGGAGG-3′ and 5′-AAGACAGCAGCAACGGAAAG-3′ for wild-type allele detection. Seeds of homozygous plants were propagated two times and T<sub>4</sub> seeds were used for further analysis.</p>
+      </sec>
+      <sec id="s2e">
+        <title>Constructs and rice transformation</title>
+        <p>For the construction of an <italic>artificial micro</italic>-RNA (<italic>ami</italic>RNA) specific to <italic>OsHsfC1b</italic>, primers harbouring <italic>attB</italic> sites were designed in WMD2 (<uri xlink:type="simple" xlink:href="http://wmd2.weigelworld.org">http://wmd2.weigelworld.org</uri>) and multi-step PCR was performed as described (<xref ref-type="bibr" rid="PLS011C59">Warthmann <italic>et al.</italic> 2008</xref>). Subsequently, the <italic>ami</italic>RNA construct was cloned into the pC5300 OE vector using BP clonase (Invitrogen, Darmstadt, Germany). pC5300 OE was constructed by inserting an <italic>attP1-ccdB-attP2</italic> Gateway<sup>R</sup> cassette into the multiple cloning site of pC1300intA.Ubi-tnos (also named IRS154) between the maize ubiquitin promoter/first exon/first intron sequence and the <italic>NOS</italic> polyadenylation sequence (J. C. Breitler, CIRAD, Montpellier, France, unpubl. res.). The backbone vector pC1300intA was originally constructed by <xref ref-type="bibr" rid="PLS011C43">Ouwerkerk <italic>et al.</italic> (2001)</xref> (GenBank accession number: AF294976). Rice calli of the Nipponbare cultivar were co-cultured with <italic>Agrobacterium tumefaciens</italic> strain EHA105 containing recombinant or empty pC5300 according to <xref ref-type="bibr" rid="PLS011C48">Sallaud <italic>et al.</italic> (2003)</xref>.</p>
+      </sec>
+      <sec id="s2f">
+        <title>Subcellular localization of OsHsfC1b</title>
+        <p>For the subcellular localization study, the full-length CDS of <italic>OsHsfC1b</italic> was amplified by PCR from root cDNA (cv. Nipponbare) using two oligonucleotides (5′-CACCATGATGGGCGGCGAGTGCAA-3′ and 5′-CTAGTAGAACACTTGGCCAAGAA-3′) and cloned into pENTR vector (Invitrogen). Subsequently, the CDS was recombined at the N-terminus with green fluorescent protein (GFP) by Gateway transfer into the vector pK7WGF2.0 (<xref ref-type="bibr" rid="PLS011C26">Karimi <italic>et al.</italic> 2005</xref>). <italic>Arabidopsis</italic> mesophyll cell protoplasts were obtained and transformed with the GFP fusion construct according to <xref ref-type="bibr" rid="PLS011C60">Wu <italic>et al.</italic> (2009)</xref>. Fluorescence imaging of the protoplasts was performed using a confocal laser scanning microscope (SP5; Leica Microsystems CMS, Mannheim, Germany).</p>
+      </sec>
+      <sec id="s2g">
+        <title>Expression analysis of stress-related genes</title>
+        <p>RNA isolation from rice roots and leaves, cDNA synthesis and quantitative real-time PCR (qRT-PCR) were performed as described (<xref ref-type="bibr" rid="PLS011C5">Caldana <italic>et al.</italic> 2007</xref>). Three biological replicates (with four plants each) were used for each experiment. The efficiency of cDNA synthesis was estimated by qRT-PCR using <italic>ACTIN</italic> (Os03g50885, forward primer 5′-CTCCCCCATGCTATCCTTCG-3′ and reverse primer 5′-TGAATGAGTAACCACGCTCCG-3′) as reference gene. For expression analysis of <italic>OsHsfC1b</italic>, the oligonucleotides 5′-GCAGCTCAACACCTACGGATTC-3′ and 5′-TTCTTCTTCTTGCGCACGATCC-3′ were used. Oligonucleotide sequences used for expression profiling of signalling and ion homoeostasis components are listed separately [see <ext-link ext-link-type="uri" xlink:href="http://aobpla.oxfordjournals.org/lookup/suppl/doi:10.1093/aobpla/pls011/-/DC1">Additional Information—File 1</ext-link>]. Oligonucleotide sequences for expression profiling of 12 <italic>sHSP</italic> genes were designed with QuantPrime (<xref ref-type="bibr" rid="PLS011C1">Arvidsson <italic>et al.</italic> 2008</xref>) and are listed in <ext-link ext-link-type="uri" xlink:href="http://aobpla.oxfordjournals.org/lookup/suppl/doi:10.1093/aobpla/pls011/-/DC1">Additional Information (File 1)</ext-link>.</p>
+      </sec>
+    </sec>
+    <sec sec-type="results" id="s3">
+      <title>Results</title>
+      <sec id="s3a">
+        <title>Phylogenetic analysis and subcellular localization of OsHsfC1b</title>
+        <p>BLAST search and multiple sequence alignment of OsHsfC1b (Os01g53220) revealed homologous proteins in other monocots such as maize, sorghum and <italic>Brachypodium</italic>, but also in the dicot <italic>Arabidopsis</italic> (Fig. <xref ref-type="fig" rid="PLS011F1">1</xref>A). In rice, OsHsfC1b shares highest similarity with OsHsfC1a, another member of the four class C HSFs identified in rice (<xref ref-type="bibr" rid="PLS011C13">Guo <italic>et al.</italic> 2008</xref>). All proteins contain a well-conserved N-terminal DNA-binding domain consisting of three α-helices and four β-sheets, and a highly conserved oligomerization domain, also known as HR-A/B domain. In addition, a putative nuclear localization signal (NLS) upstream of the oligomerization domain was identified in all proteins. To confirm targeting of OsHsfC1b to the nucleus, we performed a subcellular localization study, in <italic>Arabidopsis</italic> mesophyll cell protoplasts (Fig. <xref ref-type="fig" rid="PLS011F1">1</xref>B). The fluorescence signal of the GFP–OsHsfC1b fusion protein was detectable mainly in the nucleus and to a lesser extent in the cytosol, as expected for a nuclear protein; the signal of the GFP control was equally distributed over both compartments.
+<fig id="PLS011F1" position="float"><label>Fig. 1</label><caption><p><bold>Phylogenetic analysis and subcellular localization of OsHsfC1b.</bold> (A) Multiple sequence alignment of OsHsfC1b and homologous proteins. The DNA-binding domain consists of three α-helices (a1–a3) and four β-sheets (b1–b4). The black boxes represent the HR-A/B domain. All proteins harbour a putative NLS (red boxes). Protein sequence data were derived from phytozome (<uri xlink:type="simple" xlink:href="www.phytozome.net">www.phytozome.net</uri>) under the following accession numbers: <italic>O. sativa</italic> OsHsfC1b (Os01g53220) and OsHsfC1a (Os01g43590); <italic>Brachipodium distachyon</italic> Bradi2g489 and Bradi2g440; <italic>Sorghum bicolor</italic> Sb03g03375 and Sb03g02847; <italic>Zea mays</italic> GRMZM2G086 and GRMZM2G089; <italic>Setaria italica</italic> Si002580m and Si002292m; and <italic>Arabidopsis thaliana</italic> AT3G24520. (B) Transient expression of GFP–OsHsfC1b fusion protein in <italic>Arabidopsis</italic> mesophyll cell protoplasts. From left to right: GFP signal of non-transformed control; chlorophyll autofluorescence of the same protoplast; overlay of GFP and autofluorescence signal; GFP signal of GFP–OsHsfC1b fusion protein in transformed protoplast; chlorophyll autofluorescence of the same protoplast; overlay of GFP–OsHsfC1b and autofluorescence signal.</p></caption><graphic xlink:href="pls01101"/></fig></p>
+      </sec>
+      <sec id="s3b">
+        <title>Expression profile of OsHsfC1b in rice roots and leaves exposed to salt, mannitol, ABA or H<sub>2</sub>O<sub>2</sub></title>
+        <p>We examined the expression of <italic>OsHsfC1b</italic> in roots and leaves of 4-week-old hydroponically grown rice plants (cv. Nipponbare) exposed to 100 mM NaCl, 100 mM mannitol, 5 µM ABA or 5 mM H<sub>2</sub>O<sub>2</sub> for 30 min or 3 h (Fig. <xref ref-type="fig" rid="PLS011F2">2</xref>A and B). <italic>OsHsfC1b</italic> was significantly induced in roots after 30 min treatment with salt, mannitol and ABA. In addition, <italic>OsHsfC1b</italic> was also significantly upregulated in leaves after 30 min of salt treatment. After 3 h, the expression level of <italic>OsHsfC1b</italic> in roots was significantly increased by salt and ABA, but not by mannitol. Again, salt stress resulted in an upregulation of expression in leaves. Remarkably, the ABA-triggered induction in roots was ∼2-fold higher than that triggered by salt, reaching an ∼43-fold and ∼33-fold induction after 30 min and 3 h ABA treatment, respectively, as compared with non-stress conditions. H<sub>2</sub>O<sub>2</sub> had no effect on <italic>OsHsfC1b</italic> transcript level.
+<fig id="PLS011F2" position="float"><label>Fig. 2</label><caption><p><bold>Expression pattern of <italic>OsHsfC1a</italic> and <italic>OsHsfC1b</italic> under different treatments.</bold> (A) Relative expression of <italic>OsHsfC1a</italic> and <italic>OsHsfC1b</italic> in Nipponbare roots treated with 100 mM NaCl, 5 µM ABA, 100 mM mannitol or 5 mM H<sub>2</sub>O<sub>2</sub> for 30 min or 3 h, respectively. (B) Relative expression of <italic>OsHsfC1a</italic> and <italic>OsHsfC1b</italic> in Nipponbare leaves treated with 100 mM NaCl, 5 µM ABA, 100 mM mannitol or 5 mM H<sub>2</sub>O<sub>2</sub> for 30 min or 3 h, respectively. (C) Relative expression of <italic>OsHsfC1a</italic> and <italic>OsHsfC1b</italic> in Dongjin roots and leaves treated with 100 mM NaCl for 30 min or 3 h, respectively. (D) Insertion site of T-DNA in <italic>hsfc1b</italic> mutant. The <italic>OsHsfC1b</italic> gene consists of two exons, the second exon is disrupted in the mutant by the T-DNA insertion. Numbers indicate nucleotide positions counted from the translation start site. (E) Relative expression of <italic>OsHsfC1b</italic> in <italic>hsfc1b</italic> and <italic>ami</italic>-13.3 lines compared with Dongjin and empty-vector Nipponbare controls, respectively. Expression data in (A)–(C) and (E) represent means of three biological replicates (four plants each) ± SE. A star (*) indicates significant difference to expression under control conditions (<italic>P</italic> ≤ 0.05). FC, fold change.</p></caption><graphic xlink:href="pls01102"/></fig></p>
+        <p>In addition to Nipponbare plants, we tested the salt-dependent expression of <italic>OsHsfC1b</italic> in rice plants of the Dongjin cultivar (Fig. <xref ref-type="fig" rid="PLS011F2">2</xref>C). In contrast to Nipponbare plants, <italic>OsHsfC1b</italic> was only induced in roots after 30 min of salt stress, showing an upregulation by ∼3.5-fold. We compared the expression profile of <italic>OsHsfC1b</italic> under the different treatments with the paralogous gene <italic>OsHsfC1a</italic> (Fig. <xref ref-type="fig" rid="PLS011F1">1</xref>). As observed for <italic>OsHsfC1b</italic>, <italic>OsHsfC1a</italic> was upregulated in Nipponbare roots exposed to salt stress for 30 min and 3 h, and to ABA treatment for 3 h (Fig. <xref ref-type="fig" rid="PLS011F2">2</xref>A). Unlike its counterpart, however, <italic>OsHsfC1a</italic> was not induced by salt stress in Nipponbare leaves (Fig. <xref ref-type="fig" rid="PLS011F2">2</xref>B). Moreover, it was downregulated by mannitol treatment in roots and induced by ABA in leaves. As shown for <italic>OsHsfC1b</italic>, <italic>OsHsfC1a</italic> was significantly induced by salt stress in Dongjin roots (Fig. <xref ref-type="fig" rid="PLS011F2">2</xref>B).</p>
+      </sec>
+      <sec id="s3c">
+        <title>Identification of the T-DNA insertion line hsfc1b and establishment of amiRNA lines</title>
+        <p>For functional characterization of <italic>OsHsfC1b</italic>, we identified a homozygous T-DNA insertion line (1B-09127.R) in the Dongjin background and named it <italic>hsfc1b</italic>. The insertion site is located in the second exon of <italic>OsHsfC1b</italic> (Fig. <xref ref-type="fig" rid="PLS011F2">2</xref>D). Additionally, we generated <italic>ami</italic>RNA lines in the Nipponbare background and selected two independent lines, <italic>ami</italic>-7.1 and <italic>ami</italic>-13.3, for further characterization. Transgenic plants of the T<sub>4</sub> (<italic>hsfc1b</italic>) and T<sub>1</sub> generation (<italic>ami</italic>RNA lines) were analysed regarding the expression of <italic>OsHsfC1b</italic> under non-stress conditions. In <italic>hsfc1b</italic> roots, we observed an 11-fold reduction of <italic>OsHsfC1b</italic> expression, while in <italic>ami</italic>-13.3 roots the expression of <italic>OsHsfC1b</italic> was decreased by ∼5-fold as compared with control plants (Fig. <xref ref-type="fig" rid="PLS011F2">2</xref>E). The transcript of <italic>OsHsfC1b</italic> was not detectable in roots of the <italic>ami</italic>-7.1 line. Notably, during salt stress <italic>OsHsfC1a</italic> expression in the insertion line was similar to that in the wild type, suggesting that <italic>OsHsfC1b</italic> and <italic>OsHsfC1a</italic> act independently during the stress response [see <ext-link ext-link-type="uri" xlink:href="http://aobpla.oxfordjournals.org/lookup/suppl/doi:10.1093/aobpla/pls011/-/DC1">Additional Information—File 2</ext-link>].</p>
+      </sec>
+      <sec id="s3d">
+        <title>Growth of hsfc1b and amiRNA lines under control conditions</title>
+        <p>Transgenic plants (<italic>hsfc1b</italic>, <italic>ami</italic>-7.1 and <italic>ami</italic>-13.3 lines) showed stunted growth under non-stress conditions, visible 7 days after sowing (DAS) and at the age of 3 weeks (Fig. <xref ref-type="fig" rid="PLS011F3">3</xref>A and D). Root length and shoot height of seedlings germinated on MS medium were measured 4 and 7 DAS (Fig. <xref ref-type="fig" rid="PLS011F3">3</xref>B). Shoot length of the <italic>hsfc1b</italic> mutant was ∼75 and ∼80 % of that of the wild type (Dongjin) at 4 and 7 DAS, respectively (Fig. <xref ref-type="fig" rid="PLS011F3">3</xref>B). Furthermore, at 7 DAS, root length of <italic>hsfc1b</italic> was ∼85 % of that of the Dongjin wild type, whereas at 4 DAS no difference was observed between roots of the insertion line and the wild type. The growth retardation was also observed in the <italic>ami</italic>-7.1 and <italic>ami</italic>-13.3 lines established in the Nipponbare background (Fig. <xref ref-type="fig" rid="PLS011F3">3</xref>B). At 4 DAS, both lines had significantly shorter root and shoot lengths than control plants containing the empty vector. Furthermore, at 7 DAS <italic>ami</italic>-7.1 plants displayed a significantly shorter shoot length, and <italic>ami</italic>-13.3 plants showed a significantly shorter root length. Besides this, we observed differences in biomass accumulation between <italic>hsfc1b</italic> and Dongjin wild-type plants (Fig. <xref ref-type="fig" rid="PLS011F3">3</xref>C). Both shoot fresh weight (FW) and dry weight (DW) of 4-week-old <italic>hsfc1b</italic> plants were reduced by one-third, and root FW and DW were ∼60 % of that of wild-type plants. A similar observation was made for <italic>ami</italic>-13.3 and <italic>ami</italic>-7.1 lines, where shoot and root FW and DW were reduced by ∼50 and ∼75 %, respectively, suggesting that OsHsfC1b functions as a positive regulator of vegetative growth.
+<fig id="PLS011F3" position="float"><label>Fig. 3</label><caption><p><bold>Impact of OsHsfC1b on vegetative growth under normal conditions.</bold> (A) Seven-day-old seedlings grown on MS medium. From left to right: Dongjin wild type, <italic>hsfc1b</italic>, empty-vector control line (Nipponbare background), <italic>ami</italic>-13.3 line, <italic>ami</italic>-7.1 line. (B) Root and shoot length of <italic>hsfc1b</italic>, <italic>ami</italic>-13.3 and <italic>ami</italic>-7.1 lines at 4 and 7 DAS relative to Dongjin wild-type and Nipponbare empty-vector control seedlings, respectively. Data are means of three independent experiments (<italic>n</italic> = 12). A star (*) indicates significant difference to control (<italic>P</italic> ≤ 0.05). DAS, days after sowing. (C) Fresh and dry weight of 4-week-old <italic>hsfc1b</italic>, <italic>ami</italic>-13.3 and <italic>ami</italic>-7.1 plants relative to Dongjin wild-type and Nipponbare empty-vector control plants. Data are means of five independent experiments (<italic>n</italic> = 4). A star (*) indicates significant difference (<italic>P</italic> ≤ 0.05). FW, fresh weight; DW, dry weight. (D) Growth retardation of 4-week-old plants. From left to right: Dongjin wild type, <italic>hsfc1b</italic>, empty-vector control line (Nipponbare background), <italic>ami</italic>-13.3 line, <italic>ami</italic>-7.1 line.</p></caption><graphic xlink:href="pls01103"/></fig></p>
+      </sec>
+      <sec id="s3e">
+        <title>Growth of hsfc1b, ami-7.1 and ami-13.3 lines under salt stress, osmotic stress or ABA treatment</title>
+        <p>We examined the salt tolerance of <italic>hsfc1b</italic> plants. Seeds of the insertion line and the Dongjin wild type were germinated in the presence of either 50 or 100 mM NaCl, and subsequently shoot and root length were determined at 4 and 7 DAS. Under mild stress, shoot length of <italic>hsfc1b</italic> was significantly more reduced than that of the wild type at both time points (Fig. <xref ref-type="fig" rid="PLS011F4">4</xref>A). At 100 mM NaCl, a stronger reduction of both shoot and root length as compared with the stressed wild type was observed. These results suggest a requirement of OsHsfC1b for the response to both mild and severe salt stress. For the <italic>ami</italic>-7.1 line, we consistently observed a 20 % reduction of shoot length at 100 mM NaCl (4 DAS) as compared with stressed empty-vector control plants (Fig. <xref ref-type="fig" rid="PLS011F4">4</xref>B), while line <italic>ami</italic>-13.3 did not differ largely from the empty-vector control with respect to shoot and root growth at both time points. We also tested the response of the transgenic lines after 3 weeks of growth in hydroponic culture and subsequent exposure to 50 mM NaCl for 8 days. The <italic>hsfc1b</italic> insertion line accumulated significantly less FW and DW (shoot and root) as compared with the stressed wild type (Fig. <xref ref-type="fig" rid="PLS011F4">4</xref>C). Likewise, <italic>ami</italic>-7.1 and <italic>ami</italic>-13.3 plants showed a significantly stronger reduction of FW and DW of both shoot and root than empty-vector control plants (Fig. <xref ref-type="fig" rid="PLS011F4">4</xref>C). Interestingly, Dongjin wild-type and empty-vector control plants (Nipponbare background) also differed regarding their salt tolerance. Whereas the shoot FW and DW were similarly reduced under stress conditions, empty-vector Nipponbare plants were more strongly affected in root FW and DW than Dongjin wild-type plants (Fig. <xref ref-type="fig" rid="PLS011F4">4</xref>C).
+<fig id="PLS011F4" position="float"><label>Fig. 4</label><caption><p><bold>Impact of OsHsfC1b on growth under stress conditions.</bold> (A) Root and shoot length of <italic>hsfc1b</italic> and Dongjin wild-type seedlings at 4 and 7 DAS grown on MS medium containing 50 or 100 mM NaCl, respectively, relative to non-stressed seedlings. (B) Root and shoot length of <italic>ami</italic>-13.3, <italic>ami</italic>-7.1 and Nipponbare empty-vector control (EV) seedlings at 4 and 7 DAS grown on MS medium containing 100 mM NaCl, relative to non-stressed seedlings. (C) Fresh and dry weight of 3-week-old hydroponically grown <italic>hsfc1b</italic>, Dongjin wild-type, <italic>ami</italic>-13.3, <italic>ami</italic>-7.1 and empty-vector control (EV) plants subjected to 50 mM NaCl for 8 days relative to non-stressed plants. (D) Root and shoot length of <italic>hsfc1b</italic> and Dongjin wild-type seedlings at 4 and 7 DAS grown on MS medium containing 100 mM mannitol relative to control seedlings. (E) Root and shoot length of <italic>hsfc1b</italic> and Dongjin wild-type seedlings at 4 and 7 DAS grown on MS medium containing 1 or 5 µM ABA, respectively, relative to untreated seedlings. (F) Root and shoot length of <italic>ami</italic>-13.3, <italic>ami</italic>-7.1 and Nipponbare empty-vector (EV) seedlings at 4 and 7 DAS grown on MS medium containing 1 µM ABA relative to untreated seedlings. Data in (A)–(F) are means of three independent experiments each (<italic>n</italic> = 12). A star (*) indicates significant difference to control (<italic>P</italic> ≤ 0.05). DAS, days after sowing.</p></caption><graphic xlink:href="pls01104"/></fig></p>
+        <p>Osmotic stress alone or in combination with salt or drought stress leads to diminished cell growth (<xref ref-type="bibr" rid="PLS011C37">Munns and Tester 2008</xref>). <italic>OsHsfC1b</italic> expression is induced in Nipponbare roots exposed to mannitol (Fig. <xref ref-type="fig" rid="PLS011F2">2</xref>A). For this reason, we tested the tolerance of <italic>hsfc1b</italic> plants to osmotic stress (Fig. <xref ref-type="fig" rid="PLS011F4">4</xref>D). At 4 DAS, <italic>hsfc1b</italic> plants grown on MS medium containing 100 mM mannitol exhibited significantly greater reduced shoot and root lengths, and at 7 DAS a significantly greater reduced root length as compared with the stressed wild type was observed, suggesting a role of OsHsfC1b in the response to osmotic stress (Fig. <xref ref-type="fig" rid="PLS011F4">4</xref>D).</p>
+        <p>Abscisic acid is involved in the response to many abiotic and biotic stresses, and exogenous ABA mimics effects caused by environmental stresses (<xref ref-type="bibr" rid="PLS011C66">Zhu 2002</xref>). The expression of <italic>OsHsfC1b</italic> is ABA-inducible (Fig. <xref ref-type="fig" rid="PLS011F2">2</xref>A), suggesting a potential role in ABA signalling and/or response. Seedlings of <italic>hsfc1b</italic> showed hypersensitivity towards ABA (1 and 5 µM), visible by diminished shoot and root length at 7 DAS (Fig. <xref ref-type="fig" rid="PLS011F4">4</xref>E); this hypersensitivity was more prominent at 5 µM ABA. Seedlings of <italic>ami</italic>-7.1 and <italic>ami</italic>-13.3 had major problems in growing on 5 µM ABA, making a quantitative analysis impossible (data not shown). Therefore, we examined these parameters at 1 µM ABA (Fig. <xref ref-type="fig" rid="PLS011F4">4</xref>F). Whereas the <italic>ami</italic>-7.1 and the empty-vector control line showed a similar reduction of shoot and root length, those of <italic>ami</italic>-13.3 were significantly more affected (Fig. <xref ref-type="fig" rid="PLS011F4">4</xref>F).</p>
+      </sec>
+      <sec id="s3f">
+        <title>Expression profiling of genes related to the salt stress response</title>
+        <p>The data described above indicated that OsHsfC1b contributes to the response to salt and osmotic stress. Next, we wanted to know whether genes known to be salt-responsive in the wild type are affected by the knock-down of <italic>OsHsfC1b</italic>. We therefore tested the expression of 80 salt-responsive genes involved in salt signalling and ion homeostasis in rice; these genes respond within 24 h of salt stress, with different induction time points and courses (R. Schmidt, MPIMP, Golm, Germany, unpubl. res.). The transgenic plants (<italic>hsfc1b</italic> and line <italic>ami</italic>-13.3) were exposed to 100 mM NaCl for 30 min or 3 h, and gene expression was analysed by qRT-PCR. We selected the <italic>ami</italic>-13.3 line since the reduction in plant size and weight is comparable to that of the T-DNA insertion line (Fig. <xref ref-type="fig" rid="PLS011F3">3</xref>). Interestingly, under control conditions, i.e. in the absence of stress, various salt-responsive genes were already differentially expressed in <italic>hsfc1b</italic> and <italic>ami</italic>-13.3 lines, compared with the controls (Table <xref ref-type="table" rid="PLS011TB1">1</xref>). In <italic>hsfc1b</italic> roots, we found a significant upregulation of <italic>MAP2K.6</italic>, the ATPases <italic>ECA1</italic>, <italic>AHA1</italic> and <italic>AHA2</italic> as well as <italic>VHA-c4</italic>, the cation transporters <italic>HKT7</italic> and <italic>HKT8</italic>, and <italic>GLR2.8</italic>. Additionally, <italic>GLR2.7</italic> and <italic>TIP2-1</italic> showed a significant downregulation as compared with Dongjin roots. The differentially expressed genes in <italic>hsfc1b</italic> (Dongjin background) under control conditions differed from those of <italic>ami</italic>-13.3 (Nipponbare background), possibly indicating cultivar differences. Here the six genes with a change in expression encode MAP3K.4, MAP3K.18, calcineurin-B-like protein CBL7, CAMK1, HAK4 and a protein kinase (Os06g43030) (Table <xref ref-type="table" rid="PLS011TB1">1</xref>). Remarkably, the expression of <italic>MAPK3K.18</italic> under non-stress conditions was drastically reduced in <italic>ami</italic>-13.3, showing a &gt;130-fold lower expression than in roots of plants transformed with the empty vector.
+<table-wrap id="PLS011TB1" position="float"><label>Table 1</label><caption><p>Expression of genes encoding signalling and ion homeostasis components in <italic>hsfc1b</italic> and <italic>ami</italic>-13.3 lines. Comparison of expression levels (log<sub>2</sub>FC) in roots of hsfc1b, <italic>ami</italic>-13.3 and their respective controls under non-stress and salt stress conditions (100 mM NaCl). Values are presented as the relative expression level (log<sub>2</sub>FC) of three biological replicates. The values that are significantly different from control (ΔΔ<italic>C</italic><sub>T</sub> ≤ −1 or ≥+1) by Student's <italic>t</italic>-test are in bold (<italic>P</italic> ≤ 0.05).</p></caption><table frame="hsides" rules="groups"><colgroup span="1"><col align="left" span="1"/><col align="left" span="1"/><col align="char" char="." span="1"/><col align="char" char="." span="1"/><col align="char" char="." span="1"/><col align="char" char="." span="1"/><col align="char" char="." span="1"/><col align="char" char="." span="1"/><col align="char" char="." span="1"/><col align="char" char="." span="1"/><col align="char" char="." span="1"/><col align="char" char="." span="1"/></colgroup><thead><tr><th rowspan="1" colspan="1"/><th rowspan="1" colspan="1"/><th rowspan="1" colspan="1"/><th rowspan="1" colspan="1"/><th align="left" colspan="8" rowspan="1">100 mM NaCl<hr/></th></tr><tr><th rowspan="1" colspan="1"/><th rowspan="1" colspan="1"/><th align="left" colspan="2" rowspan="1">Control<hr/></th><th align="left" colspan="4" rowspan="1">30 min<hr/></th><th align="left" colspan="4" rowspan="1">3 h<hr/></th></tr><tr><th align="left" rowspan="1" colspan="1">Locus</th><th align="left" rowspan="1" colspan="1">Name</th><th align="left" rowspan="1" colspan="1"><italic>hsfc1b</italic></th><th align="left" rowspan="1" colspan="1"><italic>ami</italic>-13.3</th><th align="left" rowspan="1" colspan="1">Dongjin</th><th align="left" rowspan="1" colspan="1"><italic>hsfc1b</italic></th><th align="left" rowspan="1" colspan="1">EV</th><th align="left" rowspan="1" colspan="1"><italic>ami</italic>-13.3</th><th align="left" rowspan="1" colspan="1">Dongjin</th><th align="left" rowspan="1" colspan="1"><italic>hsfc1b</italic></th><th align="left" rowspan="1" colspan="1">EV</th><th align="left" rowspan="1" colspan="1"><italic>ami</italic>-13.3</th></tr></thead><tbody><tr><td rowspan="1" colspan="1">Os11g17080</td><td rowspan="1" colspan="1">MPK15</td><td rowspan="1" colspan="1">0.29</td><td rowspan="1" colspan="1">0.30</td><td rowspan="1" colspan="1">−0.06</td><td rowspan="1" colspan="1">−0.36</td><td rowspan="1" colspan="1">0.23</td><td rowspan="1" colspan="1">0.79</td><td rowspan="1" colspan="1">−0.12</td><td rowspan="1" colspan="1">−1.60</td><td rowspan="1" colspan="1"><bold>1.97</bold></td><td rowspan="1" colspan="1"><bold>2.29</bold></td></tr><tr><td rowspan="1" colspan="1">Os03g12390</td><td rowspan="1" colspan="1">MAP2K.6</td><td rowspan="1" colspan="1"><bold>1.09</bold></td><td rowspan="1" colspan="1">−0.43</td><td rowspan="1" colspan="1">0.50</td><td rowspan="1" colspan="1"><bold>1.15</bold></td><td rowspan="1" colspan="1">1.08</td><td rowspan="1" colspan="1"><bold>−2.99</bold></td><td rowspan="1" colspan="1">−0.69</td><td rowspan="1" colspan="1"><bold>1.03</bold></td><td rowspan="1" colspan="1">0.08</td><td rowspan="1" colspan="1">−0.37</td></tr><tr><td rowspan="1" colspan="1">Os01g50370</td><td rowspan="1" colspan="1">MAP3K.4</td><td rowspan="1" colspan="1">0.15</td><td rowspan="1" colspan="1"><bold>1.33</bold></td><td rowspan="1" colspan="1">0.39</td><td rowspan="1" colspan="1">0.72</td><td rowspan="1" colspan="1"><bold>2.55</bold></td><td rowspan="1" colspan="1">−0.77</td><td rowspan="1" colspan="1">−0.21</td><td rowspan="1" colspan="1">0.53</td><td rowspan="1" colspan="1">0.97</td><td rowspan="1" colspan="1">−0.42</td></tr><tr><td rowspan="1" colspan="1">Os01g50410</td><td rowspan="1" colspan="1">MAP3K.6</td><td rowspan="1" colspan="1">0.16</td><td rowspan="1" colspan="1">0.60</td><td rowspan="1" colspan="1">0.11</td><td rowspan="1" colspan="1">0.46</td><td rowspan="1" colspan="1"><bold>2.34</bold></td><td rowspan="1" colspan="1">−0.19</td><td rowspan="1" colspan="1">−0.49</td><td rowspan="1" colspan="1">1.01</td><td rowspan="1" colspan="1"><bold>1.14</bold></td><td rowspan="1" colspan="1">0.37</td></tr><tr><td rowspan="1" colspan="1">Os03g15570</td><td rowspan="1" colspan="1">MAP3K.12</td><td rowspan="1" colspan="1">0.62</td><td rowspan="1" colspan="1">0.12</td><td rowspan="1" colspan="1">−0.03</td><td rowspan="1" colspan="1"><bold>1.28</bold></td><td rowspan="1" colspan="1">−0.78</td><td rowspan="1" colspan="1">−1.50</td><td rowspan="1" colspan="1">−0.11</td><td rowspan="1" colspan="1">1.20</td><td rowspan="1" colspan="1">0.30</td><td rowspan="1" colspan="1">0.70</td></tr><tr><td rowspan="1" colspan="1">Os03g55560</td><td rowspan="1" colspan="1">MAP3K.15</td><td rowspan="1" colspan="1">0.53</td><td rowspan="1" colspan="1">0.04</td><td rowspan="1" colspan="1">0.33</td><td rowspan="1" colspan="1">0.38</td><td rowspan="1" colspan="1">−0.03</td><td rowspan="1" colspan="1">0.84</td><td rowspan="1" colspan="1">−0.16</td><td rowspan="1" colspan="1">0.23</td><td rowspan="1" colspan="1"><bold>1.40</bold></td><td rowspan="1" colspan="1"><bold>1.87</bold></td></tr><tr><td rowspan="1" colspan="1">Os05g46750</td><td rowspan="1" colspan="1">MAP3K.18</td><td rowspan="1" colspan="1">0.02</td><td rowspan="1" colspan="1"><bold>−7.06</bold></td><td rowspan="1" colspan="1">0.69</td><td rowspan="1" colspan="1">1.90</td><td rowspan="1" colspan="1"><bold>−4.54</bold></td><td rowspan="1" colspan="1">−0.61</td><td rowspan="1" colspan="1">−0.28</td><td rowspan="1" colspan="1"><bold>2.09</bold></td><td rowspan="1" colspan="1">−0.06</td><td rowspan="1" colspan="1">−0.25</td></tr><tr><td rowspan="1" colspan="1">Os05g46760</td><td rowspan="1" colspan="1">MAP3K.19</td><td rowspan="1" colspan="1">0.15</td><td rowspan="1" colspan="1">−0.48</td><td rowspan="1" colspan="1">0.15</td><td rowspan="1" colspan="1"><bold>1.33</bold></td><td rowspan="1" colspan="1">0.34</td><td rowspan="1" colspan="1">−1.46</td><td rowspan="1" colspan="1">0.09</td><td rowspan="1" colspan="1"><bold>1.78</bold></td><td rowspan="1" colspan="1">−0.91</td><td rowspan="1" colspan="1">−0.22</td></tr><tr><td rowspan="1" colspan="1">Os10g04010</td><td rowspan="1" colspan="1">MAP3K.23</td><td rowspan="1" colspan="1">1.59</td><td rowspan="1" colspan="1">0.40</td><td rowspan="1" colspan="1"><bold>1.39</bold></td><td rowspan="1" colspan="1">−0.92</td><td rowspan="1" colspan="1">1.52</td><td rowspan="1" colspan="1">−1.51</td><td rowspan="1" colspan="1">0.39</td><td rowspan="1" colspan="1"><bold>1.18</bold></td><td rowspan="1" colspan="1">−0.89</td><td rowspan="1" colspan="1">0.30</td></tr><tr><td rowspan="1" colspan="1">Os06g43030</td><td rowspan="1" colspan="1">Protein kinase</td><td rowspan="1" colspan="1">0.58</td><td rowspan="1" colspan="1"><bold>1.95</bold></td><td rowspan="1" colspan="1">0.97</td><td rowspan="1" colspan="1">−0.14</td><td rowspan="1" colspan="1">0.03</td><td rowspan="1" colspan="1">−0.88</td><td rowspan="1" colspan="1">0.66</td><td rowspan="1" colspan="1"><bold>1.01</bold></td><td rowspan="1" colspan="1"><bold>1.84</bold></td><td rowspan="1" colspan="1">−0.88</td></tr><tr><td rowspan="1" colspan="1">Os02g18880</td><td rowspan="1" colspan="1">CBL7</td><td rowspan="1" colspan="1">0.03</td><td rowspan="1" colspan="1"><bold>1.78</bold></td><td rowspan="1" colspan="1"><bold>−1.53</bold></td><td rowspan="1" colspan="1">−0.41</td><td rowspan="1" colspan="1"><bold>2.21</bold></td><td rowspan="1" colspan="1">−0.38</td><td rowspan="1" colspan="1">−1.44</td><td rowspan="1" colspan="1"><bold>−1.35</bold></td><td rowspan="1" colspan="1"><bold>2.00</bold></td><td rowspan="1" colspan="1">0.47</td></tr><tr><td rowspan="1" colspan="1">Os02g18930</td><td rowspan="1" colspan="1">CBL8</td><td rowspan="1" colspan="1">−0.28</td><td rowspan="1" colspan="1">0.12</td><td rowspan="1" colspan="1">−1.55</td><td rowspan="1" colspan="1">0.16</td><td rowspan="1" colspan="1">−1.72</td><td rowspan="1" colspan="1">−0.71</td><td rowspan="1" colspan="1">−0.69</td><td rowspan="1" colspan="1">0.41</td><td rowspan="1" colspan="1"><bold>2.35</bold></td><td rowspan="1" colspan="1">0.88</td></tr><tr><td rowspan="1" colspan="1">Os01g51420</td><td rowspan="1" colspan="1">CBL10</td><td rowspan="1" colspan="1">0.56</td><td rowspan="1" colspan="1">−0.47</td><td rowspan="1" colspan="1">0.75</td><td rowspan="1" colspan="1"><bold>1.15</bold></td><td rowspan="1" colspan="1">−1.25</td><td rowspan="1" colspan="1">−1.93</td><td rowspan="1" colspan="1">−0.24</td><td rowspan="1" colspan="1">1.06</td><td rowspan="1" colspan="1">−0.28</td><td rowspan="1" colspan="1">0.23</td></tr><tr><td rowspan="1" colspan="1">Os02g03410</td><td rowspan="1" colspan="1">CPK4</td><td rowspan="1" colspan="1">−0.50</td><td rowspan="1" colspan="1">0.77</td><td rowspan="1" colspan="1">0.02</td><td rowspan="1" colspan="1"><bold>1.59</bold></td><td rowspan="1" colspan="1"><bold>1.81</bold></td><td rowspan="1" colspan="1">0.44</td><td rowspan="1" colspan="1">−0.45</td><td rowspan="1" colspan="1">0.18</td><td rowspan="1" colspan="1">1.23</td><td rowspan="1" colspan="1">0.02</td></tr><tr><td rowspan="1" colspan="1">Os02g58520</td><td rowspan="1" colspan="1">CPK6</td><td rowspan="1" colspan="1">0.37</td><td rowspan="1" colspan="1">0.75</td><td rowspan="1" colspan="1">0.69</td><td rowspan="1" colspan="1">1.20</td><td rowspan="1" colspan="1">1.21</td><td rowspan="1" colspan="1">−0.28</td><td rowspan="1" colspan="1">0.62</td><td rowspan="1" colspan="1">0.17</td><td rowspan="1" colspan="1"><bold>2.24</bold></td><td rowspan="1" colspan="1">0.56</td></tr><tr><td rowspan="1" colspan="1">Os12g41090</td><td rowspan="1" colspan="1">CIPK4</td><td rowspan="1" colspan="1">−0.27</td><td rowspan="1" colspan="1">0.79</td><td rowspan="1" colspan="1">−0.52</td><td rowspan="1" colspan="1">0.10</td><td rowspan="1" colspan="1">−0.27</td><td rowspan="1" colspan="1">−0.42</td><td rowspan="1" colspan="1">0.64</td><td rowspan="1" colspan="1">−1.24</td><td rowspan="1" colspan="1"><bold>1.46</bold></td><td rowspan="1" colspan="1"><bold>2.97</bold></td></tr><tr><td rowspan="1" colspan="1">Os08g34240</td><td rowspan="1" colspan="1">CIPK6</td><td rowspan="1" colspan="1">0.23</td><td rowspan="1" colspan="1">−0.25</td><td rowspan="1" colspan="1"><bold>1.10</bold></td><td rowspan="1" colspan="1">0.30</td><td rowspan="1" colspan="1">−2.19</td><td rowspan="1" colspan="1"><bold>−3.26</bold></td><td rowspan="1" colspan="1">−0.55</td><td rowspan="1" colspan="1">−0.06</td><td rowspan="1" colspan="1">−1.84</td><td rowspan="1" colspan="1"><bold>−1.58</bold></td></tr><tr><td rowspan="1" colspan="1">Os05g26820</td><td rowspan="1" colspan="1">CIPK18</td><td rowspan="1" colspan="1">−1.12</td><td rowspan="1" colspan="1">1.31</td><td rowspan="1" colspan="1">−0.43</td><td rowspan="1" colspan="1">1.37</td><td rowspan="1" colspan="1">−1.14</td><td rowspan="1" colspan="1">−1.22</td><td rowspan="1" colspan="1">−0.30</td><td rowspan="1" colspan="1">−0.15</td><td rowspan="1" colspan="1"><bold>1.11</bold></td><td rowspan="1" colspan="1">0.31</td></tr><tr><td rowspan="1" colspan="1">Os03g20380</td><td rowspan="1" colspan="1">CIPK31</td><td rowspan="1" colspan="1">0.58</td><td rowspan="1" colspan="1">−0.64</td><td rowspan="1" colspan="1">−0.82</td><td rowspan="1" colspan="1">1.81</td><td rowspan="1" colspan="1">−0.58</td><td rowspan="1" colspan="1">0.50</td><td rowspan="1" colspan="1">−0.25</td><td rowspan="1" colspan="1">−0.40</td><td rowspan="1" colspan="1">1.33</td><td rowspan="1" colspan="1"><bold>2.08</bold></td></tr><tr><td rowspan="1" colspan="1">Os03g25070</td><td rowspan="1" colspan="1">CAMK1</td><td rowspan="1" colspan="1">0.87</td><td rowspan="1" colspan="1"><bold>2.13</bold></td><td rowspan="1" colspan="1">0.67</td><td rowspan="1" colspan="1">−2.15</td><td rowspan="1" colspan="1">−0.92</td><td rowspan="1" colspan="1">−1.23</td><td rowspan="1" colspan="1">−0.70</td><td rowspan="1" colspan="1"><bold>3.15</bold></td><td rowspan="1" colspan="1">1.42</td><td rowspan="1" colspan="1">−1.46</td></tr><tr><td rowspan="1" colspan="1">Os07g44710</td><td rowspan="1" colspan="1">CAMK_like.36</td><td rowspan="1" colspan="1">0.81</td><td rowspan="1" colspan="1">0.22</td><td rowspan="1" colspan="1">0.10</td><td rowspan="1" colspan="1">−0.10</td><td rowspan="1" colspan="1">−0.96</td><td rowspan="1" colspan="1">0.11</td><td rowspan="1" colspan="1">0.13</td><td rowspan="1" colspan="1">0.20</td><td rowspan="1" colspan="1"><bold>1.29</bold></td><td rowspan="1" colspan="1">0.77</td></tr><tr><td rowspan="1" colspan="1">Os03g17310</td><td rowspan="1" colspan="1">ECA1</td><td rowspan="1" colspan="1"><bold>1.64</bold></td><td rowspan="1" colspan="1">1.21</td><td rowspan="1" colspan="1"><bold>1.74</bold></td><td rowspan="1" colspan="1">0.03</td><td rowspan="1" colspan="1">−0.44</td><td rowspan="1" colspan="1">0.04</td><td rowspan="1" colspan="1">−0.93</td><td rowspan="1" colspan="1">2.09</td><td rowspan="1" colspan="1"><bold>2.34</bold></td><td rowspan="1" colspan="1"><bold>1.36</bold></td></tr><tr><td rowspan="1" colspan="1">Os03g48310</td><td rowspan="1" colspan="1">AHA1</td><td rowspan="1" colspan="1"><bold>1.34</bold></td><td rowspan="1" colspan="1">−0.38</td><td rowspan="1" colspan="1"><bold>1.91</bold></td><td rowspan="1" colspan="1">1.05</td><td rowspan="1" colspan="1"><bold>−3.45</bold></td><td rowspan="1" colspan="1"><bold>−2.20</bold></td><td rowspan="1" colspan="1">2.89</td><td rowspan="1" colspan="1">1.37</td><td rowspan="1" colspan="1">−0.72</td><td rowspan="1" colspan="1"><bold>−1.45</bold></td></tr><tr><td rowspan="1" colspan="1">Os07g09340</td><td rowspan="1" colspan="1">AHA2</td><td rowspan="1" colspan="1"><bold>1.21</bold></td><td rowspan="1" colspan="1">0.02</td><td rowspan="1" colspan="1">−1.12</td><td rowspan="1" colspan="1">0.54</td><td rowspan="1" colspan="1">1.22</td><td rowspan="1" colspan="1"><bold>−1.16</bold></td><td rowspan="1" colspan="1">−0.14</td><td rowspan="1" colspan="1"><bold>−1.08</bold></td><td rowspan="1" colspan="1">−1.68</td><td rowspan="1" colspan="1">−1.46</td></tr><tr><td rowspan="1" colspan="1">Os02g07870</td><td rowspan="1" colspan="1">VHA-A2</td><td rowspan="1" colspan="1">−0.43</td><td rowspan="1" colspan="1">0.04</td><td rowspan="1" colspan="1">−0.02</td><td rowspan="1" colspan="1">−0.21</td><td rowspan="1" colspan="1">0.69</td><td rowspan="1" colspan="1">−1.00</td><td rowspan="1" colspan="1">0.10</td><td rowspan="1" colspan="1"><bold>−1.39</bold></td><td rowspan="1" colspan="1">0.61</td><td rowspan="1" colspan="1">−0.07</td></tr><tr><td rowspan="1" colspan="1">Os01g73130</td><td rowspan="1" colspan="1">VHA-c4</td><td rowspan="1" colspan="1"><bold>3.00</bold></td><td rowspan="1" colspan="1">−0.99</td><td rowspan="1" colspan="1"><bold>2.56</bold></td><td rowspan="1" colspan="1">0.73</td><td rowspan="1" colspan="1">−2.17</td><td rowspan="1" colspan="1">−2.04</td><td rowspan="1" colspan="1">0.61</td><td rowspan="1" colspan="1">2.44</td><td rowspan="1" colspan="1">−2.25</td><td rowspan="1" colspan="1">−0.30</td></tr><tr><td rowspan="1" colspan="1">Os06g08080</td><td rowspan="1" colspan="1">OVP2</td><td rowspan="1" colspan="1">0.63</td><td rowspan="1" colspan="1">0.03</td><td rowspan="1" colspan="1">0.22</td><td rowspan="1" colspan="1">0.23</td><td rowspan="1" colspan="1"><bold>−1.63</bold></td><td rowspan="1" colspan="1">−0.64</td><td rowspan="1" colspan="1">1.20</td><td rowspan="1" colspan="1">−0.37</td><td rowspan="1" colspan="1">0.76</td><td rowspan="1" colspan="1">0.92</td></tr><tr><td rowspan="1" colspan="1">Os06g48810</td><td rowspan="1" colspan="1">HKT1</td><td rowspan="1" colspan="1">−0.86</td><td rowspan="1" colspan="1">0.36</td><td rowspan="1" colspan="1"><bold>−2.76</bold></td><td rowspan="1" colspan="1">−1.49</td><td rowspan="1" colspan="1">−1.08</td><td rowspan="1" colspan="1">−0.26</td><td rowspan="1" colspan="1"><bold>−1.49</bold></td><td rowspan="1" colspan="1">−0.37</td><td rowspan="1" colspan="1">0.41</td><td rowspan="1" colspan="1">−0.55</td></tr><tr><td rowspan="1" colspan="1">Os02g07830</td><td rowspan="1" colspan="1">HKT6</td><td rowspan="1" colspan="1">1.04</td><td rowspan="1" colspan="1">−0.39</td><td rowspan="1" colspan="1">0.22</td><td rowspan="1" colspan="1">0.72</td><td rowspan="1" colspan="1">0.70</td><td rowspan="1" colspan="1">n.d.</td><td rowspan="1" colspan="1">0.62</td><td rowspan="1" colspan="1">0.13</td><td rowspan="1" colspan="1"><bold>1.77</bold></td><td rowspan="1" colspan="1">n.d.</td></tr><tr><td rowspan="1" colspan="1">Os04g51830</td><td rowspan="1" colspan="1">HKT7</td><td rowspan="1" colspan="1"><bold>1.81</bold></td><td rowspan="1" colspan="1">1.89</td><td rowspan="1" colspan="1">1.07</td><td rowspan="1" colspan="1">−0.36</td><td rowspan="1" colspan="1">−0.20</td><td rowspan="1" colspan="1">−4.70</td><td rowspan="1" colspan="1">−0.33</td><td rowspan="1" colspan="1">0.91</td><td rowspan="1" colspan="1">−1.02</td><td rowspan="1" colspan="1">0.64</td></tr><tr><td rowspan="1" colspan="1">Os01g20160</td><td rowspan="1" colspan="1">HKT8</td><td rowspan="1" colspan="1"><bold>1.27</bold></td><td rowspan="1" colspan="1">−2.15</td><td rowspan="1" colspan="1"><bold>1.35</bold></td><td rowspan="1" colspan="1">−0.62</td><td rowspan="1" colspan="1"><bold>2.23</bold></td><td rowspan="1" colspan="1"><bold>2.89</bold></td><td rowspan="1" colspan="1">−0.65</td><td rowspan="1" colspan="1"><bold>2.48</bold></td><td rowspan="1" colspan="1"><bold>2.49</bold></td><td rowspan="1" colspan="1"><bold>4.64</bold></td></tr><tr><td rowspan="1" colspan="1">Os03g55100</td><td rowspan="1" colspan="1">CNGC2</td><td rowspan="1" colspan="1">−0.43</td><td rowspan="1" colspan="1">−0.66</td><td rowspan="1" colspan="1">0.69</td><td rowspan="1" colspan="1"><bold>2.76</bold></td><td rowspan="1" colspan="1">1.74</td><td rowspan="1" colspan="1">3.38</td><td rowspan="1" colspan="1"><bold>2.67</bold></td><td rowspan="1" colspan="1">1.29</td><td rowspan="1" colspan="1">3.98</td><td rowspan="1" colspan="1">3.41</td></tr><tr><td rowspan="1" colspan="1">Os04g49570</td><td rowspan="1" colspan="1">GLR3.1</td><td rowspan="1" colspan="1">0.21</td><td rowspan="1" colspan="1">0.58</td><td rowspan="1" colspan="1">0.79</td><td rowspan="1" colspan="1">1.04</td><td rowspan="1" colspan="1">0.57</td><td rowspan="1" colspan="1">0.19</td><td rowspan="1" colspan="1">0.59</td><td rowspan="1" colspan="1">−0.79</td><td rowspan="1" colspan="1">1.79</td><td rowspan="1" colspan="1"><bold>2.28</bold></td></tr><tr><td rowspan="1" colspan="1">Os06g08930</td><td rowspan="1" colspan="1">GLR 2.8</td><td rowspan="1" colspan="1"><bold>2.54</bold></td><td rowspan="1" colspan="1">0.39</td><td rowspan="1" colspan="1">1.91</td><td rowspan="1" colspan="1">1.31</td><td rowspan="1" colspan="1">0.05</td><td rowspan="1" colspan="1">−2.89</td><td rowspan="1" colspan="1"><bold>1.83</bold></td><td rowspan="1" colspan="1">1.89</td><td rowspan="1" colspan="1">−0.37</td><td rowspan="1" colspan="1">−1.65</td></tr><tr><td rowspan="1" colspan="1">Os06g08880</td><td rowspan="1" colspan="1">GLR 2.7</td><td rowspan="1" colspan="1"><bold>−1.52</bold></td><td rowspan="1" colspan="1">1.04</td><td rowspan="1" colspan="1"><bold>−2.54</bold></td><td rowspan="1" colspan="1">−1.02</td><td rowspan="1" colspan="1"><bold>2.43</bold></td><td rowspan="1" colspan="1">0.78</td><td rowspan="1" colspan="1">−1.33</td><td rowspan="1" colspan="1">−1.58</td><td rowspan="1" colspan="1"><bold>2.87</bold></td><td rowspan="1" colspan="1"><bold>1.74</bold></td></tr><tr><td rowspan="1" colspan="1">Os09g30446</td><td rowspan="1" colspan="1">Transporter</td><td rowspan="1" colspan="1">0.10</td><td rowspan="1" colspan="1">6.60</td><td rowspan="1" colspan="1"><bold>−1.95</bold></td><td rowspan="1" colspan="1">−0.98</td><td rowspan="1" colspan="1">−0.01</td><td rowspan="1" colspan="1">−8.39</td><td rowspan="1" colspan="1"><bold>−2.16</bold></td><td rowspan="1" colspan="1">−0.21</td><td rowspan="1" colspan="1">−1.32</td><td rowspan="1" colspan="1">−9.66</td></tr><tr><td rowspan="1" colspan="1">Os02g14840</td><td rowspan="1" colspan="1">KAT1</td><td rowspan="1" colspan="1">2.26</td><td rowspan="1" colspan="1">−1.42</td><td rowspan="1" colspan="1"><bold>3.48</bold></td><td rowspan="1" colspan="1">2.72</td><td rowspan="1" colspan="1">−1.48</td><td rowspan="1" colspan="1">−1.89</td><td rowspan="1" colspan="1"><bold>2.99</bold></td><td rowspan="1" colspan="1">1.20</td><td rowspan="1" colspan="1">−1.20</td><td rowspan="1" colspan="1">−0.10</td></tr><tr><td rowspan="1" colspan="1">Os11g01580</td><td rowspan="1" colspan="1">CaCA</td><td rowspan="1" colspan="1">0.59</td><td rowspan="1" colspan="1">−1.18</td><td rowspan="1" colspan="1"><bold>1.94</bold></td><td rowspan="1" colspan="1">2.59</td><td rowspan="1" colspan="1">−1.65</td><td rowspan="1" colspan="1"><bold>−1.51</bold></td><td rowspan="1" colspan="1">−1.36</td><td rowspan="1" colspan="1"><bold>4.25</bold></td><td rowspan="1" colspan="1">−0.23</td><td rowspan="1" colspan="1">0.58</td></tr><tr><td rowspan="1" colspan="1">Os12g42910</td><td rowspan="1" colspan="1">CaCA</td><td rowspan="1" colspan="1">0.56</td><td rowspan="1" colspan="1">0.06</td><td rowspan="1" colspan="1">0.47</td><td rowspan="1" colspan="1">0.63</td><td rowspan="1" colspan="1"><bold>−3.42</bold></td><td rowspan="1" colspan="1"><bold>−4.13</bold></td><td rowspan="1" colspan="1"><bold>1.03</bold></td><td rowspan="1" colspan="1">1.59</td><td rowspan="1" colspan="1"><bold>−2.93</bold></td><td rowspan="1" colspan="1">−2.69</td></tr><tr><td rowspan="1" colspan="1">Os08g36340</td><td rowspan="1" colspan="1">HAK4</td><td rowspan="1" colspan="1">−1.37</td><td rowspan="1" colspan="1"><bold>3.79</bold></td><td rowspan="1" colspan="1">n.d.</td><td rowspan="1" colspan="1">2.21</td><td rowspan="1" colspan="1"><bold>1.94</bold></td><td rowspan="1" colspan="1">−0.87</td><td rowspan="1" colspan="1">n.d.</td><td rowspan="1" colspan="1">n.d.</td><td rowspan="1" colspan="1"><bold>3.98</bold></td><td rowspan="1" colspan="1">0.84</td></tr><tr><td rowspan="1" colspan="1">Os01g70660</td><td rowspan="1" colspan="1">HAK6</td><td rowspan="1" colspan="1">0.25</td><td rowspan="1" colspan="1">0.63</td><td rowspan="1" colspan="1">1.82</td><td rowspan="1" colspan="1"><bold>3.45</bold></td><td rowspan="1" colspan="1">0.19</td><td rowspan="1" colspan="1">2.35</td><td rowspan="1" colspan="1">3.31</td><td rowspan="1" colspan="1">n.d.</td><td rowspan="1" colspan="1">−1.20</td><td rowspan="1" colspan="1">0.95</td></tr><tr><td rowspan="1" colspan="1">Os06g45940</td><td rowspan="1" colspan="1">HAK13</td><td rowspan="1" colspan="1">−0.23</td><td rowspan="1" colspan="1">0.85</td><td rowspan="1" colspan="1">−1.85</td><td rowspan="1" colspan="1">0.37</td><td rowspan="1" colspan="1">−0.20</td><td rowspan="1" colspan="1">−0.73</td><td rowspan="1" colspan="1">0.00</td><td rowspan="1" colspan="1">0.39</td><td rowspan="1" colspan="1"><bold>1.62</bold></td><td rowspan="1" colspan="1">−0.35</td></tr><tr><td rowspan="1" colspan="1">Os09g38960</td><td rowspan="1" colspan="1">HAK18</td><td rowspan="1" colspan="1">0.77</td><td rowspan="1" colspan="1">0.04</td><td rowspan="1" colspan="1">0.30</td><td rowspan="1" colspan="1">0.73</td><td rowspan="1" colspan="1">−2.09</td><td rowspan="1" colspan="1"><bold>−1.48</bold></td><td rowspan="1" colspan="1">0.08</td><td rowspan="1" colspan="1">1.01</td><td rowspan="1" colspan="1">0.39</td><td rowspan="1" colspan="1">−0.08</td></tr><tr><td rowspan="1" colspan="1">Os06g15910</td><td rowspan="1" colspan="1">HAK24</td><td rowspan="1" colspan="1">−0.25</td><td rowspan="1" colspan="1">0.23</td><td rowspan="1" colspan="1">−0.33</td><td rowspan="1" colspan="1">0.42</td><td rowspan="1" colspan="1"><bold>−4.31</bold></td><td rowspan="1" colspan="1">−1.78</td><td rowspan="1" colspan="1">0.78</td><td rowspan="1" colspan="1">0.63</td><td rowspan="1" colspan="1">0.80</td><td rowspan="1" colspan="1">0.60</td></tr><tr><td rowspan="1" colspan="1">Os02g13870</td><td rowspan="1" colspan="1">NIP1-1</td><td rowspan="1" colspan="1">0.67</td><td rowspan="1" colspan="1">−0.69</td><td rowspan="1" colspan="1">0.65</td><td rowspan="1" colspan="1">0.74</td><td rowspan="1" colspan="1"><bold>−1.85</bold></td><td rowspan="1" colspan="1">−0.78</td><td rowspan="1" colspan="1">0.02</td><td rowspan="1" colspan="1">1.83</td><td rowspan="1" colspan="1"><bold>−1.07</bold></td><td rowspan="1" colspan="1">−1.11</td></tr><tr><td rowspan="1" colspan="1">Os06g12310</td><td rowspan="1" colspan="1">NIP2-2</td><td rowspan="1" colspan="1">−0.47</td><td rowspan="1" colspan="1">−1.26</td><td rowspan="1" colspan="1">0.20</td><td rowspan="1" colspan="1">−0.72</td><td rowspan="1" colspan="1">−1.48</td><td rowspan="1" colspan="1">−1.57</td><td rowspan="1" colspan="1">0.90</td><td rowspan="1" colspan="1">−2.16</td><td rowspan="1" colspan="1">−0.37</td><td rowspan="1" colspan="1"><bold>−1.56</bold></td></tr><tr><td rowspan="1" colspan="1">Os02g44080</td><td rowspan="1" colspan="1">TIP2-1</td><td rowspan="1" colspan="1"><bold>−2.43</bold></td><td rowspan="1" colspan="1">0.46</td><td rowspan="1" colspan="1"><bold>−1.61</bold></td><td rowspan="1" colspan="1">0.24</td><td rowspan="1" colspan="1">−0.08</td><td rowspan="1" colspan="1">1.96</td><td rowspan="1" colspan="1">−0.07</td><td rowspan="1" colspan="1"><bold>−4.54</bold></td><td rowspan="1" colspan="1"><bold>−1.88</bold></td><td rowspan="1" colspan="1"><bold>−2.15</bold></td></tr><tr><td rowspan="1" colspan="1">Os01g13130</td><td rowspan="1" colspan="1">TIP4-2</td><td rowspan="1" colspan="1">0.65</td><td rowspan="1" colspan="1">−0.64</td><td rowspan="1" colspan="1">1.38</td><td rowspan="1" colspan="1"><bold>2.60</bold></td><td rowspan="1" colspan="1">0.36</td><td rowspan="1" colspan="1">0.68</td><td rowspan="1" colspan="1">0.29</td><td rowspan="1" colspan="1">0.78</td><td rowspan="1" colspan="1"><bold>3.14</bold></td><td rowspan="1" colspan="1"><bold>1.83</bold></td></tr><tr><td rowspan="1" colspan="1">Os04g44570</td><td rowspan="1" colspan="1">TIP3-2</td><td rowspan="1" colspan="1">1.71</td><td rowspan="1" colspan="1">0.06</td><td rowspan="1" colspan="1">2.90</td><td rowspan="1" colspan="1"><bold>1.59</bold></td><td rowspan="1" colspan="1">−0.29</td><td rowspan="1" colspan="1">−1.64</td><td rowspan="1" colspan="1"><bold>2.61</bold></td><td rowspan="1" colspan="1"><bold>2.65</bold></td><td rowspan="1" colspan="1">0.86</td><td rowspan="1" colspan="1">−1.13</td></tr><tr><td rowspan="1" colspan="1">Os02g57720</td><td rowspan="1" colspan="1">PIP1-3</td><td rowspan="1" colspan="1">0.02</td><td rowspan="1" colspan="1">0.28</td><td rowspan="1" colspan="1">0.02</td><td rowspan="1" colspan="1">0.06</td><td rowspan="1" colspan="1"><bold>1.22</bold></td><td rowspan="1" colspan="1">−0.44</td><td rowspan="1" colspan="1">−0.30</td><td rowspan="1" colspan="1">0.00</td><td rowspan="1" colspan="1">0.97</td><td rowspan="1" colspan="1">0.34</td></tr><tr><td rowspan="1" colspan="1">Os07g26690</td><td rowspan="1" colspan="1">PIP2-1</td><td rowspan="1" colspan="1">−0.41</td><td rowspan="1" colspan="1">0.56</td><td rowspan="1" colspan="1">−0.32</td><td rowspan="1" colspan="1">0.75</td><td rowspan="1" colspan="1">0.17</td><td rowspan="1" colspan="1"><bold>−1.18</bold></td><td rowspan="1" colspan="1">−0.65</td><td rowspan="1" colspan="1">−0.81</td><td rowspan="1" colspan="1">−1.59</td><td rowspan="1" colspan="1"><bold>−1.32</bold></td></tr><tr><td rowspan="1" colspan="1">Os02g41860</td><td rowspan="1" colspan="1">PIP2-2</td><td rowspan="1" colspan="1">−0.60</td><td rowspan="1" colspan="1">0.68</td><td rowspan="1" colspan="1">−0.99</td><td rowspan="1" colspan="1">0.13</td><td rowspan="1" colspan="1">0.64</td><td rowspan="1" colspan="1">0.29</td><td rowspan="1" colspan="1">0.01</td><td rowspan="1" colspan="1">−1.63</td><td rowspan="1" colspan="1"><bold>1.53</bold></td><td rowspan="1" colspan="1">0.86</td></tr><tr><td rowspan="1" colspan="1">Os07g26630</td><td rowspan="1" colspan="1">PIP2-4</td><td rowspan="1" colspan="1">−0.21</td><td rowspan="1" colspan="1">0.83</td><td rowspan="1" colspan="1">−0.01</td><td rowspan="1" colspan="1">0.81</td><td rowspan="1" colspan="1">−0.97</td><td rowspan="1" colspan="1">−0.40</td><td rowspan="1" colspan="1">−0.63</td><td rowspan="1" colspan="1">−1.42</td><td rowspan="1" colspan="1">−0.52</td><td rowspan="1" colspan="1"><bold>−1.59</bold></td></tr><tr><td rowspan="1" colspan="1">Os07g26640</td><td rowspan="1" colspan="1">Aquaporin</td><td rowspan="1" colspan="1">−0.39</td><td rowspan="1" colspan="1">0.34</td><td rowspan="1" colspan="1">−0.62</td><td rowspan="1" colspan="1">0.53</td><td rowspan="1" colspan="1"><bold>1.45</bold></td><td rowspan="1" colspan="1">−0.25</td><td rowspan="1" colspan="1">−0.79</td><td rowspan="1" colspan="1">−1.24</td><td rowspan="1" colspan="1">−0.67</td><td rowspan="1" colspan="1"><bold>−1.44</bold></td></tr></tbody></table><table-wrap-foot><fn><p>FC, fold change; EV, empty-vector control; n.d., not determined.</p></fn></table-wrap-foot></table-wrap></p>
+        <p>After 30 min of salt stress, 13 genes were differentially expressed in Dongjin, six of which matched genes that were also differentially expressed in <italic>hsfc1b</italic> compared with the wild type under control conditions, including <italic>ECA1</italic>, <italic>AHA1</italic>, <italic>VHA-c4</italic>, <italic>HKT8</italic>, <italic>GLR2.7</italic> and <italic>TIP2-1</italic>, suggesting that the salt stress-associated gene regulatory network (GRN) is already in part activated in <italic>hsfc1b</italic> even in the absence of salt stress. A similar observation was made when <italic>ami</italic>-13.3 was compared with empty-vector control plants. After 30 min of salt stress, 15 genes responded in empty-vector control plants including four genes, i.e. <italic>MAP3K.4</italic>, <italic>MAP3K.18</italic>, <italic>CBL7</italic> and <italic>HAK4</italic>, which were differentially expressed in <italic>ami</italic>-13.3 under control conditions (Table <xref ref-type="table" rid="PLS011TB1">1</xref>). Exposure of <italic>hsfc1b</italic> roots to salt stress for 30 min induced nine genes which did not overlap with the genes responding in Dongjin wild-type roots at this time point. After 3 h of salt stress, seven and 13 genes were differentially expressed in Dongjin and <italic>hsfc1b</italic> roots, respectively. The only overlapping gene at this time point was <italic>TIP3-2</italic>; five other genes responding in <italic>hsfc1b</italic> under salt stress overlapped with the 30-min time point for wild-type plants (<italic>MAP3K.23</italic>, <italic>CBL7</italic>, <italic>HKT8, CaCA/</italic>Os11g01580 and <italic>TIP2-1</italic>)<italic>.</italic> Furthermore, <italic>CNGC2</italic> (Os03g55100) showed a strong induction in Dongjin roots after 3 h, but was already induced in <italic>hsfc1b</italic> after 30 min of salt stress. For <italic>ami</italic>-13.3, we observed diverging expression profiles at both time points of salt stress as compared with the empty-vector control. After 30 min of salt stress, nine genes were differentially expressed in <italic>ami</italic>-13.3 roots, of which three genes, i.e. <italic>AHA1</italic>, <italic>HKT8</italic> and <italic>CaCA</italic> (Os12g42910), showed a similar response in the empty-vector control plants. Similarly, after 3 h of salt stress, we found 16 and 21 genes to be differentially expressed in <italic>ami</italic>-13.3 and empty-vector control, respectively. Eight genes shared a similar behaviour, including e.g. <italic>MPK15</italic>, <italic>MAP3K.15</italic>, <italic>CIPK4</italic>, <italic>TIP2-1</italic> and <italic>TIP4-2</italic> (Table <xref ref-type="table" rid="PLS011TB1">1</xref>). Overall, these results suggest a temporal misregulation of the expressional network in <italic>hsfc1b and ami</italic>-13.3 lines.</p>
+        <p>Irrespective of the duration of salt stress, we observed only a small overlap between the salt stress-associated GRNs of <italic>hsfc1b</italic>, <italic>ami</italic>-13.3, Dongjin wild type and the Nipponbare empty-vector line (Fig. <xref ref-type="fig" rid="PLS011F5">5</xref>A). Of the 19 and 17 genes that responded to salt stress in <italic>hsfc1b</italic> and Dongjin wild type, respectively, seven genes were in common. Similarly, of the 21 and 29 genes affected by salt stress in the <italic>ami</italic>-13.3 and empty-vector control lines, respectively, 10 genes showed a similar response. However, when comparing Dongjin wild-type and Nipponbare empty-vector control plants, an overlap of only seven salt-responsive genes was observed, of which four genes showed contrasting responses (Table <xref ref-type="table" rid="PLS011TB1">1</xref>), suggesting divergent expressional responses of Dongjin and Nipponbare to salt stress. Furthermore, 29 genes responded to salt stress in Nipponbare control roots, which is almost twice the number of genes differentially expressed in Dongjin wild-type roots.
+<fig id="PLS011F5" position="float"><label>Fig. 5</label><caption><p><bold>Expressional response of salt stress-responsive genes in the different genotypes.</bold> (A) Venn-diagram presentation of the overlap of differentially expressed genes in <italic>hsfc1b</italic>, <italic>ami</italic>-13.3 and corresponding controls under salt stress. (B) Differentially expressed sHSP genes: (1) expression in <italic>ami</italic>-13.3 roots compared with Nipponbare empty-vector control roots in the absence of salt stress; (2) expression in empty-vector control roots exposed to salt stress (100 mM NaCl, 30 min) compared with non-stressed roots; (3) expression in <italic>ami</italic>-13.3 roots exposed to salt stress (100 mM NaCl, 30 min), compared with non-stressed roots. Values are presented as the relative expression level (log<sub>2</sub>FC) of three biological replicates. The values that are significantly different (≤−1 or ≥+1) from the respective control by Student's <italic>t</italic>-test (<italic>P</italic> ≤ 0.05) are marked with a star (*).</p></caption><graphic xlink:href="pls01105"/></fig></p>
+      </sec>
+      <sec id="s3g">
+        <title>Expression profiling of sHSP genes</title>
+        <p>Recently, 12 <italic>sHSP</italic> genes were found to respond to salt stress in rice (<xref ref-type="bibr" rid="PLS011C49">Sarkar <italic>et al.</italic> 2009</xref>). Since HSFs potentially regulate <italic>sHSP</italic> gene expression under stress conditions, we tested the expression of these 12 genes in <italic>ami</italic>-13.3 roots (Fig. <xref ref-type="fig" rid="PLS011F5">5</xref>B). In the absence of salt stress, <italic>Hsp23.6-MII</italic> was already induced in <italic>ami</italic>-13.3 compared to the Nipponbare empty-vector line. After 30 min of salt stress, <italic>Hsp18.1-CII</italic>, <italic>Hsp23.2-ER</italic> and <italic>Hsp23.6-MII</italic> were significantly induced in empty-vector roots, whereas <italic>Hsp18.6-CIII</italic> was downregulated. In addition to <italic>Hsp23.2-ER</italic> and <italic>Hsp23.6-MII</italic>, <italic>Hsp16.9B-CI</italic>, <italic>Hsp19.0-CII</italic> and <italic>Hsp26.2-MI</italic> also showed an increased expression in <italic>ami</italic>-13.3 roots under salt stress. Like in empty-vector control plants, <italic>Hsp18.6-CIII</italic> was downregulated in <italic>ami</italic>-13.3 under salt stress, whereas <italic>Hsp18.1-CII</italic> was not significantly affected. For <italic>Hsp18.6-CIII</italic> and <italic>Hsp23.6-MII</italic>, we observed a stronger response in <italic>ami</italic>-13.3 under salt stress than in empty-vector control roots. There was no significant change in the expression of <italic>Hsp16.0-px</italic>, <italic>Hsp17.9A-CI</italic>, <italic>Hsp18.8-CV</italic> and <italic>Hsp24.0-MI</italic> in <italic>ami</italic>-13.3 or empty-vector control roots under salt stress.</p>
+      </sec>
+    </sec>
+    <sec sec-type="discussion" id="s4">
+      <title>Discussion</title>
+      <sec id="s4a">
+        <title>OsHsfC1b is localized in the nucleus</title>
+        <p>OsHsfC1b possesses a nuclear localization signal upstream of the HR-A/B domain, but lacks a nuclear export signal (<xref ref-type="bibr" rid="PLS011C58">Wang <italic>et al.</italic> 2009</xref>). We cloned the open reading frame of OsHsfC1b downstream of GFP. When transiently expressed in <italic>Arabidopsis</italic> mesophyll cell protoplasts, the fluorescence signal was primarily detected in the nucleus and to a lesser extent in the cytoplasm (Fig. <xref ref-type="fig" rid="PLS011F1">1</xref>B), consistent with a transcription factor function of OsHsfC1b. The nuclear localization of OsHsfC1b in the absence of stress indicates that a stress-dependent modification is not required for nuclear accumulation. In addition, unlike LpHsfA2 from tomato, whose physical interaction with LpHsfA1 is mandatory for its translocation from the cytosol to the nucleus (<xref ref-type="bibr" rid="PLS011C50">Scharf <italic>et al.</italic> 1998</xref>), nuclear translocation of OsHsfC1b may not be complex dependent, as transient expression of <italic>35S::GFP:OsHsfC1b</italic> in <italic>Arabidopsis</italic> protoplasts eliminates possible interactions with other rice HSFs. However, due to high sequence similarities between rice and <italic>Arabidopsis</italic> HSFs (<xref ref-type="bibr" rid="PLS011C58">Wang <italic>et al.</italic> 2009</xref>), we cannot exclude heteromeric complex formation of OsHsfC1b with <italic>Arabidopsis</italic> HSFs.</p>
+      </sec>
+      <sec id="s4b">
+        <title>OsHsfC1b is required for normal growth in rice</title>
+        <p>Heat shock factors have been shown to regulate developmental processes in animals (<xref ref-type="bibr" rid="PLS011C46">Pirkkala <italic>et al.</italic> 2001</xref>). In addition, HSF1 in mice has an impact on the immune system (<xref ref-type="bibr" rid="PLS011C21">Inouye <italic>et al.</italic> 2004</xref>), indicating a dual role of HSFs in development and survival. In <italic>S. pombe</italic>, the disruption of HSF results in growth defects under normal temperature; furthermore, it can be functionally replaced by the single HSF present in <italic>D. melanogaster</italic>, suggesting a general role of HSFs for the regulation of growth or development of eukaryotic organisms under non-stress conditions (<xref ref-type="bibr" rid="PLS011C10">Gallo <italic>et al.</italic> 1993</xref>). Transgenic <italic>Arabidopsis</italic> plants overexpressing <italic>OsHsfA2e</italic> from rice, <italic>AtHsfA2</italic> or <italic>AtHsfA3</italic> from <italic>Arabidopsis</italic>, or <italic>BhHsf1</italic> from <italic>Boea hygrometrica</italic> display impaired growth phenotypes (<xref ref-type="bibr" rid="PLS011C41">Ogawa <italic>et al.</italic> 2007</xref>; <xref ref-type="bibr" rid="PLS011C63">Yokotani <italic>et al.</italic> 2008</xref>; <xref ref-type="bibr" rid="PLS011C65">Yoshida <italic>et al.</italic> 2008</xref>; <xref ref-type="bibr" rid="PLS011C67">Zhu <italic>et al.</italic> 2009</xref>). Interestingly, we observed retarded root and shoot growth for <italic>hsfc1b</italic> and knock-down lines of <italic>OsHsfC1b</italic> and a decreased biomass at the age of 4 weeks as compared with control plants under normal conditions (Fig. <xref ref-type="fig" rid="PLS011F3">3</xref>). Thus, in contrast to class A HSFs, OsHsfC1b acts as a positive regulator of growth under standard growth conditions. We therefore propose that class C HSFs play an opposite role to class A members in plant growth control. The <italic>hsfc1b</italic> T-DNA insertion line and the <italic>ami</italic>RNA lines were established in the rice <italic>japonica</italic> cultivars Dongjin and Nipponbare, respectively. Irrespective of the genetic background, all lines exhibited stunted growth, indicating a conserved role of OsHsfC1b in growth control in the different cultivars.</p>
+      </sec>
+      <sec id="s4c">
+        <title>OsHsfC1b positively regulates salt and osmotic stress tolerance</title>
+        <p>Heat shock factors represent interaction points connecting multiple stress response pathways. Many of them display an expressional response to various stresses and for some HSFs, mainly class A members, an involvement in stress adaptation has been shown (<xref ref-type="bibr" rid="PLS011C41">Ogawa <italic>et al.</italic> 2007</xref>; <xref ref-type="bibr" rid="PLS011C2">Banti <italic>et al.</italic> 2010</xref>; <xref ref-type="bibr" rid="PLS011C6">Chauhan <italic>et al.</italic> 2011</xref>). <italic>OsHsfC1b</italic> has been reported to be induced by heat stress (<xref ref-type="bibr" rid="PLS011C19">Hu <italic>et al.</italic> 2009</xref>; <xref ref-type="bibr" rid="PLS011C58">Wang <italic>et al.</italic> 2009</xref>). Remarkably, of all class C genes, <italic>OsHsfC1b</italic> shows the strongest expression under cold stress, suggesting an involvement of class C HSFs in the cold stress response, with OsHsfC1b playing a prominent role (<xref ref-type="bibr" rid="PLS011C35">Mittal <italic>et al.</italic> 2009</xref>).</p>
+        <p>In this study, we examined the physiological role of OsHsfC1b in the response to non-thermal stress. We show that <italic>OsHsfC1b</italic> is salt-responsive in both Nipponbare and Dongjin backgrounds. Furthermore, the decrease of <italic>OsHsfC1b</italic> expression level results in a decreased salt tolerance, as determined by the growth inhibition in the <italic>hsfc1b</italic> and <italic>ami</italic>-7.1 lines under salt stress (Fig. <xref ref-type="fig" rid="PLS011F4">4</xref>A and B). Hence, OsHsfC1b contributes to salt stress tolerance, which is conserved between the two tested <italic>japonica</italic> cultivars. Its role in the response to salt stress is not restricted to the seedling stage, as 4-week-old <italic>hsfc1b</italic>, <italic>ami-</italic>13.3 and <italic>ami</italic>-7.1 plants accumulated less biomass than wild-type or empty-vector control plants under salt stress (Fig. <xref ref-type="fig" rid="PLS011F4">4</xref>C).</p>
+        <p>In addition to ion toxicity, osmotic stress develops in the course of salt stress. Seedlings of <italic>hsfc1b</italic> subjected to mannitol displayed a stronger reduction of shoot and root growth than the Dongjin wild type (Fig. <xref ref-type="fig" rid="PLS011F4">4</xref>D). Since <italic>OsHsfC1b</italic> is induced by mannitol (Fig. <xref ref-type="fig" rid="PLS011F2">2</xref>A), it might function as a regulator of an osmotic stress response by itself or in combination with salt stress, as shown for HsfA2 in <italic>Arabidopsis</italic> (<xref ref-type="bibr" rid="PLS011C41">Ogawa <italic>et al.</italic> 2007</xref>). Previously, it was reported that <italic>OsHsfC1b</italic> expression is induced by drought stress (<xref ref-type="bibr" rid="PLS011C19">Hu <italic>et al.</italic> 2009</xref>), which causes osmotic imbalance as well.</p>
+        <p>Abscisic acid acts as an important integrator of abiotic stress responses. For salt and osmotic stress, ABA-dependent and ABA-independent signalling pathways are known. The expressional network related to salt stress partially overlaps with those for drought, cold and ABA. The decreased expression of <italic>OsHsfC1b</italic> results in ABA hypersensitivity (Fig. <xref ref-type="fig" rid="PLS011F4">4</xref>E and F). Interestingly, the promoter of <italic>OsHsfC1b</italic> contains three putative ABA-response elements (ABREs; <xref ref-type="bibr" rid="PLS011C35">Mittal <italic>et al.</italic> 2009</xref>) and we showed that its expression is highly induced by ABA (Fig. <xref ref-type="fig" rid="PLS011F2">2</xref>A). These findings strongly support a role of OsHsfC1b in ABA response pathways or signalling. Abscisic acid hypersensitivity is often accompanied by hypersensitivity to salt and osmotic stress (<xref ref-type="bibr" rid="PLS011C4">Borsani <italic>et al.</italic> 2001</xref>; <xref ref-type="bibr" rid="PLS011C44">Pandey <italic>et al.</italic> 2005</xref>; <xref ref-type="bibr" rid="PLS011C68">Zhu <italic>et al.</italic> 2010</xref>). Thus, the salt and osmotic stress tolerance conferred by OsHsfC1b is most likely ABA-dependent. In addition to stress tolerance, ABA is involved in the regulation of plant growth and development. Abscisic acid hypersensitivity can cause growth retardation even in the absence of external ABA, as demonstrated by the <italic>brx-2</italic> mutant in <italic>Arabidopsis</italic>, which displays retarded root growth, and <italic>ABF3</italic> and <italic>ABF4</italic> overexpressers, which show general growth defects under non-stress conditions (<xref ref-type="bibr" rid="PLS011C25">Kang <italic>et al.</italic> 2002</xref>; <xref ref-type="bibr" rid="PLS011C47">Rodrigues <italic>et al.</italic> 2009</xref>). Possibly, the impaired growth of <italic>hsfc1b</italic>, <italic>ami</italic>-13.3 and <italic>ami</italic>-7.1 lines under normal conditions is a consequence of an increased sensitivity to ABA. In the case of the <italic>ami</italic>-7.1 line, the relative response to ABA was similar to that of the control, which might be due to the severe growth retardation under control conditions.</p>
+      </sec>
+      <sec id="s4d">
+        <title>OsHsfC1b is required for an adequate temporal expression of salt stress-associated genes</title>
+        <p>We performed expression profiling of 80 salt stress-related genes encoding signalling and ion homeostasis components in <italic>hsfc1b</italic> and <italic>ami</italic>-13.3 lines (Table <xref ref-type="table" rid="PLS011TB1">1</xref>). Interestingly, decreased expression of <italic>OsHsfC1b</italic> already resulted in differential expression of salt-responsive genes under control conditions. Thus, in <italic>hsfc1b</italic>, eight genes were induced and two genes were repressed in the absence of stress, relative to Dongjin. Notably, seven of them responded to salt stress in Dongjin wild-type roots. Similarly, in <italic>ami</italic>-13.3 roots, six genes were differentially expressed compared with empty-vector control plants in the absence of stress, of which five genes were affected by salt stress in the control plants. These findings indicate that decreased expression of <italic>OsHsfC1b</italic> causes the constitutive activation of some genes of the salt stress-associated GRN. Nonetheless, although the reduced <italic>OsHsfC1b</italic> expression in <italic>hsfc1b</italic> and the <italic>ami</italic>RNA lines resulted in the misregulation of salt stress-responsive genes, we observed only a small overlap of genes responding similarly in <italic>hsfc1b</italic> and <italic>ami</italic>-13.3 (Fig. <xref ref-type="fig" rid="PLS011F5">5</xref>A). One possible explanation for this difference is that Dongjin and Nipponbare (here represented by the empty-vector line) themselves differed regarding their expression response to salinity. In both cultivars we observed a differential expression of previously identified salt stress markers (R. Schmidt, MPIMP, Golm, Germany, unpubl. res.); however, there was only an overlap of seven genes with a similar response. Moreover, the number of salt stress-responsive genes in Nipponbare was almost twice as high as in Dongjin. Cultivars differing in stress tolerance exhibit contrasting expression profiles, as demonstrated for salt and drought stress, where increasing sensitivity is positively correlated with an increasing number of differentially expressed stress-related genes (<xref ref-type="bibr" rid="PLS011C57">Walia <italic>et al.</italic> 2005</xref>; <xref ref-type="bibr" rid="PLS011C8">Degenkolbe <italic>et al.</italic> 2009</xref>). Among <italic>japonica</italic> cultivars, Dongjin is considered to be more salt tolerant than Nipponbare (<xref ref-type="bibr" rid="PLS011C42">Oh <italic>et al.</italic> 2003</xref>; <xref ref-type="bibr" rid="PLS011C9">Ferdose <italic>et al.</italic> 2009</xref>) and we observed a greater reduction of root FW and DW of empty-vector control plants in the Nipponbare background as compared with Dongjin wild-type plants under salt stress (Fig. <xref ref-type="fig" rid="PLS011F4">4</xref>C), fitting the observed expression of stress marker genes.</p>
+        <p><italic>MAP3K.18</italic> expression is induced by salt, drought, cold, and fungal and viral pathogens, and is therefore thought to be relevant for multiple stress responses (<xref ref-type="bibr" rid="PLS011C24">Jung <italic>et al.</italic> 2010</xref>). Remarkably, <italic>MAP3K.18</italic> exhibited a &gt;130-fold downregulation in <italic>hsfc1b</italic> compared with Dongjin wild type under control conditions, whereas in Dongjin its expression was downregulated by ∼20-fold under salt stress. <italic>TIP2-1</italic>, encoding a tonoplast-located aquaporin, was constitutively repressed in <italic>hsfc1b</italic> roots under control conditions. To a lesser extent, <italic>TIP2-1</italic> was found to be downregulated in Dongjin wild-type roots after 30 min of salt stress. Moreover, after 3 h of salt stress, <italic>TIP2-1</italic> expression in <italic>hsfc1b</italic> roots was &gt;20-fold reduced, whereas no altered expression was observed in Dongjin roots. Additionally, after 3 h of salt stress, <italic>TIP2-1</italic> was more strongly repressed in <italic>ami</italic>-13.3 than in Nipponbare empty-vector control plants. Consistent with our data, <italic>TIP2-1</italic> expression appears to be correlated with salt tolerance, as salt tolerant cultivars display an eight times higher expression level of <italic>TIP2-1</italic> in roots than salt-sensitive cultivars (<xref ref-type="bibr" rid="PLS011C7">Cotsaftis <italic>et al.</italic> 2011</xref>). Interestingly, we observed upregulation of <italic>PIP2-2</italic> expression in the empty-vector control line but not in <italic>ami</italic>-13.3 upon salt stress, which might be causative for the differences between both lines regarding salt tolerance, as transgenic <italic>Arabidopsis</italic> plants overexpressing rice <italic>PIP2-2</italic> are more tolerant to salt and osmotic stress (<xref ref-type="bibr" rid="PLS011C12">Guo <italic>et al.</italic> 2006</xref>). Besides <italic>PIP2-2, PIP1-3</italic> was found to be induced in the empty-vector control after 30 min of salt stress, but was not changed in <italic>ami</italic>-13.3 under stress conditions. Like <italic>PIP2-2</italic>, <italic>PIP1-3</italic> might confer salt tolerance, since its expression is induced by salt, and rice plants overexpressing <italic>PIP1-3</italic> display an enhanced chilling and drought stress tolerance (<xref ref-type="bibr" rid="PLS011C29">Lian <italic>et al.</italic> 2004</xref>; <xref ref-type="bibr" rid="PLS011C12">Guo <italic>et al.</italic> 2006</xref>; <xref ref-type="bibr" rid="PLS011C33">Matsumoto <italic>et al.</italic> 2009</xref>). In addition to aquaporins, we tested the expression of ion transporters. HKT1 (OsHKT2;1) functions as a high-affinity Na<sup>+</sup> transporter in rice roots and root sodium influx during salt stress is prevented by downregulation of <italic>HKT1</italic> expression (<xref ref-type="bibr" rid="PLS011C11">Golldack <italic>et al.</italic> 2002</xref>; <xref ref-type="bibr" rid="PLS011C15">Horie <italic>et al.</italic> 2007</xref>). However, in contrast to Dongjin wild-type roots, <italic>HKT1</italic> expression was not downregulated in <italic>hsfc1b</italic> roots upon salt stress, which might cause an accumulation of sodium ions in the root. Similar to a previous study (<xref ref-type="bibr" rid="PLS011C7">Cotsaftis <italic>et al.</italic> 2011</xref>), we did not find a correlation between <italic>HKT8</italic> (<italic>OsHKT1;5</italic>) expression and salt tolerance, as <italic>HKT8</italic> expression was induced in both Dongjin wild-type and <italic>hsfc1b</italic> roots under salt stress. Still, <italic>HKT8</italic> was more strongly induced under salt stress in <italic>ami</italic>-13.3 than the empty-vector control line, which might reflect the increased sensitivity of <italic>ami</italic>-13.3 to salt stress. Furthermore, we observed a stronger reduction of <italic>CIPK6</italic> expression in <italic>ami</italic>-13.3; in accordance with this, a positive correlation between <italic>CIPK6</italic> expression and salt tolerance was previously reported (<xref ref-type="bibr" rid="PLS011C7">Cotsaftis <italic>et al</italic>. 2011</xref>). Thus, in addition to the temporal misregulation of genes upon salt stress, the expression levels of individual marker genes strongly support the reduced salt tolerance observed for the <italic>hsfc1b</italic> and <italic>ami</italic>RNA lines.</p>
+        <p>The heat shock element (HSE) is found in promoters of <italic>sHSP</italic> genes, suggesting a transcriptional control via HSFs (<xref ref-type="bibr" rid="PLS011C51">Scharf <italic>et al.</italic> 2001</xref>). Furthermore, HsfA2 in <italic>Arabidopsis</italic> has been shown to regulate the expression of several <italic>sHSP</italic> genes by binding to HSEs in the target gene promoters (<xref ref-type="bibr" rid="PLS011C52">Schramm <italic>et al.</italic> 2006</xref>). We tested the expression of 12 previously identified salt-responsive rice <italic>sHSP</italic> genes (<xref ref-type="bibr" rid="PLS011C49">Sarkar <italic>et al.</italic> 2009</xref>) in roots of salt-stressed <italic>ami</italic>-13.3 plants (Fig. <xref ref-type="fig" rid="PLS011F5">5</xref>B). Interestingly, we observed altered <italic>sHSP</italic> gene expression within 30 min of salt stress, indicating a rapid expressional response of the heat-shock network to non-thermal stresses. Similar to salt stress-related genes encoding signalling and ion homeostasis components, decreased <italic>OsHsfC1b</italic> expression causes a partial activation of the heat-shock expression network in the absence of stress (Fig. <xref ref-type="fig" rid="PLS011F5">5</xref>B). Under salt stress, <italic>ami</italic>-13.3 plants showed more and stronger responding <italic>sHSP</italic> genes. The increased response of <italic>sHSP</italic> genes in <italic>ami</italic>-13.3 indicates a regulatory function of OsHsfC1b in the heat-shock expressional network; however, whether OsHsfC1b interacts with these <italic>sHSP</italic> genes in a direct or an indirect manner has to be determined. Our findings suggest that an enhanced response of the heat-shock expressional network under salt stress does not necessarily improve stress tolerance.</p>
+      </sec>
+    </sec>
+    <sec id="s5">
+      <title>Conclusions and forward look</title>
+      <p>OsHsfC1b is, to our knowledge, the first class C HSF characterized <italic>in planta</italic>. Its dual role in salt tolerance and plant growth illustrates the contribution of class C HSFs to these important aspects. Transgenic rice overexpressing <italic>OsHsfC1b</italic> might be relevant for future breeding strategies, as decreased expression of <italic>OsHsfC1b</italic> causes salt sensitivity and impaired growth under normal conditions. Identifying direct interactions between OsHsfC1b and <italic>cis</italic>-regulatory elements of stress-related target genes is of further interest, as OsHsfC1b has been reported not to bind to the typical HSE element (<xref ref-type="bibr" rid="PLS011C36">Mittal <italic>et al.</italic> 2011</xref>). In addition to its eminent role as a food source, rice serves as an important model plant. Thus, the knowledge gained here for a class C HSF transcription factor could form the basis for the characterization of similar regulators in other monocotyledonous species. Of note, the relevance of OsHsfC1b in stress adaptation and growth demonstrated for two rice cultivars suggests that the function of class C HSFs is conserved within, and possibly also between, species.</p>
+    </sec>
+    <sec id="s6">
+      <title>Additional information</title>
+      <p>
+        <ext-link ext-link-type="uri" xlink:href="http://aobpla.oxfordjournals.org/lookup/suppl/doi:10.1093/aobpla/pls011/-/DC1">The following additional information is available in the online version of this article –</ext-link>
+      </p>
+      <p><bold>File 1.</bold> Table. Primer sequences for qRT-PCR-based expression profiling of rice genes.</p>
+      <p><bold>File 2.</bold> Figure. Expression of <italic>OsHsfC1a</italic> in the <italic>hsfc1b</italic> mutant under control and salt stress conditions.</p>
+    </sec>
+    <sec id="s7">
+      <title>Accession numbers</title>
+      <p>Sequence data from this article can be found in the Michigan State University Rice Genome Annotation Project database (<uri xlink:type="simple" xlink:href="http://rice.plantbiology.msu.edu">http://rice.plantbiology.msu.edu</uri>; Ouyang <italic>et al.</italic> 2007) by using the MSU accession numbers given in Table <xref ref-type="table" rid="PLS011TB1">1</xref> and [<ext-link ext-link-type="uri" xlink:href="http://aobpla.oxfordjournals.org/lookup/suppl/doi:10.1093/aobpla/pls011/-/DC1">Additional Information—File 1</ext-link>].</p>
+    </sec>
+    <sec id="s8">
+      <title>Sources of funding</title>
+      <p>This work was in part conducted within the ERA-NET Plant Genomics project ‘TRIESTER—Trilateral Initiative for Enhancing Salt Tolerance in Rice’ for which funding was provided by the <funding-source>Federal Ministry of Education and Research (BMBF) in Germany</funding-source> (grant no. <award-id>0313993A</award-id>) and the <funding-source>Agence Nationale de la Recherche (ANR) in France</funding-source> (grant no. <award-id>ANR-06-ERAPG-005-01</award-id>). Part of this work was conducted on the RicE Functional Genomics (REFUGE) platform, Montpellier, France, funded by the <funding-source>Agropolis Foundation</funding-source>. R.S. thanks the FAZIT Stiftung for providing a PhD fellowship.</p>
+    </sec>
+    <sec id="s9">
+      <title>Contributions by the authors</title>
+      <p>R.S., J.H.M.S. and B.M.R. designed the research. R.S., J.H.M.S. and A.W. conducted the research. D.M. and E.G. did the rice transformations. R.S., J.H.M.S. and B.M.R. wrote the paper.</p>
+    </sec>
+    <sec id="s10">
+      <title>Conflict of interest statement</title>
+      <p>None declared.</p>
+    </sec>
+  </body>
+  <back>
+    <ack>
+      <title>Acknowledgements</title>
+      <p>We thank Eugenia Maximova for microscopic work, and Slobodan Ruzicic and Janine Turner for technical assistance during the initial phase of the project.</p>
+    </ack>
+    <ref-list>
+      <title>References</title>
+      <ref id="PLS011C1">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Arvidsson</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Kwasniewski</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Riano-Pachon</surname>
+              <given-names>DM</given-names>
+            </name>
+            <name>
+              <surname>Mueller-Roeber</surname>
+              <given-names>B</given-names>
+            </name>
+          </person-group>
+          <article-title>QuantPrime—a flexible tool for reliable high-throughput primer design for quantitative PCR</article-title>
+          <source>BMC Bioinformatics</source>
+          <year>2008</year>
+          <volume>9</volume>
+          <fpage>465</fpage>
+          <pub-id pub-id-type="pmid">18976492</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C2">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Banti</surname>
+              <given-names>V</given-names>
+            </name>
+            <name>
+              <surname>Mafessoni</surname>
+              <given-names>F</given-names>
+            </name>
+            <name>
+              <surname>Loreti</surname>
+              <given-names>E</given-names>
+            </name>
+            <name>
+              <surname>Alpi</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Perata</surname>
+              <given-names>P</given-names>
+            </name>
+          </person-group>
+          <article-title>The heat-inducible transcription factor HsfA2 enhances anoxia tolerance in <italic>Arabidopsis</italic></article-title>
+          <source>Plant Physiology</source>
+          <year>2010</year>
+          <volume>152</volume>
+          <fpage>1471</fpage>
+          <lpage>1483</lpage>
+          <pub-id pub-id-type="pmid">20089772</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C3">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Barros</surname>
+              <given-names>MD</given-names>
+            </name>
+            <name>
+              <surname>Czarnecka</surname>
+              <given-names>E</given-names>
+            </name>
+            <name>
+              <surname>Gurley</surname>
+              <given-names>BW</given-names>
+            </name>
+          </person-group>
+          <article-title>Mutation analysis of a plant heat shock element</article-title>
+          <source>Plant Molecular Biology</source>
+          <year>1992</year>
+          <volume>19</volume>
+          <fpage>665</fpage>
+          <lpage>675</lpage>
+          <pub-id pub-id-type="pmid">1627779</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C4">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Borsani</surname>
+              <given-names>O</given-names>
+            </name>
+            <name>
+              <surname>Cuartero</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Fernández</surname>
+              <given-names>JA</given-names>
+            </name>
+            <name>
+              <surname>Valpuesta</surname>
+              <given-names>V</given-names>
+            </name>
+            <name>
+              <surname>Botella</surname>
+              <given-names>MA</given-names>
+            </name>
+          </person-group>
+          <article-title>Identification of two loci in tomato reveals distinct mechanisms for salt tolerance</article-title>
+          <source>Plant Cell</source>
+          <year>2001</year>
+          <volume>13</volume>
+          <fpage>873</fpage>
+          <lpage>887</lpage>
+          <pub-id pub-id-type="pmid">11283342</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C5">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Caldana</surname>
+              <given-names>C</given-names>
+            </name>
+            <name>
+              <surname>Scheible</surname>
+              <given-names>WR</given-names>
+            </name>
+            <name>
+              <surname>Mueller-Roeber</surname>
+              <given-names>B</given-names>
+            </name>
+            <name>
+              <surname>Ruzicic</surname>
+              <given-names>S</given-names>
+            </name>
+          </person-group>
+          <article-title>A quantitative RT-PCR platform for high-throughput expression profiling of 2500 rice transcription factors</article-title>
+          <source>Plant Methods</source>
+          <year>2007</year>
+          <volume>8</volume>
+          <fpage>3</fpage>
+          <lpage>7</lpage>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C6">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Chauhan</surname>
+              <given-names>H</given-names>
+            </name>
+            <name>
+              <surname>Khurana</surname>
+              <given-names>N</given-names>
+            </name>
+            <name>
+              <surname>Agarwal</surname>
+              <given-names>P</given-names>
+            </name>
+            <name>
+              <surname>Khurana</surname>
+              <given-names>P</given-names>
+            </name>
+          </person-group>
+          <article-title>Heat shock factors in rice (<italic>Oryza sativa</italic> L.): genome-wide expression analysis during reproductive development and abiotic stress</article-title>
+          <source>Molecular Genetics and Genomics</source>
+          <year>2011</year>
+          <volume>286</volume>
+          <fpage>171</fpage>
+          <lpage>178</lpage>
+          <pub-id pub-id-type="pmid">21792744</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C7">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Cotsaftis</surname>
+              <given-names>O</given-names>
+            </name>
+            <name>
+              <surname>Plett</surname>
+              <given-names>D</given-names>
+            </name>
+            <name>
+              <surname>Johnson</surname>
+              <given-names>AA</given-names>
+            </name>
+            <name>
+              <surname>Walia</surname>
+              <given-names>H</given-names>
+            </name>
+            <name>
+              <surname>Wilson</surname>
+              <given-names>C</given-names>
+            </name>
+            <name>
+              <surname>Ismail</surname>
+              <given-names>AM</given-names>
+            </name>
+            <name>
+              <surname>Close</surname>
+              <given-names>TJ</given-names>
+            </name>
+            <name>
+              <surname>Tester</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Baumann</surname>
+              <given-names>U</given-names>
+            </name>
+          </person-group>
+          <article-title>Root-specific transcript profiling of contrasting rice genotypes in response to salinity stress</article-title>
+          <source>Molecular Plant</source>
+          <year>2011</year>
+          <volume>4</volume>
+          <fpage>25</fpage>
+          <lpage>41</lpage>
+          <pub-id pub-id-type="pmid">20924028</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C8">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Degenkolbe</surname>
+              <given-names>T</given-names>
+            </name>
+            <name>
+              <surname>Do</surname>
+              <given-names>PT</given-names>
+            </name>
+            <name>
+              <surname>Zuther</surname>
+              <given-names>E</given-names>
+            </name>
+            <name>
+              <surname>Repsilber</surname>
+              <given-names>D</given-names>
+            </name>
+            <name>
+              <surname>Walther</surname>
+              <given-names>D</given-names>
+            </name>
+            <name>
+              <surname>Hincha</surname>
+              <given-names>DK</given-names>
+            </name>
+            <name>
+              <surname>Köhl</surname>
+              <given-names>KI</given-names>
+            </name>
+          </person-group>
+          <article-title>Expression profiling of rice cultivars differing in their tolerance to long-term drought stress</article-title>
+          <source>Plant Molecular Biology</source>
+          <year>2009</year>
+          <volume>69</volume>
+          <fpage>133</fpage>
+          <lpage>153</lpage>
+          <pub-id pub-id-type="pmid">18931976</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C9">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Ferdose</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Kawasaki</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Taniguchi</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Miyake</surname>
+              <given-names>H</given-names>
+            </name>
+          </person-group>
+          <article-title>Differential sensitivity of rice cultivars to salinity and its relation to ion accumulation and root tip structure</article-title>
+          <source>Plant Production Science</source>
+          <year>2009</year>
+          <volume>12</volume>
+          <fpage>453</fpage>
+          <lpage>461</lpage>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C10">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Gallo</surname>
+              <given-names>GJ</given-names>
+            </name>
+            <name>
+              <surname>Prentice</surname>
+              <given-names>H</given-names>
+            </name>
+            <name>
+              <surname>Kingston</surname>
+              <given-names>RE</given-names>
+            </name>
+          </person-group>
+          <article-title>Heat shock factor is required for growth at normal temperatures in the fission yeast <italic>Schizosaccharomyces pombe</italic></article-title>
+          <source>Molecular and Cellular Biology</source>
+          <year>1993</year>
+          <volume>13</volume>
+          <fpage>749</fpage>
+          <lpage>761</lpage>
+          <pub-id pub-id-type="pmid">8423799</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C11">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Golldack</surname>
+              <given-names>D</given-names>
+            </name>
+            <name>
+              <surname>Su</surname>
+              <given-names>H</given-names>
+            </name>
+            <name>
+              <surname>Quigley</surname>
+              <given-names>F</given-names>
+            </name>
+            <name>
+              <surname>Kamasani</surname>
+              <given-names>UR</given-names>
+            </name>
+            <name>
+              <surname>Muñoz-Garay</surname>
+              <given-names>C</given-names>
+            </name>
+            <name>
+              <surname>Balderas</surname>
+              <given-names>E</given-names>
+            </name>
+            <name>
+              <surname>Popova</surname>
+              <given-names>OV</given-names>
+            </name>
+            <name>
+              <surname>Bennett</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Bohnert</surname>
+              <given-names>HJ</given-names>
+            </name>
+            <name>
+              <surname>Pantoja</surname>
+              <given-names>O</given-names>
+            </name>
+          </person-group>
+          <article-title>Characterization of a HKT-type transporter in rice as a general alkali cation transporter</article-title>
+          <source>The Plant Journal</source>
+          <year>2002</year>
+          <volume>31</volume>
+          <fpage>529</fpage>
+          <lpage>542</lpage>
+          <pub-id pub-id-type="pmid">12182709</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C12">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Guo</surname>
+              <given-names>L</given-names>
+            </name>
+            <name>
+              <surname>Wang</surname>
+              <given-names>ZY</given-names>
+            </name>
+            <name>
+              <surname>Lin</surname>
+              <given-names>H</given-names>
+            </name>
+            <name>
+              <surname>Cui</surname>
+              <given-names>WE</given-names>
+            </name>
+            <name>
+              <surname>Chen</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Liu</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Chen</surname>
+              <given-names>ZL</given-names>
+            </name>
+            <name>
+              <surname>Qu</surname>
+              <given-names>LJ</given-names>
+            </name>
+            <name>
+              <surname>Gu</surname>
+              <given-names>H</given-names>
+            </name>
+          </person-group>
+          <article-title>Expression and functional analysis of the rice plasma-membrane intrinsic protein gene family</article-title>
+          <source>Cell Research</source>
+          <year>2006</year>
+          <volume>16</volume>
+          <fpage>277</fpage>
+          <lpage>286</lpage>
+          <pub-id pub-id-type="pmid">16541126</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C13">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Guo</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Wu</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Ji</surname>
+              <given-names>Q</given-names>
+            </name>
+            <name>
+              <surname>Wang</surname>
+              <given-names>C</given-names>
+            </name>
+            <name>
+              <surname>Luo</surname>
+              <given-names>L</given-names>
+            </name>
+            <name>
+              <surname>Yuan</surname>
+              <given-names>Y</given-names>
+            </name>
+            <name>
+              <surname>Wang</surname>
+              <given-names>Y</given-names>
+            </name>
+            <name>
+              <surname>Wang</surname>
+              <given-names>J</given-names>
+            </name>
+          </person-group>
+          <article-title>Genome-wide analysis of heat shock transcription factor families in rice and <italic>Arabidopsis</italic></article-title>
+          <source>Journal of Genetics and Genomics</source>
+          <year>2008</year>
+          <volume>35</volume>
+          <fpage>105</fpage>
+          <lpage>118</lpage>
+          <pub-id pub-id-type="pmid">18407058</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C14">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Hadiarto</surname>
+              <given-names>T</given-names>
+            </name>
+            <name>
+              <surname>Tran</surname>
+              <given-names>LSP</given-names>
+            </name>
+          </person-group>
+          <article-title>Progress studies of drought-responsive genes in rice</article-title>
+          <source>Plant Cell Reports</source>
+          <year>2011</year>
+          <volume>30</volume>
+          <fpage>297</fpage>
+          <lpage>310</lpage>
+          <pub-id pub-id-type="pmid">21132431</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C15">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Horie</surname>
+              <given-names>T</given-names>
+            </name>
+            <name>
+              <surname>Costa</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Kim</surname>
+              <given-names>TH</given-names>
+            </name>
+            <name>
+              <surname>Han</surname>
+              <given-names>MJ</given-names>
+            </name>
+            <name>
+              <surname>Horie</surname>
+              <given-names>R</given-names>
+            </name>
+            <name>
+              <surname>Leung</surname>
+              <given-names>HY</given-names>
+            </name>
+            <name>
+              <surname>Miyao</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Hirochika</surname>
+              <given-names>H</given-names>
+            </name>
+            <name>
+              <surname>An</surname>
+              <given-names>G</given-names>
+            </name>
+            <name>
+              <surname>Schroeder</surname>
+              <given-names>JI</given-names>
+            </name>
+          </person-group>
+          <article-title>Rice OsHKT2;1 transporter mediates large Na<sup>+</sup> influx component into K<sup>+</sup>-starved roots for growth</article-title>
+          <source>EMBO Journal</source>
+          <year>2007</year>
+          <volume>26</volume>
+          <fpage>3003</fpage>
+          <lpage>3014</lpage>
+          <pub-id pub-id-type="pmid">17541409</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C16">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Hossain</surname>
+              <given-names>MA</given-names>
+            </name>
+            <name>
+              <surname>Cho</surname>
+              <given-names>JI</given-names>
+            </name>
+            <name>
+              <surname>Han</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Ahn</surname>
+              <given-names>CH</given-names>
+            </name>
+            <name>
+              <surname>Jeon</surname>
+              <given-names>JS</given-names>
+            </name>
+            <name>
+              <surname>An</surname>
+              <given-names>G</given-names>
+            </name>
+            <name>
+              <surname>Park</surname>
+              <given-names>PB</given-names>
+            </name>
+          </person-group>
+          <article-title>The ABRE-binding bZIP transcription factor OsABF2 is a positive regulator of abiotic stress and ABA signalling in rice</article-title>
+          <source>Journal of Plant Physiology</source>
+          <year>2010</year>
+          <volume>167</volume>
+          <fpage>1512</fpage>
+          <lpage>1520</lpage>
+          <pub-id pub-id-type="pmid">20576316</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C17">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Hu</surname>
+              <given-names>H</given-names>
+            </name>
+            <name>
+              <surname>Dai</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Yao</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Xiao</surname>
+              <given-names>B</given-names>
+            </name>
+            <name>
+              <surname>Li</surname>
+              <given-names>X</given-names>
+            </name>
+            <name>
+              <surname>Zhang</surname>
+              <given-names>Q</given-names>
+            </name>
+            <name>
+              <surname>Xiong</surname>
+              <given-names>L</given-names>
+            </name>
+          </person-group>
+          <article-title>Overexpressing a NAM, ATAF, and CUC (NAC) transcription factor enhances drought resistance and salt tolerance in rice</article-title>
+          <source>Proceedings of the National Academy of Sciences of the USA</source>
+          <year>2006</year>
+          <volume>35</volume>
+          <fpage>12987</fpage>
+          <lpage>12992</lpage>
+          <pub-id pub-id-type="pmid">16924117</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C18">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Hu</surname>
+              <given-names>H</given-names>
+            </name>
+            <name>
+              <surname>You</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Fang</surname>
+              <given-names>Y</given-names>
+            </name>
+            <name>
+              <surname>Zhu</surname>
+              <given-names>X</given-names>
+            </name>
+            <name>
+              <surname>Qi</surname>
+              <given-names>Z</given-names>
+            </name>
+            <name>
+              <surname>Xiong</surname>
+              <given-names>L</given-names>
+            </name>
+          </person-group>
+          <article-title>Characterization of transcription factor gene <italic>SNAC2</italic> conferring cold and salt tolerance in rice</article-title>
+          <source>Plant Molecular Biology</source>
+          <year>2008</year>
+          <volume>67</volume>
+          <fpage>169</fpage>
+          <lpage>181</lpage>
+          <pub-id pub-id-type="pmid">18273684</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C19">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Hu</surname>
+              <given-names>W</given-names>
+            </name>
+            <name>
+              <surname>Hu</surname>
+              <given-names>G</given-names>
+            </name>
+            <name>
+              <surname>Han</surname>
+              <given-names>B</given-names>
+            </name>
+          </person-group>
+          <article-title>Genome-wide survey and expression profiling of heat shock proteins and heat shock factors revealed overlapped and stress specific response under abiotic stresses in rice</article-title>
+          <source>Plant Science</source>
+          <year>2009</year>
+          <volume>176</volume>
+          <fpage>583</fpage>
+          <lpage>590</lpage>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C20">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Ikeda</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Mitsuda</surname>
+              <given-names>N</given-names>
+            </name>
+            <name>
+              <surname>Ohme-Takagi</surname>
+              <given-names>M</given-names>
+            </name>
+          </person-group>
+          <article-title><italic>Arabidopsis</italic> HsfB1 and HsfB2b act as repressors of the expression of heat-inducible Hsfs but positively regulate the acquired thermotolerance</article-title>
+          <source>Plant Physiology</source>
+          <year>2011</year>
+          <volume>157</volume>
+          <fpage>1243</fpage>
+          <lpage>1254</lpage>
+          <pub-id pub-id-type="pmid">21908690</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C21">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Inouye</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Izu</surname>
+              <given-names>H</given-names>
+            </name>
+            <name>
+              <surname>Takaki</surname>
+              <given-names>E</given-names>
+            </name>
+            <name>
+              <surname>Suzuki</surname>
+              <given-names>H</given-names>
+            </name>
+            <name>
+              <surname>Shirai</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Yokota</surname>
+              <given-names>Y</given-names>
+            </name>
+            <name>
+              <surname>Ichikawa</surname>
+              <given-names>H</given-names>
+            </name>
+            <name>
+              <surname>Fujimoto</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Nakai</surname>
+              <given-names>A</given-names>
+            </name>
+          </person-group>
+          <article-title>Impaired IgG production in mice deficient for heat shock transcription factor 1</article-title>
+          <source>Journal of Biological Chemistry</source>
+          <year>2004</year>
+          <volume>279</volume>
+          <fpage>38701</fpage>
+          <lpage>38709</lpage>
+          <pub-id pub-id-type="pmid">15226319</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C22">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Jedlicka</surname>
+              <given-names>P</given-names>
+            </name>
+            <name>
+              <surname>Mortin</surname>
+              <given-names>MA</given-names>
+            </name>
+            <name>
+              <surname>Wu</surname>
+              <given-names>C</given-names>
+            </name>
+          </person-group>
+          <article-title>Multiple functions of <italic>Drosophila</italic> heat shock transcription factor <italic>in vivo</italic></article-title>
+          <source>EMBO Journal</source>
+          <year>1997</year>
+          <volume>16</volume>
+          <fpage>2452</fpage>
+          <lpage>2462</lpage>
+          <pub-id pub-id-type="pmid">9171358</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C23">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Jeon</surname>
+              <given-names>JS</given-names>
+            </name>
+            <name>
+              <surname>Lee</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Jung</surname>
+              <given-names>KH</given-names>
+            </name>
+            <name>
+              <surname>Jun</surname>
+              <given-names>SH</given-names>
+            </name>
+            <name>
+              <surname>Jeong</surname>
+              <given-names>DH</given-names>
+            </name>
+            <name>
+              <surname>Lee</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Kim</surname>
+              <given-names>C</given-names>
+            </name>
+            <name>
+              <surname>Jang</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Yang</surname>
+              <given-names>K</given-names>
+            </name>
+            <name>
+              <surname>Nam</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>An</surname>
+              <given-names>K</given-names>
+            </name>
+            <name>
+              <surname>Han</surname>
+              <given-names>MJ</given-names>
+            </name>
+            <name>
+              <surname>Sung</surname>
+              <given-names>RJ</given-names>
+            </name>
+            <name>
+              <surname>Choi</surname>
+              <given-names>HS</given-names>
+            </name>
+            <name>
+              <surname>Yu</surname>
+              <given-names>JH</given-names>
+            </name>
+            <name>
+              <surname>Choi</surname>
+              <given-names>JH</given-names>
+            </name>
+            <name>
+              <surname>Cho</surname>
+              <given-names>SY</given-names>
+            </name>
+            <name>
+              <surname>Cha</surname>
+              <given-names>SS</given-names>
+            </name>
+            <name>
+              <surname>Kim</surname>
+              <given-names>SI</given-names>
+            </name>
+            <name>
+              <surname>An</surname>
+              <given-names>G</given-names>
+            </name>
+          </person-group>
+          <article-title>T-DNA insertional mutagenesis for functional genomics in rice</article-title>
+          <source>The Plant Journal</source>
+          <year>2000</year>
+          <volume>22</volume>
+          <fpage>561</fpage>
+          <lpage>570</lpage>
+          <pub-id pub-id-type="pmid">10886776</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C24">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Jung</surname>
+              <given-names>KH</given-names>
+            </name>
+            <name>
+              <surname>Cao</surname>
+              <given-names>P</given-names>
+            </name>
+            <name>
+              <surname>Seo</surname>
+              <given-names>YS</given-names>
+            </name>
+            <name>
+              <surname>Dardick</surname>
+              <given-names>C</given-names>
+            </name>
+            <name>
+              <surname>Ronald</surname>
+              <given-names>PC</given-names>
+            </name>
+          </person-group>
+          <article-title>The Rice Kinase Phylogenomics Database: a guide for systematic analysis of the rice kinase super-family</article-title>
+          <source>Trends in Plant Science</source>
+          <year>2010</year>
+          <volume>15</volume>
+          <fpage>595</fpage>
+          <lpage>599</lpage>
+          <pub-id pub-id-type="pmid">20832349</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C25">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Kang</surname>
+              <given-names>JY</given-names>
+            </name>
+            <name>
+              <surname>Choi</surname>
+              <given-names>HI</given-names>
+            </name>
+            <name>
+              <surname>Im</surname>
+              <given-names>MY</given-names>
+            </name>
+            <name>
+              <surname>Kim</surname>
+              <given-names>SY</given-names>
+            </name>
+          </person-group>
+          <article-title><italic>Arabidopsis</italic> basic leucine zipper proteins that mediate stress-responsive abscisic acid signalling</article-title>
+          <source>Plant Cell</source>
+          <year>2002</year>
+          <volume>14</volume>
+          <fpage>343</fpage>
+          <lpage>357</lpage>
+          <pub-id pub-id-type="pmid">11884679</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C26">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Karimi</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Meyer</surname>
+              <given-names>D</given-names>
+            </name>
+            <name>
+              <surname>Hilson</surname>
+              <given-names>P</given-names>
+            </name>
+          </person-group>
+          <article-title>Modular cloning and expression of tagged fluorescent protein in plant cells</article-title>
+          <source>Trends in Plant Science</source>
+          <year>2005</year>
+          <volume>10</volume>
+          <fpage>103</fpage>
+          <lpage>105</lpage>
+          <pub-id pub-id-type="pmid">15749466</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C27">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Kumar</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Busch</surname>
+              <given-names>W</given-names>
+            </name>
+            <name>
+              <surname>Birke</surname>
+              <given-names>H</given-names>
+            </name>
+            <name>
+              <surname>Kemmerling</surname>
+              <given-names>B</given-names>
+            </name>
+            <name>
+              <surname>Nürnberger</surname>
+              <given-names>T</given-names>
+            </name>
+            <name>
+              <surname>Schöffl</surname>
+              <given-names>F</given-names>
+            </name>
+          </person-group>
+          <article-title>Heat shock factors HsfB1 and HsfB2b are involved in the regulation of <italic>Pdf1.2</italic> expression and pathogen resistance in <italic>Arabidopsis</italic></article-title>
+          <source>Molecular Plant</source>
+          <year>2009</year>
+          <volume>2</volume>
+          <fpage>152</fpage>
+          <lpage>165</lpage>
+          <pub-id pub-id-type="pmid">19529832</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C28">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Larkin</surname>
+              <given-names>MA</given-names>
+            </name>
+            <name>
+              <surname>Blackshields</surname>
+              <given-names>G</given-names>
+            </name>
+            <name>
+              <surname>Brown</surname>
+              <given-names>NP</given-names>
+            </name>
+            <name>
+              <surname>Chenna</surname>
+              <given-names>R</given-names>
+            </name>
+            <name>
+              <surname>McGettigan</surname>
+              <given-names>PA</given-names>
+            </name>
+            <name>
+              <surname>McWilliam</surname>
+              <given-names>H</given-names>
+            </name>
+            <name>
+              <surname>Valentin</surname>
+              <given-names>F</given-names>
+            </name>
+            <name>
+              <surname>Wallace</surname>
+              <given-names>IM</given-names>
+            </name>
+            <name>
+              <surname>Wilm</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Lopez</surname>
+              <given-names>R</given-names>
+            </name>
+            <name>
+              <surname>Thompson</surname>
+              <given-names>JD</given-names>
+            </name>
+            <name>
+              <surname>Gibson</surname>
+              <given-names>TJ</given-names>
+            </name>
+            <name>
+              <surname>Higgins</surname>
+              <given-names>DG</given-names>
+            </name>
+          </person-group>
+          <article-title>Clustal W and Clustal X version 2.0</article-title>
+          <source>Bioinformatics</source>
+          <year>2007</year>
+          <volume>23</volume>
+          <fpage>2947</fpage>
+          <lpage>2948</lpage>
+          <pub-id pub-id-type="pmid">17846036</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C29">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Lian</surname>
+              <given-names>HL</given-names>
+            </name>
+            <name>
+              <surname>Yu</surname>
+              <given-names>X</given-names>
+            </name>
+            <name>
+              <surname>Ye</surname>
+              <given-names>Q</given-names>
+            </name>
+            <name>
+              <surname>Ding</surname>
+              <given-names>X</given-names>
+            </name>
+            <name>
+              <surname>Kitagawa</surname>
+              <given-names>Y</given-names>
+            </name>
+            <name>
+              <surname>Kwak</surname>
+              <given-names>SS</given-names>
+            </name>
+            <name>
+              <surname>Su</surname>
+              <given-names>WA</given-names>
+            </name>
+            <name>
+              <surname>Tang</surname>
+              <given-names>ZC</given-names>
+            </name>
+          </person-group>
+          <article-title>The role of aquaporin RWC3 in drought avoidance in rice</article-title>
+          <source>Plant and Cell Physiology</source>
+          <year>2004</year>
+          <volume>45</volume>
+          <fpage>481</fpage>
+          <lpage>489</lpage>
+          <pub-id pub-id-type="pmid">15111723</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C30">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Liu</surname>
+              <given-names>JG</given-names>
+            </name>
+            <name>
+              <surname>Qin</surname>
+              <given-names>QL</given-names>
+            </name>
+            <name>
+              <surname>Zhang</surname>
+              <given-names>Z</given-names>
+            </name>
+            <name>
+              <surname>Peng</surname>
+              <given-names>RH</given-names>
+            </name>
+            <name>
+              <surname>Xiong</surname>
+              <given-names>AS</given-names>
+            </name>
+            <name>
+              <surname>Chen</surname>
+              <given-names>JM</given-names>
+            </name>
+            <name>
+              <surname>Yao</surname>
+              <given-names>QH</given-names>
+            </name>
+          </person-group>
+          <article-title><italic>OsHSF7</italic> gene in rice, <italic>Oryza sativa</italic> L., encodes a transcription factor that functions as a high temperature receptive and responsive factor</article-title>
+          <source>BMB Reports</source>
+          <year>2009</year>
+          <volume>42</volume>
+          <fpage>16</fpage>
+          <lpage>21</lpage>
+          <pub-id pub-id-type="pmid">19192388</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C31">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Ma</surname>
+              <given-names>Q</given-names>
+            </name>
+            <name>
+              <surname>Dai</surname>
+              <given-names>X</given-names>
+            </name>
+            <name>
+              <surname>Xu</surname>
+              <given-names>Y</given-names>
+            </name>
+            <name>
+              <surname>Guo</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Liu</surname>
+              <given-names>Y</given-names>
+            </name>
+            <name>
+              <surname>Chen</surname>
+              <given-names>N</given-names>
+            </name>
+            <name>
+              <surname>Xiao</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Zhang</surname>
+              <given-names>D</given-names>
+            </name>
+            <name>
+              <surname>Xu</surname>
+              <given-names>Z</given-names>
+            </name>
+            <name>
+              <surname>Zhang</surname>
+              <given-names>X</given-names>
+            </name>
+            <name>
+              <surname>Chong</surname>
+              <given-names>K</given-names>
+            </name>
+          </person-group>
+          <article-title>Enhanced tolerance to chilling stress in OsMYB3R-2 transgenic rice is mediated by alteration in cell cycle and ectopic expression of stress genes</article-title>
+          <source>Plant Physiology</source>
+          <year>2009</year>
+          <volume>150</volume>
+          <fpage>244</fpage>
+          <lpage>256</lpage>
+          <pub-id pub-id-type="pmid">19279197</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C32">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Mallikarjuna</surname>
+              <given-names>G</given-names>
+            </name>
+            <name>
+              <surname>Mallikarjuna</surname>
+              <given-names>K</given-names>
+            </name>
+            <name>
+              <surname>Reddy</surname>
+              <given-names>MK</given-names>
+            </name>
+            <name>
+              <surname>Kaul</surname>
+              <given-names>T</given-names>
+            </name>
+          </person-group>
+          <article-title>Expression of OsDREB2A transcription factor confers enhanced dehydration and salt stress tolerance in rice (<italic>Oryza sativa</italic> L.)</article-title>
+          <source>Biotechnology Letters</source>
+          <year>2011</year>
+          <volume>33</volume>
+          <fpage>1689</fpage>
+          <lpage>1697</lpage>
+          <pub-id pub-id-type="pmid">21528404</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C33">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Matsumoto</surname>
+              <given-names>T</given-names>
+            </name>
+            <name>
+              <surname>Lian</surname>
+              <given-names>HL</given-names>
+            </name>
+            <name>
+              <surname>Su</surname>
+              <given-names>WA</given-names>
+            </name>
+            <name>
+              <surname>Tanaka</surname>
+              <given-names>D</given-names>
+            </name>
+            <name>
+              <surname>Liu</surname>
+              <given-names>C</given-names>
+            </name>
+            <name>
+              <surname>Iwasaki</surname>
+              <given-names>I</given-names>
+            </name>
+            <name>
+              <surname>Kitagawa</surname>
+              <given-names>Y</given-names>
+            </name>
+          </person-group>
+          <article-title>Role of the aquaporin PIP1 subfamily in the chilling tolerance of rice</article-title>
+          <source>Plant and Cell Physiology</source>
+          <year>2009</year>
+          <volume>50</volume>
+          <fpage>216</fpage>
+          <lpage>229</lpage>
+          <pub-id pub-id-type="pmid">19098326</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C34">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Mishra</surname>
+              <given-names>SK</given-names>
+            </name>
+            <name>
+              <surname>Tripp</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Winkelhaus</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Tschiersch</surname>
+              <given-names>B</given-names>
+            </name>
+            <name>
+              <surname>Theres</surname>
+              <given-names>K</given-names>
+            </name>
+            <name>
+              <surname>Nover</surname>
+              <given-names>L</given-names>
+            </name>
+            <name>
+              <surname>Scharf</surname>
+              <given-names>KD</given-names>
+            </name>
+          </person-group>
+          <article-title>In the complex family of heat stress transcription factors, HsfA1 has a unique role as master regulator of thermotolerance in tomato</article-title>
+          <source>Genes and Development</source>
+          <year>2002</year>
+          <volume>16</volume>
+          <fpage>1555</fpage>
+          <lpage>1567</lpage>
+          <pub-id pub-id-type="pmid">12080093</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C35">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Mittal</surname>
+              <given-names>D</given-names>
+            </name>
+            <name>
+              <surname>Chakrabarti</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Sarkar</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Singh</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Grover</surname>
+              <given-names>A</given-names>
+            </name>
+          </person-group>
+          <article-title>Heat shock factor gene family in rice: genomic organization and transcript expression profiling in response to high temperature, low temperature and oxidative stresses</article-title>
+          <source>Plant Physiology and Biochemistry</source>
+          <year>2009</year>
+          <volume>47</volume>
+          <fpage>785</fpage>
+          <lpage>795</lpage>
+          <pub-id pub-id-type="pmid">19539489</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C36">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Mittal</surname>
+              <given-names>D</given-names>
+            </name>
+            <name>
+              <surname>Enoki</surname>
+              <given-names>Y</given-names>
+            </name>
+            <name>
+              <surname>Lavania</surname>
+              <given-names>D</given-names>
+            </name>
+            <name>
+              <surname>Singh</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Sakurai</surname>
+              <given-names>H</given-names>
+            </name>
+            <name>
+              <surname>Grover</surname>
+              <given-names>A</given-names>
+            </name>
+          </person-group>
+          <article-title>Binding affinities and interactions among different heat shock element types and heat shock factors in rice (<italic>Oryza sativa</italic> L.)</article-title>
+          <source>FEBS Journal</source>
+          <year>2011</year>
+          <volume>278</volume>
+          <fpage>3076</fpage>
+          <lpage>3085</lpage>
+          <pub-id pub-id-type="pmid">21729241</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C37">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Munns</surname>
+              <given-names>R</given-names>
+            </name>
+            <name>
+              <surname>Tester</surname>
+              <given-names>M</given-names>
+            </name>
+          </person-group>
+          <article-title>Mechanisms of salinity tolerance</article-title>
+          <source>Annual Review of Plant Biology</source>
+          <year>2008</year>
+          <volume>59</volume>
+          <fpage>651</fpage>
+          <lpage>681</lpage>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C38">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Nishizawa-Yokoi</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Nosaka</surname>
+              <given-names>R</given-names>
+            </name>
+            <name>
+              <surname>Hayashi</surname>
+              <given-names>H</given-names>
+            </name>
+            <name>
+              <surname>Tainaka</surname>
+              <given-names>H</given-names>
+            </name>
+            <name>
+              <surname>Maruta</surname>
+              <given-names>T</given-names>
+            </name>
+            <name>
+              <surname>Tamoi</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Ikeda</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Ohme-Takagi</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Yoshimura</surname>
+              <given-names>K</given-names>
+            </name>
+            <name>
+              <surname>Yabuta</surname>
+              <given-names>Y</given-names>
+            </name>
+            <name>
+              <surname>Shigeoka</surname>
+              <given-names>S</given-names>
+            </name>
+          </person-group>
+          <article-title>HsfA1d and HsfA1e involved in the transcriptional regulation of HsfA2 function as key regulators for the Hsf signalling network in response to environmental stress</article-title>
+          <source>Plant and Cell Physiology</source>
+          <year>2011</year>
+          <volume>52</volume>
+          <fpage>933</fpage>
+          <lpage>945</lpage>
+          <pub-id pub-id-type="pmid">21471117</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C39">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Nover</surname>
+              <given-names>L</given-names>
+            </name>
+            <name>
+              <surname>Bharti</surname>
+              <given-names>K</given-names>
+            </name>
+            <name>
+              <surname>Döring</surname>
+              <given-names>P</given-names>
+            </name>
+            <name>
+              <surname>Mishra</surname>
+              <given-names>SK</given-names>
+            </name>
+            <name>
+              <surname>Ganguli</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Scharf</surname>
+              <given-names>KD</given-names>
+            </name>
+          </person-group>
+          <article-title><italic>Arabidopsis</italic> and the heat stress transcription factor world: how many heat stress transcription factors do we need?</article-title>
+          <source>Cell Stress and Chaperones</source>
+          <year>2001</year>
+          <volume>6</volume>
+          <fpage>177</fpage>
+          <lpage>189</lpage>
+          <pub-id pub-id-type="pmid">11599559</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C40">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Obata</surname>
+              <given-names>T</given-names>
+            </name>
+            <name>
+              <surname>Kitamoto</surname>
+              <given-names>HK</given-names>
+            </name>
+            <name>
+              <surname>Nakamura</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Fukuda</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Tanaka</surname>
+              <given-names>Y</given-names>
+            </name>
+          </person-group>
+          <article-title>Rice Shaker potassium channel OsKAT1 confers tolerance to salinity stress on yeast and rice cells</article-title>
+          <source>Plant Physiology</source>
+          <year>2007</year>
+          <volume>144</volume>
+          <fpage>1978</fpage>
+          <lpage>1985</lpage>
+          <pub-id pub-id-type="pmid">17586689</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C41">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Ogawa</surname>
+              <given-names>D</given-names>
+            </name>
+            <name>
+              <surname>Yamaguchi</surname>
+              <given-names>K</given-names>
+            </name>
+            <name>
+              <surname>Nishiuchi</surname>
+              <given-names>T</given-names>
+            </name>
+          </person-group>
+          <article-title>High level overexpression of the <italic>Arabidopsis</italic> HsfA2 gene confers not only increased thermotolerance but also salt/osmotic stress tolerance and enhanced callus growth</article-title>
+          <source>Journal of Experimental Botany</source>
+          <year>2007</year>
+          <volume>58</volume>
+          <fpage>1</fpage>
+          <lpage>11</lpage>
+          <pub-id pub-id-type="pmid">17030541</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C42">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Oh</surname>
+              <given-names>MJ</given-names>
+            </name>
+            <name>
+              <surname>Chun</surname>
+              <given-names>HS</given-names>
+            </name>
+            <name>
+              <surname>Lee</surname>
+              <given-names>CB</given-names>
+            </name>
+          </person-group>
+          <article-title>Differences in photosynthetic characterization of salt tolerance for two rice (<italic>Oryza sativa</italic>) cultivars</article-title>
+          <source>Journal of Plant Biology</source>
+          <year>2003</year>
+          <volume>46</volume>
+          <fpage>17</fpage>
+          <lpage>22</lpage>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C43">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Ouwerkerk</surname>
+              <given-names>PBF</given-names>
+            </name>
+            <name>
+              <surname>de Kam</surname>
+              <given-names>RJ</given-names>
+            </name>
+            <name>
+              <surname>Hoge</surname>
+              <given-names>JHC</given-names>
+            </name>
+            <name>
+              <surname>Meijer</surname>
+              <given-names>AH</given-names>
+            </name>
+          </person-group>
+          <article-title>Glucocorticoid-inducible gene expression in rice</article-title>
+          <source>Planta</source>
+          <year>2001</year>
+          <volume>213</volume>
+          <fpage>370</fpage>
+          <lpage>378</lpage>
+          <pub-id pub-id-type="pmid">11506359</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C69">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Ouyang</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Zhu</surname>
+              <given-names>W</given-names>
+            </name>
+            <name>
+              <surname>Hamilton</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Lin</surname>
+              <given-names>H</given-names>
+            </name>
+            <name>
+              <surname>Campbell</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Childs</surname>
+              <given-names>K</given-names>
+            </name>
+            <name>
+              <surname>Thibaud-Nissen</surname>
+              <given-names>F</given-names>
+            </name>
+            <name>
+              <surname>Malek</surname>
+              <given-names>RL</given-names>
+            </name>
+            <name>
+              <surname>Lee</surname>
+              <given-names>Y</given-names>
+            </name>
+            <name>
+              <surname>Zheng</surname>
+              <given-names>L</given-names>
+            </name>
+            <name>
+              <surname>Orvis</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Haas</surname>
+              <given-names>B</given-names>
+            </name>
+            <name>
+              <surname>Wortman</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Buell</surname>
+              <given-names>CR</given-names>
+            </name>
+          </person-group>
+          <article-title>The TIGR Rice Genome Annotation Resource: improvements and new features</article-title>
+          <source>Nucleic Acids Research</source>
+          <year>2007</year>
+          <volume>35</volume>
+          <fpage>D846</fpage>
+          <lpage>851</lpage>
+          <pub-id pub-id-type="pmid">17088284</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C44">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Pandey</surname>
+              <given-names>GK</given-names>
+            </name>
+            <name>
+              <surname>Grant</surname>
+              <given-names>JJ</given-names>
+            </name>
+            <name>
+              <surname>Cheong</surname>
+              <given-names>YH</given-names>
+            </name>
+            <name>
+              <surname>Kim</surname>
+              <given-names>BG</given-names>
+            </name>
+            <name>
+              <surname>Li</surname>
+              <given-names>L</given-names>
+            </name>
+            <name>
+              <surname>Luan</surname>
+              <given-names>S</given-names>
+            </name>
+          </person-group>
+          <article-title>ABR1, an APETALA2-domain transcription factor that functions as a repressor of ABA response in <italic>Arabidopsis</italic></article-title>
+          <source>Plant Physiology</source>
+          <year>2005</year>
+          <volume>139</volume>
+          <fpage>1185</fpage>
+          <lpage>1193</lpage>
+          <pub-id pub-id-type="pmid">16227468</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C45">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Park</surname>
+              <given-names>MR</given-names>
+            </name>
+            <name>
+              <surname>Yun</surname>
+              <given-names>KY</given-names>
+            </name>
+            <name>
+              <surname>Mohanty</surname>
+              <given-names>B</given-names>
+            </name>
+            <name>
+              <surname>Herath</surname>
+              <given-names>V</given-names>
+            </name>
+            <name>
+              <surname>Xu</surname>
+              <given-names>F</given-names>
+            </name>
+            <name>
+              <surname>Wijaya</surname>
+              <given-names>E</given-names>
+            </name>
+            <name>
+              <surname>Bajic</surname>
+              <given-names>VB</given-names>
+            </name>
+            <name>
+              <surname>Yun</surname>
+              <given-names>SJ</given-names>
+            </name>
+            <name>
+              <surname>De Los Reyes</surname>
+              <given-names>BG</given-names>
+            </name>
+          </person-group>
+          <article-title>Supra-optimal expression of the cold-regulated OsMyb4 transcription factor in transgenic rice changes the complexity of transcriptional network with major effects on stress tolerance and panicle development</article-title>
+          <source>Plant, Cell and Environment</source>
+          <year>2010</year>
+          <volume>33</volume>
+          <fpage>2209</fpage>
+          <lpage>2230</lpage>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C46">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Pirkkala</surname>
+              <given-names>L</given-names>
+            </name>
+            <name>
+              <surname>Nykänen</surname>
+              <given-names>P</given-names>
+            </name>
+            <name>
+              <surname>Sistonen</surname>
+              <given-names>L</given-names>
+            </name>
+          </person-group>
+          <article-title>Roles of the heat shock transcription factors in regulation of the heat shock response and beyond</article-title>
+          <source>FASEB Journal</source>
+          <year>2001</year>
+          <volume>15</volume>
+          <fpage>1118</fpage>
+          <lpage>1131</lpage>
+          <pub-id pub-id-type="pmid">11344080</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C47">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Rodrigues</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Santiago</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Rubio</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Saez</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Osmont</surname>
+              <given-names>KS</given-names>
+            </name>
+            <name>
+              <surname>Gadea</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Hardtke</surname>
+              <given-names>CS</given-names>
+            </name>
+            <name>
+              <surname>Rodriguez</surname>
+              <given-names>PL</given-names>
+            </name>
+          </person-group>
+          <article-title>The short-rooted phenotype of the <italic>brevis radix</italic> mutant partly reflects root abscisic acid hypersensitivity</article-title>
+          <source>Plant Physiology</source>
+          <year>2009</year>
+          <volume>149</volume>
+          <fpage>1917</fpage>
+          <lpage>1928</lpage>
+          <pub-id pub-id-type="pmid">19201913</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C48">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Sallaud</surname>
+              <given-names>C</given-names>
+            </name>
+            <name>
+              <surname>Meynard</surname>
+              <given-names>D</given-names>
+            </name>
+            <name>
+              <surname>van Boxtel</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Gay</surname>
+              <given-names>C</given-names>
+            </name>
+            <name>
+              <surname>Bes</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Brizard</surname>
+              <given-names>JP</given-names>
+            </name>
+            <name>
+              <surname>Larmande</surname>
+              <given-names>P</given-names>
+            </name>
+            <name>
+              <surname>Ortega</surname>
+              <given-names>D</given-names>
+            </name>
+            <name>
+              <surname>Raynal</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Portefaix</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Ouwerkerk</surname>
+              <given-names>PB</given-names>
+            </name>
+            <name>
+              <surname>Rueb</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Delseny</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Guiderdoni</surname>
+              <given-names>E</given-names>
+            </name>
+          </person-group>
+          <article-title>Highly efficient production and characterization of T-DNA plants for rice (<italic>Oryza sativa</italic> L.) functional genomics</article-title>
+          <source>Theoretical and Applied Genetics</source>
+          <year>2003</year>
+          <volume>106</volume>
+          <fpage>1396</fpage>
+          <lpage>1408</lpage>
+          <pub-id pub-id-type="pmid">12677401</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C49">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Sarkar</surname>
+              <given-names>NK</given-names>
+            </name>
+            <name>
+              <surname>Kim</surname>
+              <given-names>YK</given-names>
+            </name>
+            <name>
+              <surname>Grover</surname>
+              <given-names>A</given-names>
+            </name>
+          </person-group>
+          <article-title>Rice sHsp genes: genomic organization and expression profiling under stress and development</article-title>
+          <source>BMC Genomics</source>
+          <year>2009</year>
+          <volume>10</volume>
+          <fpage>393</fpage>
+          <lpage>411</lpage>
+          <pub-id pub-id-type="pmid">19703271</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C50">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Scharf</surname>
+              <given-names>KD</given-names>
+            </name>
+            <name>
+              <surname>Heider</surname>
+              <given-names>H</given-names>
+            </name>
+            <name>
+              <surname>Höhfeld</surname>
+              <given-names>I</given-names>
+            </name>
+            <name>
+              <surname>Lyck</surname>
+              <given-names>R</given-names>
+            </name>
+            <name>
+              <surname>Schmidt</surname>
+              <given-names>E</given-names>
+            </name>
+            <name>
+              <surname>Nover</surname>
+              <given-names>L</given-names>
+            </name>
+          </person-group>
+          <article-title>The tomato Hsf system: HsfA2 needs interaction with HsfA1 for efficient nuclear import and may be localized in cytoplasmic heat stress granules</article-title>
+          <source>Molecular and Cellular Biology</source>
+          <year>1998</year>
+          <volume>18</volume>
+          <fpage>2240</fpage>
+          <lpage>2251</lpage>
+          <pub-id pub-id-type="pmid">9528795</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C51">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Scharf</surname>
+              <given-names>KD</given-names>
+            </name>
+            <name>
+              <surname>Siddique</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Vierling</surname>
+              <given-names>E</given-names>
+            </name>
+          </person-group>
+          <article-title>The expanding family of <italic>Arabidopsis thaliana</italic> small heat stress proteins and a new family of proteins containing alpha-crystallin domains (Acd proteins)</article-title>
+          <source>Cell Stress and Chaperones</source>
+          <year>2001</year>
+          <volume>6</volume>
+          <fpage>225</fpage>
+          <lpage>237</lpage>
+          <pub-id pub-id-type="pmid">11599564</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C52">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Schramm</surname>
+              <given-names>F</given-names>
+            </name>
+            <name>
+              <surname>Ganguli</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Kiehlmann</surname>
+              <given-names>E</given-names>
+            </name>
+            <name>
+              <surname>Englich</surname>
+              <given-names>G</given-names>
+            </name>
+            <name>
+              <surname>Walch</surname>
+              <given-names>D</given-names>
+            </name>
+            <name>
+              <surname>von Koskull-Döring</surname>
+              <given-names>P</given-names>
+            </name>
+          </person-group>
+          <article-title>The heat stress transcription factor HsfA2 serves as a regulatory amplifier of a subset of genes in the heat stress response in <italic>Arabidopsis</italic></article-title>
+          <source>Plant Molecular Biology</source>
+          <year>2006</year>
+          <volume>60</volume>
+          <fpage>759</fpage>
+          <lpage>772</lpage>
+          <pub-id pub-id-type="pmid">16649111</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C53">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Schulz-Raffelt</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Lodha</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Schroda</surname>
+              <given-names>M</given-names>
+            </name>
+          </person-group>
+          <article-title>Heat shock factor 1 is a key regulator of the stress response in <italic>Chlamydomonas</italic></article-title>
+          <source>The Plant Journal</source>
+          <year>2007</year>
+          <volume>52</volume>
+          <fpage>286</fpage>
+          <lpage>295</lpage>
+          <pub-id pub-id-type="pmid">17711413</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C54">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Song</surname>
+              <given-names>SY</given-names>
+            </name>
+            <name>
+              <surname>Chen</surname>
+              <given-names>Y</given-names>
+            </name>
+            <name>
+              <surname>Chen</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Dai</surname>
+              <given-names>XY</given-names>
+            </name>
+            <name>
+              <surname>Zhang</surname>
+              <given-names>WH</given-names>
+            </name>
+          </person-group>
+          <article-title>Physiological mechanisms underlying OsNAC5-dependent tolerance of rice plants to abiotic stress</article-title>
+          <source>Planta</source>
+          <year>2011</year>
+          <volume>234</volume>
+          <fpage>331</fpage>
+          <lpage>345</lpage>
+          <pub-id pub-id-type="pmid">21448719</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C55">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Sun</surname>
+              <given-names>W</given-names>
+            </name>
+            <name>
+              <surname>Van Montagu</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Verbruggen</surname>
+              <given-names>N</given-names>
+            </name>
+          </person-group>
+          <article-title>Small heat shock proteins and stress tolerance in plants</article-title>
+          <source>Biochimica et Biophysica Acta</source>
+          <year>2002</year>
+          <volume>1577</volume>
+          <fpage>1</fpage>
+          <lpage>9</lpage>
+          <pub-id pub-id-type="pmid">12151089</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C56">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Takasaki</surname>
+              <given-names>H</given-names>
+            </name>
+            <name>
+              <surname>Maruyama</surname>
+              <given-names>K</given-names>
+            </name>
+            <name>
+              <surname>Kidokoro</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Ito</surname>
+              <given-names>Y</given-names>
+            </name>
+            <name>
+              <surname>Fujita</surname>
+              <given-names>Y</given-names>
+            </name>
+            <name>
+              <surname>Shinozaki</surname>
+              <given-names>K</given-names>
+            </name>
+            <name>
+              <surname>Yamaguchi-Shinozaki</surname>
+              <given-names>K</given-names>
+            </name>
+            <name>
+              <surname>Nakashima</surname>
+              <given-names>K</given-names>
+            </name>
+          </person-group>
+          <article-title>The abiotic stress-responsive NAC-type transcription factor OsNAC5 regulates stress-inducible genes and stress tolerance in rice</article-title>
+          <source>Molecular Genetics and Genomics</source>
+          <year>2010</year>
+          <volume>284</volume>
+          <fpage>173</fpage>
+          <lpage>183</lpage>
+          <pub-id pub-id-type="pmid">20632034</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C57">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Walia</surname>
+              <given-names>H</given-names>
+            </name>
+            <name>
+              <surname>Wilson</surname>
+              <given-names>C</given-names>
+            </name>
+            <name>
+              <surname>Condamine</surname>
+              <given-names>P</given-names>
+            </name>
+            <name>
+              <surname>Liu</surname>
+              <given-names>X</given-names>
+            </name>
+            <name>
+              <surname>Ismail</surname>
+              <given-names>AM</given-names>
+            </name>
+            <name>
+              <surname>Zeng</surname>
+              <given-names>L</given-names>
+            </name>
+            <name>
+              <surname>Wanamaker</surname>
+              <given-names>SI</given-names>
+            </name>
+            <name>
+              <surname>Mandal</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Xu</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Cui</surname>
+              <given-names>X</given-names>
+            </name>
+            <name>
+              <surname>Close</surname>
+              <given-names>TJ</given-names>
+            </name>
+          </person-group>
+          <article-title>Environmental stress and adaptation to stress: comparative transcriptional profiling of two contrasting rice genotypes under salinity stress during the vegetative growth stage</article-title>
+          <source>American Society of Plant Biologists</source>
+          <year>2005</year>
+          <volume>139</volume>
+          <fpage>822</fpage>
+          <lpage>835</lpage>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C58">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Wang</surname>
+              <given-names>C</given-names>
+            </name>
+            <name>
+              <surname>Zhang</surname>
+              <given-names>Q</given-names>
+            </name>
+            <name>
+              <surname>Shou</surname>
+              <given-names>HX</given-names>
+            </name>
+          </person-group>
+          <article-title>Identification and expression analysis of OsHsfs in rice</article-title>
+          <source>Journal of Zhejiang University Science B</source>
+          <year>2009</year>
+          <volume>10</volume>
+          <fpage>291</fpage>
+          <lpage>300</lpage>
+          <pub-id pub-id-type="pmid">19353748</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C59">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Warthmann</surname>
+              <given-names>N</given-names>
+            </name>
+            <name>
+              <surname>Chen</surname>
+              <given-names>H</given-names>
+            </name>
+            <name>
+              <surname>Ossowski</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Weigel</surname>
+              <given-names>D</given-names>
+            </name>
+            <name>
+              <surname>Hervé</surname>
+              <given-names>P</given-names>
+            </name>
+          </person-group>
+          <article-title>Highly specific gene silencing by artificial miRNAs in rice</article-title>
+          <source>PLoS One</source>
+          <year>2008</year>
+          <volume>3</volume>
+          <fpage>e1829</fpage>
+          <pub-id pub-id-type="pmid">18350165</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C60">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Wu</surname>
+              <given-names>FH</given-names>
+            </name>
+            <name>
+              <surname>Shen</surname>
+              <given-names>SC</given-names>
+            </name>
+            <name>
+              <surname>Lee</surname>
+              <given-names>LY</given-names>
+            </name>
+            <name>
+              <surname>Lee</surname>
+              <given-names>SH</given-names>
+            </name>
+            <name>
+              <surname>Chan</surname>
+              <given-names>MT</given-names>
+            </name>
+            <name>
+              <surname>Lin</surname>
+              <given-names>CS</given-names>
+            </name>
+          </person-group>
+          <article-title>Tape-Arabidopsis sandwich—a simpler <italic>Arabidopsis</italic> protoplast isolation method</article-title>
+          <source>Plant Methods</source>
+          <year>2009</year>
+          <volume>5</volume>
+          <fpage>16</fpage>
+          <pub-id pub-id-type="pmid">19930690</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C61">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Xiao</surname>
+              <given-names>X</given-names>
+            </name>
+            <name>
+              <surname>Zuo</surname>
+              <given-names>X</given-names>
+            </name>
+            <name>
+              <surname>Davis</surname>
+              <given-names>AA</given-names>
+            </name>
+            <name>
+              <surname>McMillan</surname>
+              <given-names>DR</given-names>
+            </name>
+            <name>
+              <surname>Curry</surname>
+              <given-names>BB</given-names>
+            </name>
+            <name>
+              <surname>Richardson</surname>
+              <given-names>JA</given-names>
+            </name>
+            <name>
+              <surname>Benjamin</surname>
+              <given-names>IJ</given-names>
+            </name>
+          </person-group>
+          <article-title>HSF1 is required for extra-embryonic development, postnatal growth and protection during inflammatory responses in mice</article-title>
+          <source>EMBO Journal</source>
+          <year>1999</year>
+          <volume>18</volume>
+          <fpage>5943</fpage>
+          <lpage>5952</lpage>
+          <pub-id pub-id-type="pmid">10545106</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C62">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Yan</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Tang</surname>
+              <given-names>Z</given-names>
+            </name>
+            <name>
+              <surname>Su</surname>
+              <given-names>W</given-names>
+            </name>
+            <name>
+              <surname>Sun</surname>
+              <given-names>W</given-names>
+            </name>
+          </person-group>
+          <article-title>Proteomic analysis of salt stress-responsive proteins in rice root</article-title>
+          <source>Proteomics</source>
+          <year>2005</year>
+          <volume>5</volume>
+          <fpage>235</fpage>
+          <lpage>244</lpage>
+          <pub-id pub-id-type="pmid">15672456</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C63">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Yokotani</surname>
+              <given-names>N</given-names>
+            </name>
+            <name>
+              <surname>Ichikawa</surname>
+              <given-names>T</given-names>
+            </name>
+            <name>
+              <surname>Kondou</surname>
+              <given-names>Y</given-names>
+            </name>
+            <name>
+              <surname>Matsui</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Hirochika</surname>
+              <given-names>H</given-names>
+            </name>
+            <name>
+              <surname>Iwabuchi</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Oda</surname>
+              <given-names>K</given-names>
+            </name>
+          </person-group>
+          <article-title>Expression of rice heat stress transcription factor OsHsfA2e enhances tolerance to environmental stresses in transgenic <italic>Arabidopsis</italic></article-title>
+          <source>Planta</source>
+          <year>2008</year>
+          <volume>227</volume>
+          <fpage>957</fpage>
+          <lpage>967</lpage>
+          <pub-id pub-id-type="pmid">18064488</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C64">
+        <element-citation publication-type="book">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Yoshida</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Forno</surname>
+              <given-names>DD</given-names>
+            </name>
+            <name>
+              <surname>Cock</surname>
+              <given-names>JH</given-names>
+            </name>
+          </person-group>
+          <article-title>Routine procedure for growing rice plants in culture solution</article-title>
+          <source>Laboratory manual for physiological studies of rice</source>
+          <year>1971</year>
+          <publisher-loc>Philippines</publisher-loc>
+          <publisher-name>The International Rice Research Institute</publisher-name>
+          <fpage>53</fpage>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C65">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Yoshida</surname>
+              <given-names>T</given-names>
+            </name>
+            <name>
+              <surname>Sakuma</surname>
+              <given-names>Y</given-names>
+            </name>
+            <name>
+              <surname>Todaka</surname>
+              <given-names>D</given-names>
+            </name>
+            <name>
+              <surname>Maruyama</surname>
+              <given-names>K</given-names>
+            </name>
+            <name>
+              <surname>Qin</surname>
+              <given-names>F</given-names>
+            </name>
+            <name>
+              <surname>Mizoi</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Kidokoro</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Fujita</surname>
+              <given-names>Y</given-names>
+            </name>
+            <name>
+              <surname>Shinozaki</surname>
+              <given-names>K</given-names>
+            </name>
+            <name>
+              <surname>Yamaguchi-Shinozaki</surname>
+              <given-names>K</given-names>
+            </name>
+          </person-group>
+          <article-title>Functional analysis of an <italic>Arabidopsis</italic> heat-shock transcription factor HsfA3 in the transcriptional cascade downstream of the DREB2A stress-regulatory system</article-title>
+          <source>Biochemical and Biophysical Research Communications</source>
+          <year>2008</year>
+          <volume>368</volume>
+          <fpage>515</fpage>
+          <lpage>521</lpage>
+          <pub-id pub-id-type="pmid">18261981</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C66">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Zhu</surname>
+              <given-names>JK</given-names>
+            </name>
+          </person-group>
+          <article-title>Salt and drought stress signal transduction in plants</article-title>
+          <source>Annual Review of Plant Biology</source>
+          <year>2002</year>
+          <volume>53</volume>
+          <fpage>247</fpage>
+          <lpage>273</lpage>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C67">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Zhu</surname>
+              <given-names>Y</given-names>
+            </name>
+            <name>
+              <surname>Wang</surname>
+              <given-names>Z</given-names>
+            </name>
+            <name>
+              <surname>Jing</surname>
+              <given-names>Y</given-names>
+            </name>
+            <name>
+              <surname>Wang</surname>
+              <given-names>L</given-names>
+            </name>
+            <name>
+              <surname>Liu</surname>
+              <given-names>X</given-names>
+            </name>
+            <name>
+              <surname>Liu</surname>
+              <given-names>Y</given-names>
+            </name>
+            <name>
+              <surname>Deng</surname>
+              <given-names>X</given-names>
+            </name>
+          </person-group>
+          <article-title>Ectopic over-expression of BhHsf1, a heat shock factor from the resurrection plant <italic>Boea hygrometrica</italic>, leads to increased thermotolerance and retarded growth in transgenic <italic>Arabidopsis</italic> and tobacco</article-title>
+          <source>Plant Molecular Biology</source>
+          <year>2009</year>
+          <volume>71</volume>
+          <fpage>451</fpage>
+          <lpage>467</lpage>
+          <pub-id pub-id-type="pmid">19701723</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="PLS011C68">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Zhu</surname>
+              <given-names>Q</given-names>
+            </name>
+            <name>
+              <surname>Zhang</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Gao</surname>
+              <given-names>X</given-names>
+            </name>
+            <name>
+              <surname>Tong</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Xiao</surname>
+              <given-names>L</given-names>
+            </name>
+            <name>
+              <surname>Li</surname>
+              <given-names>W</given-names>
+            </name>
+            <name>
+              <surname>Zhang</surname>
+              <given-names>H</given-names>
+            </name>
+          </person-group>
+          <article-title>The <italic>Arabidopsis</italic> AP2/ERF transcription factor RAP2.6 participates in ABA, salt and osmotic stress responses</article-title>
+          <source>Gene</source>
+          <year>2010</year>
+          <volume>457</volume>
+          <fpage>1</fpage>
+          <lpage>12</lpage>
+          <pub-id pub-id-type="pmid">20193749</pub-id>
+        </element-citation>
+      </ref>
+    </ref-list>
+  </back>
+</article>
