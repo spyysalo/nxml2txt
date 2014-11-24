@@ -2,6 +2,8 @@
 
 import sys
 import re
+import argparse
+
 try:
     import cElementTree as ET
 except:
@@ -10,8 +12,28 @@ except:
 # string to use to indicate elided text in output
 ELIDED_TEXT_STRING = "[[[...]]]"
 
-# maximum length of text sting to show without eliding
+# maximum length of text sting to show without eliding (-1 for no limit)
+#MAXIMUM_TEXT_DISPLAY_LENGTH = -1
 MAXIMUM_TEXT_DISPLAY_LENGTH = 40
+
+DESCRIPTION='XML to standoff conversion'
+USAGE='%(prog)s [OPTIONS] IN-XML OUT-TEXT OUT-SO'
+
+def argparser():
+    ap = argparse.ArgumentParser(description=DESCRIPTION, usage=USAGE)
+
+    ap.add_argument('in_xml', metavar='IN-XML',
+                    help='input XML file')
+    ap.add_argument('out_text', metavar='OUT-TEXT',
+                    help='output text file')
+    ap.add_argument('out_so', metavar='OUT-SO',
+                    help='output standoff file')
+    ap.add_argument('-f', '--filter', metavar='[TAG[,TAG[...]]]', default=None,
+                    help='remove tags from output')
+    ap.add_argument('-p', '--prefix', default=None,
+                    help='prefix to add to IDs on output')
+
+    return ap
 
 # c-style string escaping for just newline, tab and backslash.
 # (s.encode('string_escape') does too much for utf-8)
@@ -25,19 +47,25 @@ class Standoff:
         self.start   = start
         self.end     = end
         self.text    = text
+        self.prefix  = 'X'
 
-    def compress_text(self, l):
-        if len(self.text) >= l:
-            el = len(ELIDED_TEXT_STRING)
-            sl = (l-el)/2
-            self.text = (self.text[:sl]+ELIDED_TEXT_STRING+self.text[-(l-sl-el):])
-    def __str__(self):
+    def tag(self):
         # remove namespace spec from output, if any
         if self.element.tag[0] == "{":
             tag = re.sub(r'\{.*?\}', '', self.element.tag)
         else:
             tag = self.element.tag
+        return tag
 
+    def set_prefix(self, prefix):
+        self.prefix = prefix
+
+    def compress_text(self, l):
+        if l != -1 and len(self.text) >= l:
+            el = len(ELIDED_TEXT_STRING)
+            sl = (l-el)/2
+            self.text = (self.text[:sl]+ELIDED_TEXT_STRING+self.text[-(l-sl-el):])
+    def __str__(self):
         # remove namespace specs from attribute names, if any
         attrib = {}
         for a in self.element.attrib:
@@ -47,7 +75,7 @@ class Standoff:
                 an = a
             attrib[an] = self.element.attrib[a]
 
-        return "X%d\t%s %d %d\t%s\t%s" % (self.sid, tag, self.start, self.end, c_escape(self.text.encode("utf-8")), " ".join(['%s="%s"' % (k.encode("utf-8"),v.encode("utf-8")) for k,v in attrib.items()]))
+        return "%s%d\t%s %d %d\t%s\t%s" % (self.prefix, self.sid, self.tag(), self.start, self.end, c_escape(self.text.encode("utf-8")), " ".join(['%s="%s"' % (k.encode("utf-8"),v.encode("utf-8")) for k,v in attrib.items()]))
 
 def txt(s):
     return s if s is not None else ""
@@ -83,14 +111,14 @@ def subelem_text_and_standoffs(e, curroff, standoffs):
         curroff = startoff + len(text)
     return (text, standoffs)
 
-def main(argv=[]):
-    if len(argv) != 4:
-        print >> sys.stderr, "Usage:", argv[0], "IN-XML OUT-TEXT OUT-SO"
-        return -1
+def main(argv=None):
+    if argv is None:
+        argv = sys.argv
 
-    in_fn, out_txt_fn, out_so_fn = argv[1:]
+    args = argparser().parse_args(argv[1:])
 
     # Ugly hack for quick testing: allow "-" for standard in/out
+    in_fn, out_txt_fn, out_so_fn = args.in_xml, args.out_text, args.out_so
     if in_fn == "-":
         in_fn = "/dev/stdin"
     if out_txt_fn == "-":
@@ -107,6 +135,18 @@ def main(argv=[]):
     root = tree.getroot()
 
     text, standoffs = text_and_standoffs(root)
+
+    # filter standoffs by tag
+    if args.filter is None:
+        filtered = set()
+    else:
+        filtered = set(args.filter.split(','))
+    standoffs = [s for s in standoffs if s.tag() not in filtered]
+
+    # set ID prefixes
+    if args.prefix is not None:
+        for s in standoffs:
+            s.set_prefix(args.prefix)
 
     # open output files 
     out_txt = open(out_txt_fn, "wt")
