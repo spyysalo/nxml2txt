@@ -186,6 +186,9 @@ def tex_compile(fn):
 
         if no_output and not dvifn:
             #print >> sys.stderr, "rewritetex: failed to compile tex"
+            error_lines = [l for l in tex_out.split('\n') if 'Error' in l]
+            if error_lines:
+                print >> sys.stderr, '\n'.join(error_lines)
             return None
 
         return dvifn
