@@ -6,7 +6,9 @@ set -u
 set -e
 
 USAGESTR="Usage: $0 NXMLFILE [TEXTFILE] [SOFILE]"
-SRC=src
+# http://stackoverflow.com/a/246128
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+SRC=$DIR/src
 
 if [ $# -lt 1 -o $# -gt 3 ]; then
     echo $USAGESTR
