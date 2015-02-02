@@ -414,7 +414,7 @@ def main(argv):
     save_cache(TEX2STR_CACHE_PATH, ordall(tex2str_map))
 
     # output stats
-    if options.verbose:
+    if options.verbose and any (value for value in (tex2str_rewrites, tex2str_cache_hits, tex2str_cache_misses, tex2str_conversions_ok, tex2str_conversions_err) if value != 0):
         print >> sys.stderr, 'rewritetex: %d rewrites (%d cache hits, %d misses; converted %d, failed %d)' % (tex2str_rewrites, tex2str_cache_hits, tex2str_cache_misses, tex2str_conversions_ok, tex2str_conversions_err)
 
     return 0
