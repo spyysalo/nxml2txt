@@ -16,6 +16,6 @@ content of the input document, and `test/PMC3357053.so`, containing
 the annotations (XML elements and their attributes) in a simple
 standoff format.
 
-This tools was originally introduced as part of the BioNLP Shared Task
+This tool was originally introduced as part of the BioNLP Shared Task
 2011 supporting resources
 (https://github.com/ninjin/bionlp_st_2011_supporting).
