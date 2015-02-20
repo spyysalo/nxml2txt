@@ -67,8 +67,8 @@ def read_mapping(f, fn="mapping data"):
         assert m, "Format error in %s line %s: '%s'" % (fn, i+1, l.replace("\n","").encode("utf-8"))
         c, r = m.groups()
 
-        c = unichr(int(c, 16))
-        assert c not in mapping or mapping[c] == r, "ERROR: conflicting mappings for %.4X: '%s' and '%s'" % (ord(c), mapping[c], r)
+        c = wide_unichr(int(c, 16))
+        assert c not in mapping or mapping[c] == r, "ERROR: conflicting mappings for %.4X: '%s' and '%s'" % (wide_ord(c), mapping[c], r)
 
         # exception: literal '\n' maps to newline
         if r == '\\n':
@@ -78,24 +78,39 @@ def read_mapping(f, fn="mapping data"):
 
     return mapping
 
+def wide_ord(char):
+    try:
+        return ord(char)
+    except TypeError:
+        if len(char) == 2 and 0xD800 <= ord(char[0]) <= 0xDBFF and 0xDC00 <= ord(char[1]) <= 0xDFFF:
+            return (ord(char[0]) - 0xD800) * 0x400 + (ord(char[1]) - 0xDC00) + 0x10000
+        else:
+            raise
+
+def wide_unichr(i):
+    try:
+        return unichr(i)
+    except ValueError:
+        return (r'\U' + hex(i)[2:].zfill(8)).decode('unicode-escape')
+
 def mapchar(c, mapping):
     if c in mapping:
         return mapping[c]
     else:
         # make a note of anything unmapped
         global missing_mappings, options
-        missing_mappings.add("%.4X" % ord(c))
+        missing_mappings.add("%.4X" % wide_ord(c))
 
         # remove missing by default, output codepoint as hex as an option
         if not options.hex:
             return ''
         else:
-            return "<%.4X>" % ord(c)
+            return "<%.4X>" % wide_ord(c)
 
 def replace_mapped_text(e, mapping):
     # TODO: inefficient, improve
     for i, c in enumerate(e.text):
-        if ord(c) >= 128:
+        if wide_ord(c) >= 128:
             s = mapchar(c, mapping)
 
             # create new element for the replacement
@@ -123,7 +138,7 @@ def parent_index(e, parent):
 def replace_mapped_tail(e, mapping, parent):
     # TODO: inefficient, improve
     for i, c in enumerate(e.tail):
-        if ord(c) >= 128:
+        if wide_ord(c) >= 128:
             s = mapchar(c, mapping)
 
             # create new element for the replacement
