@@ -73,7 +73,7 @@ def read_lines(filename):
 def read_text(filename):
     return ''.join(read_lines(filename))
 
-def getInterestingSpans(soFileName):
+def interesting_spans(soFileName):
     mainSection=None
     currentSection=None
     spans=[] #list of (element,beg,end,spanTxt)
@@ -160,36 +160,57 @@ def getInterestingSpans(soFileName):
                     
     return articleID,mainSection,spans
 
-def printCleanTxt(out, spans, txtFileName, include_abstract=True):
-    actualSpanOffsets=[]
-    txt = read_text(txtFileName)
-    fileOffset=0
-    for (element,charBeg,charEnd, spanControlTxt) in spans:
-        if element in (u"abstract",u"article-title") and not include_abstract:
-            #print >> sys.stderr, "Skipping", element
-            actualSpanOffsets.append((None,None))
+# Magic string that doesn't appear in PubMed document text.
+UUID_STRING = '7f4efe60-4f29-434a-aa61-609fd066dcaa'
+
+# The standoff conversion abbreviates long control spans with this
+ELLIPSIS = '[[[...]]]'
+
+def validate_text(text, control):
+    # unescape
+    control=control.strip().replace(u"\\\\", UUID_STRING).replace(u"\\n",u"\n").replace(u"\\t",u"\t").replace(UUID_STRING,u"\\").strip()
+
+    idx=control.find(ELLIPSIS)
+    if idx == -1:
+        assert text == control, (text, control)
+    else:
+        prefix=control[:idx]
+        suffix=control[idx+len(ELLIPSIS):]
+        assert text.startswith(prefix), (text, prefix)
+        assert text.endswith(suffix), (text, suffix)
+
+def skip_element(element, options):
+    # don't skip anything by default
+    if options is None:
+        return False
+    elif element in (u"abstract",u"article-title") and options.no_abstract:
+        return True
+    else:
+        return False
+
+def clean_text(spans, txt, options):
+    cleaned_offsets=[]
+    cleaned_texts=[]
+    offset=0
+    for element, start, end, control in spans:
+        if skip_element(element, options):
+            cleaned_offsets.append((None, None))
             continue
-        #print >> sys.stderr, u"#", element
-        while charBeg<=charEnd and charBeg<len(txt) and txt[charBeg].isspace():
-            charBeg+=1
-        while charEnd>=charBeg and charEnd<=len(txt) and txt[charEnd-1].isspace():
-            charEnd-=1
-        spanText=txt[charBeg:charEnd]
-        spanControlTxt=spanControlTxt.strip().replace(u"\\\\",u"xxxmymagicstringfilip1112xxx").replace(u"\\n",u"\n").replace(u"\\t",u"\t").replace(u"xxxmymagicstringfilip1112xxx",u"\\").strip()
-        splitIdx=spanControlTxt.find(u"[[[...]]]")
-        if splitIdx>=0:
-            prefix=spanControlTxt[:splitIdx]
-            suffix=spanControlTxt[splitIdx+len(u"[[[...]]]"):]
-            assert spanText.startswith(prefix), (spanText,prefix)
-            assert spanText.endswith(suffix), (spanText,suffix)
-        else:
-            assert spanText==spanControlTxt, (spanText,spanControlTxt)
-        
-        actualSpanOffsets.append((fileOffset,fileOffset+len(spanText)+2)) #+2 for the two newlines
-        print >> out, spanText
-        print >> out
-        fileOffset+=len(spanText)+2
-    return actualSpanOffsets,txt
+
+        while start<=end and start<len(txt) and txt[start].isspace():
+            start+=1
+        while end>=start and end<=len(txt) and txt[end-1].isspace():
+            end-=1
+        span_text=txt[start:end]
+        validate_text(span_text, control)
+
+        # use newlines to separate sections
+        span_text = span_text + '\n\n'
+
+        cleaned_texts.append(span_text)
+        cleaned_offsets.append((offset, offset+len(span_text)))
+        offset += len(span_text)
+    return cleaned_offsets, ''.join(cleaned_texts)
 
 def rootname(filename):
     """Return basename root without extensions."""
@@ -199,7 +220,7 @@ def rootname(filename):
         root, ext = os.path.splitext(root)
     return root
 
-def getDocPairs(textdir, sodir, options=None):
+def get_doc_pairs(textdir, sodir, options=None):
     if options and options.zipped:
         txtglob = '*.txt.gz'
         soglob = '*.so.gz'
@@ -232,41 +253,40 @@ def indent(elem, level=0):
     else:
         if level and (not elem.tail or not elem.tail.strip()):
             elem.tail = i
+    return elem
 
-def write_sections(secdir, docid, element):
+def output_filenames(textfile, sofile, textdir, secdir, docid, options=None):
+    outtext = os.path.join(textdir, 'pmc_%s.txt' % docid)
     if secdir is None:
-        # Silently skip output if no directory specified.
-        return
-    filename = os.path.join(secdir, 'pmc_%s_sections.xml' % docid)
-    ET.ElementTree(element).write(filename, 'utf-8')
+        outsec = None
+    else:
+        outsec = os.path.join(secdir, 'pmc_%s_sections.xml' % docid)
+    return outtext, outsec
 
-def processPair(txtFile, soFile, outdirTXT, outdirSEC):
+def process_pair(textfile, sofile, textdir, secdir, options=None):
     try:
-        pmcID,mainSection,spans=getInterestingSpans(soFile)
-        assert pmcID.isdigit()
-        pmcID=int(pmcID)
+        text = read_text(textfile)
+        docid, mainSection, spans = interesting_spans(sofile)
+        actual_offsets, cleaned = clean_text(spans, text, options)
 
-        outFileNameTXT=os.path.join(outdirTXT,"pmc_"+str(pmcID)+".txt")
-        outFile=codecs.open(outFileNameTXT,"w","utf-8")
-        actualSpanOffsets,txt=printCleanTxt(outFile, spans, txtFile)
-        outFile.close()
-
-        E=mainSection.elem(actualSpanOffsets,txt)
-        indent(E)
-        write_sections(outdirSEC, pmcID, E)
+        outtext, outsec = output_filenames(textfile, sofile, textdir, secdir,
+                                           docid, options)
+        with codecs.open(outtext, 'w', 'utf-8') as f:
+            f.write(cleaned)
+        if outsec is not None:
+            element = indent(mainSection.elem(actual_offsets, text))
+            ET.ElementTree(element).write(outsec, 'utf-8')
     except:
         traceback.print_exc()
-        print >> sys.stderr, "FAILURE / ERROR / SKIPPING"
-        print >> sys.stderr, txtFile
-        try:
-            os.system("rm -f '%s'"%outFileNameTXT)
-            os.system("rm -f '%s'"%outFileNameSEC)
-        except:
-            pass
+        print >> sys.stderr, "ERROR, SKIPPING:", textfile
+        for fn in (outtext, outsec):
+            try:
+                os.system("rm -f '%s'"% fn)
+            except:
+                pass
 
-
-def processDir(textdir, sodir, options):
-    pairs = getDocPairs(textdir, sodir)
+def process_dir(textdir, sodir, options):
+    pairs = get_doc_pairs(textdir, sodir)
 
     textout = options.textout
     if not os.path.exists(textout):
@@ -277,10 +297,12 @@ def processDir(textdir, sodir, options):
         os.makedirs(secout)
 
     for txtfile, sofile in pairs:
-        processPair(txtfile, sofile, textout, secout)
+        process_pair(txtfile, sofile, textout, secout, options)
 
 def main(argv):
     parser = argparse.ArgumentParser(description='Get clean text and section data from .txt and .so files.')
+    parser.add_argument('-a', '--no-abstract', action='store_true',
+                        help='Do not ouput abstract or title')
     parser.add_argument('-t', '--textout', metavar='DIR', required=True,
                         help='Directory to store clean .txt files to')
     parser.add_argument('-s', '--secout', metavar='DIR', default=None, 
@@ -290,14 +312,10 @@ def main(argv):
     parser.add_argument('dirs', nargs='+',
                         help='Directories to process.')
     args = parser.parse_args(argv[1:])
-    
-    dirs2process=args.dirs
-    dirs2process.sort()
 
-    for dirName in dirs2process:
-        print >> sys.stderr, dirName
-        dirName=dirName.strip()
-        processDir(dirName, dirName, args)
+    for dir_name in sorted(args.dirs):
+        dir_name=dir_name.strip()
+        process_dir(dir_name, dir_name, args)
 
     return 0
 
