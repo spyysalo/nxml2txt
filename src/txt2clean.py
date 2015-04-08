@@ -1,5 +1,5 @@
 import cPickle as pickle
-from optparse import OptionParser
+import argparse
 import codecs
 import glob
 import sys
@@ -56,15 +56,29 @@ class Section:
         for subS in self.subsections:
             E.append(subS.elem(actualSpanOffsets,inputTXT))
         return E
-    
+
+def is_zip_file(filename):
+    return filename.endswith('.gz')
+
+def read_lines(filename):
+    if is_zip_file(filename):
+        with gzip.open(filename, 'rb') as f:
+            for line in f:
+                yield line
+    else:
+        with open(filename, 'rt') as f:
+            for line in f:
+                yield line
+
+def read_text(filename):
+    return ''.join(read_lines(filename))
 
 def getInterestingSpans(soFileName):
     mainSection=None
     currentSection=None
     spans=[] #list of (element,beg,end,spanTxt)
-    f=gzip.open(soFileName,"rb")
     ranges={} #key: latest seen element of the given type, value: (beg,end)
-    for line in f:
+    for line in read_lines(soFileName):
         line=line.strip()
         if not line:
             continue
@@ -144,18 +158,14 @@ def getInterestingSpans(soFileName):
                     spans.pop(-1)
                     currentSection.spans.pop(-1)
                     
-    f.close()
     return articleID,mainSection,spans
 
-def printCleanTxt(out,spans,txtFileName,printAbstractless):
+def printCleanTxt(out, spans, txtFileName, include_abstract=True):
     actualSpanOffsets=[]
-    f=gzip.open(txtFileName,"rb")
-    txt=f.read()
-    f.close()
-    #print >> sys.stderr, u"#", txtFileName
+    txt = read_text(txtFileName)
     fileOffset=0
     for (element,charBeg,charEnd, spanControlTxt) in spans:
-        if printAbstractless and element in (u"abstract",u"article-title"):
+        if element in (u"abstract",u"article-title") and not include_abstract:
             #print >> sys.stderr, "Skipping", element
             actualSpanOffsets.append((None,None))
             continue
@@ -181,17 +191,31 @@ def printCleanTxt(out,spans,txtFileName,printAbstractless):
         fileOffset+=len(spanText)+2
     return actualSpanOffsets,txt
 
-def getDocPairs(dirNameTXT,dirNameSO):
-    print dirNameTXT, dirNameSO
-    txtFiles=glob.glob(os.path.join(dirNameTXT,"*.txt.gz"))
-    txtFiles.sort()
-    soFiles=glob.glob(os.path.join(dirNameSO,"*.so.gz"))
-    soFiles.sort()
-    assert len(txtFiles)==len(soFiles)
+def rootname(filename):
+    """Return basename root without extensions."""
+    name = os.path.basename(filename)
+    root, ext = os.path.splitext(name)
+    while ext:
+        root, ext = os.path.splitext(root)
+    return root
+
+def getDocPairs(textdir, sodir, options=None):
+    if options and options.zipped:
+        txtglob = '*.txt.gz'
+        soglob = '*.so.gz'
+    else:
+        txtglob = '*.txt'
+        soglob = '*.so'
+    textfiles=glob.glob(os.path.join(textdir, txtglob))
+    textfiles.sort()
+    sofiles=glob.glob(os.path.join(sodir, soglob))
+    sofiles.sort()
+    assert len(textfiles) == len(sofiles), \
+        '.txt and .so counts differ in %s and %s' % (textdir, sodir)
     pairs=[]
-    for txtFile,soFile in zip(txtFiles,soFiles):
-        assert os.path.basename(txtFile.replace(".txt.gz",""))==os.path.basename(soFile.replace(".so.gz","")), (txtFile,soFile)
-        pairs.append((txtFile,soFile))
+    for textfile, sofile in zip(textfiles, sofiles):
+        assert rootname(textfile) == rootname(sofile), (textfile, sofile)
+        pairs.append((textfile, sofile))
     return pairs
 
 def indent(elem, level=0):
@@ -209,7 +233,14 @@ def indent(elem, level=0):
         if level and (not elem.tail or not elem.tail.strip()):
             elem.tail = i
 
-def processPair(txtFile,soFile,outdirTXT,outdirSEC,abstractless):
+def write_sections(secdir, docid, element):
+    if secdir is None:
+        # Silently skip output if no directory specified.
+        return
+    filename = os.path.join(secdir, 'pmc_%s_sections.xml' % docid)
+    ET.ElementTree(element).write(filename, 'utf-8')
+
+def processPair(txtFile, soFile, outdirTXT, outdirSEC):
     try:
         pmcID,mainSection,spans=getInterestingSpans(soFile)
         assert pmcID.isdigit()
@@ -217,13 +248,12 @@ def processPair(txtFile,soFile,outdirTXT,outdirSEC,abstractless):
 
         outFileNameTXT=os.path.join(outdirTXT,"pmc_"+str(pmcID)+".txt")
         outFile=codecs.open(outFileNameTXT,"w","utf-8")
-        actualSpanOffsets,txt=printCleanTxt(outFile,spans,txtFile,pmcID in abstractless)
+        actualSpanOffsets,txt=printCleanTxt(outFile, spans, txtFile)
         outFile.close()
 
-        outFileNameSEC=os.path.join(outdirSEC,"pmc_"+str(pmcID)+"_sections.xml")
         E=mainSection.elem(actualSpanOffsets,txt)
         indent(E)
-        ET.ElementTree(E).write(outFileNameSEC,"utf-8")
+        write_sections(outdirSEC, pmcID, E)
     except:
         traceback.print_exc()
         print >> sys.stderr, "FAILURE / ERROR / SKIPPING"
@@ -235,38 +265,41 @@ def processPair(txtFile,soFile,outdirTXT,outdirSEC,abstractless):
             pass
 
 
-def processDir(dirNameTXT,dirNameSO,abstractless,options):
-    pairs=getDocPairs(dirNameTXT,dirNameSO)
+def processDir(textdir, sodir, options):
+    pairs = getDocPairs(textdir, sodir)
 
+    textout = options.textout
+    if not os.path.exists(textout):
+        os.makedirs(textout)
 
-    dirBase=os.path.basename("OUT")
+    secout = options.secout
+    if secout and not os.path.exists(secout):
+        os.makedirs(secout)
 
-    outdirTXT=os.path.join(options.outDirTXT_ROOT,dirBase)
-    if not os.path.exists(outdirTXT):
-        os.makedirs(outdirTXT)
+    for txtfile, sofile in pairs:
+        processPair(txtfile, sofile, textout, secout)
 
-    outdirSEC=os.path.join(options.outDirSEC_ROOT,dirBase)
-    if not os.path.exists(outdirSEC):
-        os.makedirs(outdirSEC)
-
-    for txtFile,soFile in pairs:
-        processPair(txtFile,soFile,outdirTXT,outdirSEC,abstractless)
-
-if __name__=="__main__":
-    parser = OptionParser(description="Give this script a list of directories containing .txt and .standoff files, it will write new directories with clean text and section data")
-    parser.add_option("--abstractless",action="store",dest="abstractless",default=None, help="Pickled set of PMCIDs which should be processed without title & abstract")
-    parser.add_option("--outDirTXT_ROOT",action="store",dest="outDirTXT_ROOT",default=None, help="Directory root to which the directories with clean .txts go", metavar="DIR")
-    parser.add_option("--outDirSEC_ROOT",action="store",dest="outDirSEC_ROOT",default=None, help="Directory root to which the directories with section data XMLs go", metavar="DIR")
-    (options, args) = parser.parse_args()
+def main(argv):
+    parser = argparse.ArgumentParser(description='Get clean text and section data from .txt and .so files.')
+    parser.add_argument('-t', '--textout', metavar='DIR', required=True,
+                        help='Directory to store clean .txt files to')
+    parser.add_argument('-s', '--secout', metavar='DIR', default=None, 
+                        help='Directory to store section data XML to')
+    parser.add_argument('-z', '--zipped', default=False, action='store_true',
+                        help='Process zipped (.gz) files')
+    parser.add_argument('dirs', nargs='+',
+                        help='Directories to process.')
+    args = parser.parse_args(argv[1:])
     
-    #f=open(options.abstractless,"rb")
-    abstractless=set()#pickle.load(f)
-    #f.close()
-
-    dirs2process=args
+    dirs2process=args.dirs
     dirs2process.sort()
 
     for dirName in dirs2process:
         print >> sys.stderr, dirName
         dirName=dirName.strip()
-        processDir(dirName+"/TXT",dirName+"/SO",abstractless,options)
+        processDir(dirName, dirName, args)
+
+    return 0
+
+if __name__=='__main__':
+    sys.exit(main(sys.argv))
