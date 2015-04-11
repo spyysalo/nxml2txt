@@ -60,6 +60,25 @@ def normalize_tex(s):
 
     return s
 
+def compilable(tex):
+    """Return tex-math content wrapped so that it can be compiled using tex."""
+
+    # remove "\usepackage{pmc}". It's not clear what the contents
+    # of this package are (I have not been able to find it), but
+    # compilation more often succeeds without it than with it.
+    tex = tex.replace('\\usepackage{pmc}', '')
+
+    # replace "\documentclass{minimal}" with "\documentclass{slides}".
+    # It's not clear why, but some font commands (e.g. "\tt") appear
+    # to fail with the former.
+    tex = re.sub(r'(\\documentclass(?:\[[^\[\]]*\])?\{)minimal(\})',
+                 r'\1slides\2', tex)
+
+    # replace any amount of consequtive space by a single plain space
+    tex = space_re.sub(' ', tex)
+    
+    return tex
+    
 def process(fn, tex_set={}):
     global exttex_rewrites, exttex_cache_hits, exttex_cache_misses
     global options
@@ -84,7 +103,7 @@ def process(fn, tex_set={}):
             exttex_cache_hits += 1
         else:
             exttex_cache_misses += 1
-            print tex_norm
+            print compilable(tex)
             tex_set.add(tex_norm)
     return True
 
