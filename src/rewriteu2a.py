@@ -101,9 +101,12 @@ def mapchar(c, mapping):
         global missing_mappings, options
         missing_mappings.add("%.4X" % wide_ord(c))
 
-        # remove missing by default, output codepoint as hex as an option
-        if not options.hex:
+        # remove missing by default, keep unicode or output codepoint
+        # as hex as an option
+        if not options.hex and not options.keep_missing:
             return ''
+        elif options.keep_missing:
+            return c
         else:
             return "<%.4X>" % wide_ord(c)
 
@@ -217,10 +220,16 @@ def process(fn, mapping):
 def argparser():
     import argparse
     ap=argparse.ArgumentParser(description='Rewrite Unicode text content with approximately equivalent ASCII in PMC NXML files.')
-    ap.add_argument('-d', '--directory', default=None, metavar='DIR', help='output directory')
-    ap.add_argument('-o', '--overwrite', default=False, action='store_true', help='allow output to overwrite input files')
-    ap.add_argument('-s', '--stdout', default=False, action='store_true', help='output to stdout')
-    ap.add_argument('-x', '--hex', default=False, action='store_true', help='write hex sequence for missing mappings')
+    ap.add_argument('-d', '--directory', default=None, metavar='DIR',
+                    help='output directory')
+    ap.add_argument('-o', '--overwrite', default=False, action='store_true',
+                    help='allow output to overwrite input files')
+    ap.add_argument('-s', '--stdout', default=False, action='store_true',
+                    help='output to stdout')
+    ap.add_argument('-x', '--hex', default=False, action='store_true',
+                    help='write hex sequence for missing mappings')
+    ap.add_argument('-k', '--keep-missing', default=False, action='store_true',
+                    help='keep unicode for missing mappings')
     ap.add_argument('file', nargs='+', help='input PubMed Central NXML file')
     return ap
 
