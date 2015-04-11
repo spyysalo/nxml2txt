@@ -116,6 +116,10 @@ def replace_mapped_text(e, mapping):
         if wide_ord(c) >= 128:
             s = mapchar(c, mapping)
 
+            # if the character is unchanged, just skip
+            if s == c:
+                continue
+
             # create new element for the replacement
             r = ET.Element(REWRITTEN_TAG)
             r.attrib[ORIG_TEXT_ATTRIBUTE] = c
@@ -143,6 +147,10 @@ def replace_mapped_tail(e, mapping, parent):
     for i, c in enumerate(e.tail):
         if wide_ord(c) >= 128:
             s = mapchar(c, mapping)
+
+            # if the character is unchanged, just skip
+            if s == c:
+                continue
 
             # create new element for the replacement
             r = ET.Element(REWRITTEN_TAG)
