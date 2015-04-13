@@ -4,10 +4,7 @@ import sys
 import re
 import argparse
 
-try:
-    import cElementTree as ET
-except:
-    import xml.etree.cElementTree as ET
+import lxml
 
 # string to use to indicate elided text in output
 ELIDED_TEXT_STRING = "[[[...]]]"
@@ -80,6 +77,14 @@ class Standoff:
 def txt(s):
     return s if s is not None else ""
 
+def is_standard_element(e):
+    """Return whether given element is a normal element as opposed to a
+    special like a comment, a processing instruction, or an entity."""
+    try:
+        return isinstance(e.tag, basestring)
+    except:
+        return False
+
 next_free_so_id = 1
 
 def text_and_standoffs(e, curroff=0, standoffs=None):
@@ -105,60 +110,77 @@ def subelem_text_and_standoffs(e, curroff, standoffs):
     startoff = curroff
     text = ""
     for s in e:
+        if not is_standard_element(s):
+            # comments, processing instructions and entities are simply ignored
+            continue
         stext, dummy = text_and_standoffs(s, curroff, standoffs)
         text += stext
         text += txt(s.tail)
         curroff = startoff + len(text)
     return (text, standoffs)
 
-def main(argv=None):
-    if argv is None:
-        argv = sys.argv
-
-    args = argparser().parse_args(argv[1:])
-
-    # Ugly hack for quick testing: allow "-" for standard in/out
-    in_fn, out_txt_fn, out_so_fn = args.in_xml, args.out_text, args.out_so
-    if in_fn == "-":
-        in_fn = "/dev/stdin"
-    if out_txt_fn == "-":
-        out_txt_fn = "/dev/stdout"
-    if out_so_fn == "-":
-        out_so_fn = "/dev/stdout"
-
+def read_tree(filename):
+    # TODO: portable STDIN input
+    if filename == "-":
+        filename = "/dev/stdin"
     try:
-        tree = ET.parse(in_fn)
+        return ET.parse(filename)
     except Exception:
         print >> sys.stderr, "%s: Error parsing %s" % (argv[0], in_fn)
-        return 1
+        raise
 
+def convert_tree(tree, options=None):
     root = tree.getroot()
 
     text, standoffs = text_and_standoffs(root)
 
     # filter standoffs by tag
-    if args.filter is None:
+    if options is None or options.filter is None:
         filtered = set()
     else:
-        filtered = set(args.filter.split(','))
+        filtered = set(options.filter.split(','))
     standoffs = [s for s in standoffs if s.tag() not in filtered]
 
     # set ID prefixes
-    if args.prefix is not None:
+    if options is not None and options.prefix is not None:
         for s in standoffs:
-            s.set_prefix(args.prefix)
+            s.set_prefix(options.prefix)
 
-    # open output files 
-    out_txt = open(out_txt_fn, "wt")
-    out_so  = open(out_so_fn, "wt")
-
-    out_txt.write(text.encode("utf-8"))
+    # compress long reference texts
     for so in standoffs:
         so.compress_text(MAXIMUM_TEXT_DISPLAY_LENGTH)
-        print >> out_so, so
 
-    out_txt.close()
-    out_so.close()
+    return text, standoffs
 
-if __name__ == "__main__":
+def write_text(text, filename):
+    # TODO: be portable
+    if filename == '-':
+        filename = '/dev/stdout'
+    with open(filename, 'wt') as out:
+        out.write(text.encode('utf-8'))
+
+def write_standoffs(standoffs, filename):
+    # TODO: be portable
+    if filename == '-':
+        filename = '/dev/stdout'
+    with open(filename, 'wt') as out:
+        for so in standoffs:
+            print >> out, so
+
+def process(options):
+    tree = read_tree(options.in_xml)
+    text, standoffs = convert_tree(tree)
+    write_text(text, options.out_text)
+    write_standoffs(standoffs, options.out_so)
+
+def main(argv=None):
+    if argv is None:
+        argv = sys.argv
+    args = argparser().parse_args(argv[1:])
+
+    process(args)
+
+    return 0
+
+if __name__ == '__main__':
     sys.exit(main(sys.argv))
