@@ -15,11 +15,7 @@ import os
 import re
 import codecs
 
-# TODO: switch to lxml
-try:
-    import xml.etree.ElementTree as ET
-except ImportError: 
-    import cElementTree as ET
+from lxml import etree as ET
 
 class ParseError:
     pass
@@ -37,9 +33,6 @@ INSERTED_ELEMENT_TAG = "n2t-spc"
 
 INPUT_ENCODING="UTF-8"
 OUTPUT_ENCODING="UTF-8"
-
-# command-line options
-options = None
 
 newline_wrap_element = set([
         "article-title",
@@ -101,6 +94,14 @@ class Standoff:
 def txt(s):
     return s if s is not None else ""
 
+def is_standard_element(e):
+    """Return whether given element is a normal element as opposed to a
+    special like a comment, a processing instruction, or an entity."""
+    try:
+        return isinstance(e.tag, basestring)
+    except:
+        return False
+
 def text_and_standoffs(e):
     strings, standoffs = [], []
     _text_and_standoffs(e, 0, strings, standoffs)
@@ -124,6 +125,9 @@ def _text_and_standoffs(e, curroff, strings, standoffs):
 def _subelem_text_and_standoffs(e, curroff, strings, standoffs):
     startoff = curroff
     for s in e:
+        if not is_standard_element(s):
+            # comments, processing instructions and entities are simply ignored
+            continue
         curroff = _text_and_standoffs(s, curroff, strings, standoffs)
         if s.tail is not None and s.tail != "":
             strings.append(s.tail)
@@ -331,27 +335,23 @@ def element_in_set(e, s):
         tag = e.tag
     return tag in s
 
-def process(fn):
-    global strip_element
-    global options
-
-    # ugly hack for testing: allow "-" for "/dev/stdin"
-    if fn == "-":
-        fn = "/dev/stdin"
-
+def read_tree(filename):
+    # TODO: portable STDIN input
+    if filename == "-":
+        filename = "/dev/stdin"
     try:
-        tree = ET.parse(fn)
+        return ET.parse(filename)
     except Exception:
         print >> sys.stderr, "Error parsing %s" % fn
         raise ParseError
 
+def process_tree(tree, options=None):
     root = tree.getroot()
 
-    ########## space normalization and stripping ##########
-
+    # space normalization and stripping
     reduce_space(root, strip_element)
 
-    ########## additional space ##########
+    # additional space
 
     # convert tree into text and standoffs
     text, standoffs = text_and_standoffs(root)
@@ -426,7 +426,6 @@ def process(fn):
 
     # traverse standoffs again, adding the new elements as needed.
     for so in standoffs:
-
         if so.start in respace and respace[so.start][1] == True:
             # Early space needed here. The current node can be assumed
             # to be the first to "discover" this, so it's appropriate
@@ -481,9 +480,10 @@ def process(fn):
     strip_elements(root)
     trim_tails(root)
 
-    # all done, output
+    return tree
 
-    if options.stdout:
+def write_tree(tree, options=None):
+    if options is not None and options.stdout:
         try:
             tree.write(sys.stdout, encoding=OUTPUT_ENCODING)
         except IOError:
@@ -497,9 +497,8 @@ def process(fn):
 
     output_fn = os.path.join(output_dir, os.path.basename(fn))
 
-    # TODO: better checking of path identify to protect against
-    # clobbering.
-    if output_fn == fn and not options.overwrite:
+    # TODO: better protection against clobbering.
+    if output_fn == fn and (not options or not options.overwrite):
         print >> sys.stderr, 'respace: skipping output for %s: file would overwrite input (consider -d and -o options)' % fn
     else:
         # OK to write output_fn
@@ -511,6 +510,10 @@ def process(fn):
                 
     return True
 
+def process(fn, options=None):
+    tree = read_tree(fn)
+    process_tree(tree, options)
+    write_tree(tree, options)
 
 def argparser():
     import argparse
@@ -522,13 +525,11 @@ def argparser():
     return ap
 
 def main(argv):
-    global options
-
     options = argparser().parse_args(argv[1:])
 
     for fn in options.file:
         try:
-            process(fn)
+            process(fn, options)
         except ParseError:
             pass
 

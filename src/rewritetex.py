@@ -378,17 +378,11 @@ class Stats(object):
             (self.rewrites, self.cache_hits, self.cache_misses,
              self.conversions_ok, self.conversions_err)
 
-def process(fn, cache=None, stats=None, options=None):
+def process_tree(tree, cache=None, stats=None, options=None):
     if cache is None:
-        cache = Cache()
+        cache = get_cache()
     if stats is None:
         stats = Stats()
-
-    try:
-        tree = ET.parse(fn)
-    except ET.XMLSyntaxError:
-        print >> sys.stderr, "Error parsing %s" % fn
-        raise
 
     root = tree.getroot()
 
@@ -424,8 +418,16 @@ def process(fn, cache=None, stats=None, options=None):
             rewrite_tex_element(e, mapped)
             stats.rewrites += 1
 
-    # processing done, output
+    return tree
 
+def read_tree(filename):
+    try:
+        return ET.parse(filename)
+    except ET.XMLSyntaxError:
+        print >> sys.stderr, "Error parsing %s" % fn
+        raise
+
+def write_tree(tree, options=None):
     if options is not None and options.stdout:
         tree.write(sys.stdout, encoding=OUTPUT_ENCODING)
         return True
@@ -438,7 +440,7 @@ def process(fn, cache=None, stats=None, options=None):
     output_fn = os.path.join(output_dir, os.path.basename(fn))
 
     # TODO: better checking to protect against clobbering.
-    if output_fn == fn and not options.overwrite:
+    if output_fn == fn and (not options or not options.overwrite):
         print >> sys.stderr, 'rewritetex: skipping output for %s: file would overwrite input (consider -d and -o options)' % fn
     else:
         # OK to write output_fn
@@ -447,8 +449,13 @@ def process(fn, cache=None, stats=None, options=None):
                 tree.write(of, encoding=OUTPUT_ENCODING)
         except IOError, ex:
             print >> sys.stderr, 'rewritetex: failed write: %s' % ex
-                
+
     return True
+
+def process(fn, cache=None, stats=None, options=None):
+    tree = read_tree(fn)
+    process_tree(tree)
+    write_tree(tree, options)
 
 def argparser():
     import argparse

@@ -1,0 +1,42 @@
+#!/bin/bash
+
+# Convert NLM .nxml to text and standoff annotations
+
+set -u
+set -e
+
+USAGESTR="Usage: $0 NXMLFILE [TEXTFILE] [SOFILE]"
+# http://stackoverflow.com/a/246128
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+SRC=$DIR/src
+
+if [ $# -lt 1 -o $# -gt 3 ]; then
+    echo $USAGESTR
+    exit 1
+fi
+
+nxmlfn=$1
+
+if [ ! -f $nxmlfn ]; then
+    echo "$nxmlfn: No such file"
+    exit 1
+fi
+
+if [ $# -gt 1 ]; then
+    textfn=$2
+else
+    textfn=${nxmlfn%.nxml}.txt
+fi
+
+if [ $# -gt 2 ]; then
+    sofn=$3
+else
+    sofn=${nxmlfn%.nxml}.so
+fi
+
+cat $nxmlfn |
+    python $SRC/rewritetex.py - -s -v |
+    python $SRC/rewritemmla.py - -s -v |
+    python $SRC/respace.py - -s |
+    python $SRC/rewriteu2a.py - -s |
+    python $SRC/standoff.py - $textfn $sofn
