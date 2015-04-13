@@ -38,9 +38,11 @@ TEX_OUTPUTDIR = '/tmp'
 # layout such as sub- and superscript positioning.)
 CATDVI_COMMAND = 'catdvi -e 0 -s'
 
-# path to on-disk pickle-based cache of tex document -> text mappings
+# path to on-disk caches of tex document -> text mappings
 PICKLE_CACHE_PATH = os.path.join(os.path.dirname(__file__),
                                  '../data/tex2txt.cache')
+SQLITE_CACHE_PATH = os.path.join(os.path.dirname(__file__),
+                                 '../data/tex2txt.db')
 
 INPUT_ENCODING="UTF-8"
 OUTPUT_ENCODING="UTF-8"
@@ -130,9 +132,6 @@ class Cache(object):
     def set(self, key, value):
         self._map[key] = value
 
-    def get_map(self):
-        return self._map
-
 class PickleCache(Cache):
     def __init__(self, map=None):
         super(PickleCache, self).__init__(map)
@@ -142,7 +141,7 @@ class PickleCache(Cache):
         from cPickle import dump as pickle_dump
         try:
             with open(filename, 'wb') as cache_file:
-                pickle_dump(ordall(self.get_map()), cache_file)
+                pickle_dump(ordall(self._map), cache_file)
                 cache_file.close()
         except IOError:
             print >> sys.stderr, 'warning: failed to write cache.'
@@ -167,11 +166,42 @@ class PickleCache(Cache):
             print >> sys.stderr, 'warning: unexpected error loading cache.'
             raise
 
-def get_cache():
+class SqliteCache(Cache):
+    def __init__(self, db=None):
+        super(SqliteCache, self).__init__(None)
+        self.db = db
+
+    def get(self, key):
+        cursor = self.db.cursor()
+        cursor.execute('SELECT txt FROM tex2txt WHERE tex = ?', (key,))
+        return cursor.fetchone()
+
+    def set(self, key, value):
+        cursor = self.db.cursor()
+        cursor.execute('INSERT OR REPLACE INTO tex2txt VALUES (?,?)',
+                       (key, value))
+        self.db.commit()
+
+    def save(self):
+        self.db.close()
+        self.db = None
+
+    @classmethod
+    def load(cls, filename=SQLITE_CACHE_PATH):
+        import sqlite3
+        db = sqlite3.connect(filename)
+        # make sure the map table exists
+        cursor = db.cursor()
+        cursor.execute('CREATE TABLE IF NOT EXISTS'
+                       '  tex2txt(tex TEXT PRIMARY KEY, txt TEXT)')
+        db.commit()
+        return cls(db)
+
+def get_cache(cls=SqliteCache):
     try:
-        return PickleCache.load()
+        return cls.load()
     except:
-        return PickleCache()
+        return cls()
 
 def tex_compile(fn):
     """
