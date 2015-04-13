@@ -45,9 +45,6 @@ TEX2STR_CACHE_PATH = os.path.join(os.path.dirname(__file__),
 INPUT_ENCODING="UTF-8"
 OUTPUT_ENCODING="UTF-8"
 
-# command-line options
-options = None
-
 # pre-compiled regular expressions
 
 # key declarations in tex documents
@@ -63,13 +60,6 @@ docstartspace_re = re.compile(r'^\s*')
 docendspace_re   = re.compile(r'\s*$')
 
 ##########
-
-# for stats output
-tex2str_cache_hits = 0
-tex2str_cache_misses = 0
-tex2str_conversions_ok = 0
-tex2str_conversions_err = 0
-tex2str_rewrites = 0
 
 def normalize_tex(s):
     """
@@ -306,11 +296,31 @@ def rewrite_tex_element(e, s):
     # that's all
     return True
 
-def process(fn, tex2str_map={}):
-    global tex2str_rewrites, tex2str_cache_hits, tex2str_cache_misses
-    global tex2str_conversions_ok, tex2str_conversions_err
-    global options
-    
+class Stats(object):
+    def __init__(self):
+        self.rewrites = 0
+        self.cache_hits = 0
+        self.cache_misses = 0
+        self.conversions_ok = 0
+        self.conversions_err = 0
+
+    def zero(self):
+        return (self.rewrites == 0 and
+                self.cache_hits == 0 and
+                self.cache_misses == 0 and
+                self.conversions_ok == 0 and
+                self.conversions_err == 0)
+
+    def __str__(self):
+        return \
+            '%d rewrites (%d cache hits, %d misses; converted %d, failed %d)' %\
+            (self.rewrites, self.cache_hits, self.cache_misses,
+             self.conversions_ok, self.conversions_err)
+
+def process(fn, tex2str_map={}, stats=None, options=None):
+    if stats is None:
+        stats = Stats()
+
     try:
         tree = ET.parse(fn)
     except ET.XMLSyntaxError:
@@ -329,10 +339,9 @@ def process(fn, tex2str_map={}):
 
         if tex_norm in tex2str_map:
             mapped = tex2str_map[tex_norm]
-            #print 'rewritetex: cache hit: "%s" -> "%s"' % (tex_norm, mapped)
-            tex2str_cache_hits += 1
+            stats.cache_hits += 1
         else:
-            tex2str_cache_misses += 1
+            stats.cache_misses += 1
 
             # no existing mapping to string; try to convert
             #print >> sys.stderr, "rewritetex: converting: '%s'" % tex_norm
@@ -341,22 +350,21 @@ def process(fn, tex2str_map={}):
             # only use results of successful conversions
             if s is None or s == "":
                 mapped = None
-                tex2str_conversions_err += 1
+                stats.conversions_err += 1
             else:
-                tex2str_conversions_ok += 1
+                stats.conversions_ok += 1
                 mapped = s
                 # store in cache 
                 tex2str_map[tex_norm] = s
-                #print 'tex2str: "%s"' % s
 
         if mapped is not None:
             # replace the <tex-math> element with the mapped text
             rewrite_tex_element(e, mapped)
-            tex2str_rewrites += 1
+            stats.rewrites += 1
 
     # processing done, output
 
-    if options.stdout:
+    if options is not None and options.stdout:
         tree.write(sys.stdout, encoding=OUTPUT_ENCODING)
         return True
 
@@ -367,8 +375,7 @@ def process(fn, tex2str_map={}):
 
     output_fn = os.path.join(output_dir, os.path.basename(fn))
 
-    # TODO: better checking of path identify to protect against
-    # clobbering.
+    # TODO: better checking to protect against clobbering.
     if output_fn == fn and not options.overwrite:
         print >> sys.stderr, 'rewritetex: skipping output for %s: file would overwrite input (consider -d and -o options)' % fn
     else:
@@ -390,32 +397,32 @@ def argparser():
     ap.add_argument('-v', '--verbose', default=False, action='store_true', help='verbose output')
     ap.add_argument('file', nargs='+', help='input PubMed Central NXML file')
     return ap
-    
-def main(argv):
-    global tex2str_rewrites, tex2str_cache_hits, tex2str_cache_misses
-    global tex2str_conversions_ok, tex2str_conversions_err
-    global options
 
-    options = argparser().parse_args(argv[1:])
-
-    # load cache
+def get_tex2str_map():
     try:
         # (see comment in unordall() for why this it's used here)
-        tex2str_map = unordall(load_cache(TEX2STR_CACHE_PATH))
+        return unordall(load_cache(TEX2STR_CACHE_PATH))
     except:
-        tex2str_map = {}
+        return {}
+
+def main(argv):
+    options = argparser().parse_args(argv[1:])
+    stats = Stats()
+
+    # load cache
+    tex2str_map = get_tex2str_map()
 
     # process each file
     for fn in options.file:
-        process(fn, tex2str_map)
+        process(fn, tex2str_map, stats, options)
 
     # save cache
     # (see comment in ordall() for why this it's used here)
     save_cache(TEX2STR_CACHE_PATH, ordall(tex2str_map))
 
     # output stats
-    if options.verbose and any (value for value in (tex2str_rewrites, tex2str_cache_hits, tex2str_cache_misses, tex2str_conversions_ok, tex2str_conversions_err) if value != 0):
-        print >> sys.stderr, 'rewritetex: %d rewrites (%d cache hits, %d misses; converted %d, failed %d)' % (tex2str_rewrites, tex2str_cache_hits, tex2str_cache_misses, tex2str_conversions_ok, tex2str_conversions_err)
+    if options.verbose and not stats.zero():
+        print >> sys.stderr, 'rewritetex: %s' % str(stats)
 
     return 0
 
