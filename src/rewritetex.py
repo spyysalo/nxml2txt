@@ -38,9 +38,9 @@ TEX_OUTPUTDIR = '/tmp'
 # layout such as sub- and superscript positioning.)
 CATDVI_COMMAND = 'catdvi -e 0 -s'
 
-# path to on-disk cache of tex document -> text mappings
-TEX2STR_CACHE_PATH = os.path.join(os.path.dirname(__file__), 
-                                  '../data/tex2txt.cache')
+# path to on-disk pickle-based cache of tex document -> text mappings
+PICKLE_CACHE_PATH = os.path.join(os.path.dirname(__file__),
+                                 '../data/tex2txt.cache')
 
 INPUT_ENCODING="UTF-8"
 OUTPUT_ENCODING="UTF-8"
@@ -117,34 +117,61 @@ def unordall(d):
         d[k] = "".join([unichr(c) for c in d[k]])
     return d
 
-def load_cache(fn):
-    from cPickle import UnpicklingError
-    from cPickle import load as pickle_load
-    try:
-        with open(fn, 'rb') as cache_file:
-            data = pickle_load(cache_file)
-            return data
-    except UnpicklingError:
-        print >> sys.stderr, "rewritetex: warning: failed to read cache file."
-        raise
-    except IOError:
-        print >> sys.stderr, "rewritetex: note: cache file not found."
-        raise
-    except:
-        print >> sys.stderr, "rewritetex: warning: unexpected error loading cache."
-        raise
+class Cache(object):
+    def __init__(self, map_=None):
+        if map_ is None:
+            self._map = {}
+        else:
+            self._map = map_
 
-def save_cache(fn, data):
-    from cPickle import UnpicklingError
-    from cPickle import dump as pickle_dump
+    def get(self, key):
+        return self._map.get(key)
+
+    def set(self, key, value):
+        self._map[key] = value
+
+    def get_map(self):
+        return self._map
+
+class PickleCache(Cache):
+    def __init__(self, map=None):
+        super(PickleCache, self).__init__(map)
+
+    def save(self, filename=PICKLE_CACHE_PATH):
+        from cPickle import UnpicklingError
+        from cPickle import dump as pickle_dump
+        try:
+            with open(filename, 'wb') as cache_file:
+                pickle_dump(ordall(self.get_map()), cache_file)
+                cache_file.close()
+        except IOError:
+            print >> sys.stderr, 'warning: failed to write cache.'
+        except:
+            print >> sys.stderr, 'warning: unexpected error writing cache.'
+
+    @classmethod
+    def load(cls, filename=PICKLE_CACHE_PATH):
+        from cPickle import UnpicklingError
+        from cPickle import load as pickle_load
+        try:
+            with open(filename, 'rb') as cache_file:
+                map_ = unordall(pickle_load(cache_file))
+                return cls(map_)
+        except UnpicklingError:
+            print >> sys.stderr, 'warning: failed to read cache file.'
+            raise
+        except IOError:
+            print >> sys.stderr, 'note: cache file not found.'
+            raise
+        except:
+            print >> sys.stderr, 'warning: unexpected error loading cache.'
+            raise
+
+def get_cache():
     try:
-        with open(fn, 'wb') as cache_file:
-            pickle_dump(data, cache_file)
-            cache_file.close()
-    except IOError:
-        print >> sys.stderr, "rewritetex: warning: failed to write cache."        
+        return PickleCache.load()
     except:
-        print >> sys.stderr, "rewritetex: warning: unexpected error writing cache."
+        return Cache()
 
 def tex_compile(fn):
     """
@@ -317,7 +344,9 @@ class Stats(object):
             (self.rewrites, self.cache_hits, self.cache_misses,
              self.conversions_ok, self.conversions_err)
 
-def process(fn, tex2str_map={}, stats=None, options=None):
+def process(fn, cache=None, stats=None, options=None):
+    if cache is None:
+        cache = Cache()
     if stats is None:
         stats = Stats()
 
@@ -337,14 +366,14 @@ def process(fn, tex2str_map={}, stats=None, options=None):
         # normalize the tex document for cache lookup
         tex_norm = normalize_tex(tex)
 
-        if tex_norm in tex2str_map:
-            mapped = tex2str_map[tex_norm]
+        mapped = cache.get(tex_norm)
+
+        if mapped is not None:
             stats.cache_hits += 1
         else:
             stats.cache_misses += 1
 
             # no existing mapping to string; try to convert
-            #print >> sys.stderr, "rewritetex: converting: '%s'" % tex_norm
             s = tex2str(tex)
             
             # only use results of successful conversions
@@ -354,8 +383,7 @@ def process(fn, tex2str_map={}, stats=None, options=None):
             else:
                 stats.conversions_ok += 1
                 mapped = s
-                # store in cache 
-                tex2str_map[tex_norm] = s
+                cache.set(tex_norm, s)
 
         if mapped is not None:
             # replace the <tex-math> element with the mapped text
@@ -398,29 +426,16 @@ def argparser():
     ap.add_argument('file', nargs='+', help='input PubMed Central NXML file')
     return ap
 
-def get_tex2str_map():
-    try:
-        # (see comment in unordall() for why this it's used here)
-        return unordall(load_cache(TEX2STR_CACHE_PATH))
-    except:
-        return {}
-
 def main(argv):
     options = argparser().parse_args(argv[1:])
     stats = Stats()
+    cache = get_cache()
 
-    # load cache
-    tex2str_map = get_tex2str_map()
-
-    # process each file
     for fn in options.file:
-        process(fn, tex2str_map, stats, options)
+        process(fn, cache, stats, options)
 
-    # save cache
-    # (see comment in ordall() for why this it's used here)
-    save_cache(TEX2STR_CACHE_PATH, ordall(tex2str_map))
+    cache.save()
 
-    # output stats
     if options.verbose and not stats.zero():
         print >> sys.stderr, 'rewritetex: %s' % str(stats)
 
