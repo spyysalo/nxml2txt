@@ -210,7 +210,7 @@ def write_tree(tree, options=None):
                 
     return True
 
-def rewrite_u2a(tree, mapping=None, missing=None, options=None):
+def process_tree(tree, mapping=None, missing=None, options=None):
     if mapping is None:
         mapping = load_mapping()
     if missing is None:
@@ -222,7 +222,7 @@ def rewrite_u2a(tree, mapping=None, missing=None, options=None):
 
 def process(fn, mapping, missing, options):
     tree = read_tree(fn)
-    rewrite_u2a(tree)
+    process_tree(tree)
     write_tree(tree, options)
 
 def argparser():

@@ -12,6 +12,7 @@ from lxml import etree as ET
 from src import rewritetex
 from src import rewritemmla
 from src import respace
+from src import rewriteu2a
 from src import standoff
 
 usage='%s NXMLFILE [TEXTFILE] [SOFILE]' % __file__
@@ -31,6 +32,9 @@ def nxml2txt(nxmlfn, tex_options=None):
 
     # normalize whitespace
     respace.process_tree(tree)
+
+    # map unicode to ASCII
+    rewriteu2a.process_tree(tree)
 
     # convert to text and standoffs
     text, standoffs = standoff.convert_tree(tree)
