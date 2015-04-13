@@ -174,7 +174,11 @@ class SqliteCache(Cache):
     def get(self, key):
         cursor = self.db.cursor()
         cursor.execute('SELECT txt FROM tex2txt WHERE tex = ?', (key,))
-        return cursor.fetchone()
+        row = cursor.fetchone()
+        if row is None:
+            return None
+        else:
+            return row[0]
 
     def set(self, key, value):
         cursor = self.db.cursor()
