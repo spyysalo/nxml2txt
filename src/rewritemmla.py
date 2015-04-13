@@ -30,9 +30,6 @@ ORIG_TEXT_ATTRIBUTE = 'orig-text'
 INPUT_ENCODING="UTF-8"
 OUTPUT_ENCODING="UTF-8"
 
-# command-line options
-options = None
-
 ##########
 
 def rewrite_element(e, s):
@@ -58,15 +55,14 @@ def rewrite_element(e, s):
     # that's all
     return True
 
-def process(fn):
-    global options
-    
+def read_tree(filename):
     try:
-        tree = ET.parse(fn)
+        return ET.parse(filename)
     except ET.XMLSyntaxError:
         print >> sys.stderr, "Error parsing %s" % fn
         raise
 
+def process_tree(tree, options=None):
     root = tree.getroot()
 
     namespaces = { 'mml': 'http://www.w3.org/1998/Math/MathML' }
@@ -76,7 +72,10 @@ def process(fn):
     for e in root.xpath("//mml:annotation", namespaces=namespaces):
         rewrite_element(e, '')
 
-    if options.stdout:
+    return tree
+
+def write_tree(tree, options=None):
+    if options is not None and options.stdout:
         tree.write(sys.stdout, encoding=OUTPUT_ENCODING)
         return True
 
@@ -89,7 +88,7 @@ def process(fn):
 
     # TODO: better checking of path identify to protect against
     # clobbering.
-    if output_fn == fn and not options.overwrite:
+    if output_fn == fn and (not options or not options.overwrite):
         print >> sys.stderr, 'rewritemmla: skipping output for %s: file would overwrite input (consider -d and -o options)' % fn
     else:
         # OK to write output_fn
@@ -100,6 +99,11 @@ def process(fn):
             print >> sys.stderr, 'rewritemmla: failed write: %s' % ex
                 
     return True
+
+def process(fn, options=None):
+    tree = read_tree(fn)
+    process_tree(tree)
+    write_tree(tree, options)
 
 def argparser():
     import argparse
@@ -112,13 +116,9 @@ def argparser():
     return ap
     
 def main(argv):
-    global options
-
     options = argparser().parse_args(argv[1:])
-
     for fn in options.file:
-        process(fn)
-
+        process(fn, options)
     return 0
 
 if __name__ == "__main__":
