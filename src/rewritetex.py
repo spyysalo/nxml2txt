@@ -171,7 +171,7 @@ def get_cache():
     try:
         return PickleCache.load()
     except:
-        return Cache()
+        return PickleCache()
 
 def tex_compile(fn):
     """
