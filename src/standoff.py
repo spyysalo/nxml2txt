@@ -110,11 +110,11 @@ def subelem_text_and_standoffs(e, curroff, standoffs):
     startoff = curroff
     text = ""
     for s in e:
-        if not is_standard_element(s):
-            # comments, processing instructions and entities are simply ignored
-            continue
-        stext, dummy = text_and_standoffs(s, curroff, standoffs)
-        text += stext
+        if is_standard_element(s):
+            # the content of comments, processing instructions and
+            # entities is ignored (except for the tail)
+            stext, dummy = text_and_standoffs(s, curroff, standoffs)
+            text += stext
         text += txt(s.tail)
         curroff = startoff + len(text)
     return (text, standoffs)

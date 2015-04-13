@@ -125,10 +125,10 @@ def _text_and_standoffs(e, curroff, strings, standoffs):
 def _subelem_text_and_standoffs(e, curroff, strings, standoffs):
     startoff = curroff
     for s in e:
-        if not is_standard_element(s):
-            # comments, processing instructions and entities are simply ignored
-            continue
-        curroff = _text_and_standoffs(s, curroff, strings, standoffs)
+        if is_standard_element(s):
+            # the content of comments, processing instructions and
+            # entities is ignored (except for the tail)
+            curroff = _text_and_standoffs(s, curroff, strings, standoffs)
         if s.tail is not None and s.tail != "":
             strings.append(s.tail)
             curroff += len(s.tail)
