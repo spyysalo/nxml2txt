@@ -160,7 +160,7 @@ def replace_mapped_tail(e, mapping, missing, parent, options=None):
             e.tail = e.tail[:i]
 
             # process the rest in the new element
-            replace_mapped_tail(r, mapping, parent)
+            replace_mapped_tail(r, mapping, missing, parent, options)
 
             # terminate search; done in recursion.
             break
