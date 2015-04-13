@@ -72,7 +72,7 @@ class Standoff:
                 an = a
             attrib[an] = self.element.attrib[a]
 
-        return "%s%d\t%s %d %d\t%s\t%s" % (self.prefix, self.sid, self.tag(), self.start, self.end, c_escape(self.text.encode("utf-8")), " ".join(['%s="%s"' % (k.encode("utf-8"),v.encode("utf-8")) for k,v in attrib.items()]))
+        return "%s%d\t%s %d %d\t%s\t%s" % (self.prefix, self.sid, self.tag(), self.start, self.end, c_escape(self.text.encode("utf-8")), " ".join(['%s="%s"' % (k.encode("utf-8"),c_escape(v).encode("utf-8")) for k,v in attrib.items()]))
 
 def txt(s):
     return s if s is not None else ""
