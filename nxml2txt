@@ -1,0 +1,68 @@
+#!/usr/bin/env python
+
+# Convert NLM .nxml to text and standoff annotations
+
+import os
+import sys
+import codecs
+
+from collections import namedtuple
+from lxml import etree as ET
+
+from src import rewritetex
+from src import rewritemmla
+from src import respace
+from src import standoff
+
+usage='%s NXMLFILE [TEXTFILE] [SOFILE]' % __file__
+
+TexOptions = namedtuple('Options', 'verbose')
+
+def nxml2txt(nxmlfn, tex_options=None):
+    tree = ET.parse(nxmlfn)
+
+    # process embedded TeX math
+    if tex_options is None:
+        tex_options = TexOptions(verbose=True)
+    rewritetex.process_tree(tree, options=tex_options)
+
+    # process MathML annotations
+    rewritemmla.process_tree(tree)
+
+    # normalize whitespace
+    respace.process_tree(tree)
+
+    # convert to text and standoffs
+    text, standoffs = standoff.convert_tree(tree)
+
+    return text, standoffs
+
+def write_text(text, nxmlfn, argv=None):
+    if argv is not None and len(argv) > 2:
+        textfn = argv[2]
+    else:
+        textfn = nxmlfn.replace('.nxml', '') + '.txt'
+    standoff.write_text(text, textfn)
+
+def write_standoffs(standoffs, nxmlfn, argv=None):
+    if argv is not None and len(argv) > 3:
+        sofn = argv[3]
+    else:
+        sofn = nxmlfn.replace('.nxml', '') + '.so'
+    standoff.write_standoffs(standoffs, sofn)
+
+def main(argv):
+    if len(argv) < 2 or len(argv) > 4:
+        print >> sys.stderr, 'Usage: %s' % usage
+        return 1
+    nxmlfn = argv[1]
+
+    text, standoffs = nxml2txt(nxmlfn)
+
+    write_text(text, nxmlfn, argv)
+    write_standoffs(standoffs, nxmlfn, argv)
+    
+    return 0
+    
+if __name__ == '__main__':
+    sys.exit(main(sys.argv))
