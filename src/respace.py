@@ -114,7 +114,10 @@ def _text_and_standoffs(e, curroff, strings, standoffs):
     # a placeholder before recursing
     so = Standoff(e, 0, 0)
     standoffs.append(so)
-    if e.text is not None and e.text != "":
+    # Note: special elements (comments, processing instructions, entities)
+    # are considered not to have text content. TODO: check that this makes
+    # sense for entities.
+    if e.text is not None and e.text != "" and is_standard_element(e):
         strings.append(e.text)
         curroff += len(e.text)
     curroff = _subelem_text_and_standoffs(e, curroff, strings, standoffs)
@@ -125,10 +128,7 @@ def _text_and_standoffs(e, curroff, strings, standoffs):
 def _subelem_text_and_standoffs(e, curroff, strings, standoffs):
     startoff = curroff
     for s in e:
-        if is_standard_element(s):
-            # the content of comments, processing instructions and
-            # entities is ignored (except for the tail)
-            curroff = _text_and_standoffs(s, curroff, strings, standoffs)
+        curroff = _text_and_standoffs(s, curroff, strings, standoffs)
         if s.tail is not None and s.tail != "":
             strings.append(s.tail)
             curroff += len(s.tail)
@@ -329,10 +329,16 @@ def reduce_space(root, elements_to_strip=set()):
 
 def element_in_set(e, s):
     # strip namespaces for lookup
-    if e.tag[0] == "{":
-        tag = re.sub(r'\{.*?\}', '', e.tag)
-    else:
-        tag = e.tag
+    try:
+        if e.tag[0] == "{":
+            tag = re.sub(r'\{.*?\}', '', e.tag)
+        else:
+            tag = e.tag
+    except TypeError:
+        # should only happen for special elements (comments,
+        # processing instructions, and entities)
+        assert not is_standard_element(e), 'internal error'
+        tag = None
     return tag in s
 
 def read_tree(filename):
@@ -482,7 +488,7 @@ def process_tree(tree, options=None):
 
     return tree
 
-def write_tree(tree, options=None):
+def write_tree(tree, treefn, options=None):
     if options is not None and options.stdout:
         try:
             tree.write(sys.stdout, encoding=OUTPUT_ENCODING)
@@ -495,11 +501,11 @@ def write_tree(tree, options=None):
     else:
         output_dir = ""
 
-    output_fn = os.path.join(output_dir, os.path.basename(fn))
+    output_fn = os.path.join(output_dir, os.path.basename(treefn))
 
     # TODO: better protection against clobbering.
-    if output_fn == fn and (not options or not options.overwrite):
-        print >> sys.stderr, 'respace: skipping output for %s: file would overwrite input (consider -d and -o options)' % fn
+    if output_fn == treefn and (not options or not options.overwrite):
+        print >> sys.stderr, 'respace: skipping output for %s: file would overwrite input (consider -d and -o options)' % treefn
     else:
         # OK to write output_fn
         try:
@@ -513,7 +519,7 @@ def write_tree(tree, options=None):
 def process(fn, options=None):
     tree = read_tree(fn)
     process_tree(tree, options)
-    write_tree(tree, options)
+    write_tree(tree, fn, options)
 
 def argparser():
     import argparse
