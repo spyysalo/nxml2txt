@@ -17,9 +17,10 @@ from src import standoff
 
 usage='%s NXMLFILE [TEXTFILE] [SOFILE]' % __file__
 
-TexOptions = namedtuple('Options', 'verbose')
+TexOptions = namedtuple('TexOptions', 'verbose')
+U2aOptions = namedtuple('U2aOptions', 'hex keep_missing stdout directory overwrite')
 
-def nxml2txt(nxmlfn, tex_options=None):
+def nxml2txt(nxmlfn, tex_options=None, u2a_options=None):
     tree = ET.parse(nxmlfn)
 
     # process embedded TeX math
@@ -34,7 +35,10 @@ def nxml2txt(nxmlfn, tex_options=None):
     respace.process_tree(tree)
 
     # map unicode to ASCII
-    rewriteu2a.process_tree(tree)
+    if u2a_options is None:
+        u2a_options = U2aOptions(keep_missing=True, hex=False, stdout=False,
+                                 directory=None, overwrite=False)
+    rewriteu2a.process_tree(tree, options=u2a_options)
 
     # convert to text and standoffs
     text, standoffs = standoff.convert_tree(tree)
