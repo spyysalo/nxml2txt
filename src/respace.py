@@ -252,8 +252,15 @@ def strip_elements(root, elements_to_strip=set(), text=None, standoffs=None):
                 l += 1
             space, end = e.text[:l], e.text[l:]
             for i in range(l):
-                assert so.start+i not in rewritten, "ERROR: dup remove at %d"  % (so.start+i)
-                rewritten[so.start+i] = None
+                if so.start+i not in rewritten:
+                    rewritten[so.start+i] = None
+                else:
+                    # Note: with lxml and empty special elements such as
+                    # comments and processing instructions, it's possible to
+                    # have double deletes. These should be rare and harmless.
+                    assert rewritten[so.start+i] is None, 'internal error'
+                    print >> sys.stderr, 'Note: dup remove at %d'  % \
+                        (so.start+i)
             e.text = end
 
         # element-final space is in e.text only if the element has no
