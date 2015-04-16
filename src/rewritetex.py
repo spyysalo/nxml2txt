@@ -204,7 +204,8 @@ class SqliteCache(Cache):
 def get_cache(cls=SqliteCache):
     try:
         return cls.load()
-    except:
+    except Exception, e:
+        print >> sys.stderr, 'Warning: %s load failed: %s' % (str(cls), str(e))
         return cls()
 
 def tex_compile(fn):
