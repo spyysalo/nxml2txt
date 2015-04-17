@@ -17,6 +17,9 @@ import codecs
 
 from lxml import etree as ET
 
+# How many seconds to wait for a SQLite lock to go away.
+SQLITE_TIMEOUT = 30.0
+
 # XML tag to use for elements whose text content has been rewritten
 # by this script.
 REWRITTEN_TAG = 'n2t-tex'
@@ -175,6 +178,7 @@ class SqliteCache(Cache):
         cursor = self.db.cursor()
         cursor.execute('SELECT txt FROM tex2txt WHERE tex = ?', (key,))
         row = cursor.fetchone()
+        cursor.close()
         if row is None:
             return None
         else:
@@ -185,6 +189,7 @@ class SqliteCache(Cache):
         cursor.execute('INSERT OR REPLACE INTO tex2txt VALUES (?,?)',
                        (key, value))
         self.db.commit()
+        cursor.close()
 
     def save(self):
         self.db.close()
@@ -193,12 +198,13 @@ class SqliteCache(Cache):
     @classmethod
     def load(cls, filename=SQLITE_CACHE_PATH):
         import sqlite3
-        db = sqlite3.connect(filename)
+        db = sqlite3.connect(filename, timeout=SQLITE_TIMEOUT)
         # make sure the map table exists
         cursor = db.cursor()
         cursor.execute('CREATE TABLE IF NOT EXISTS'
                        '  tex2txt(tex TEXT PRIMARY KEY, txt TEXT)')
         db.commit()
+        cursor.close()
         return cls(db)
 
 def get_cache(cls=SqliteCache):
