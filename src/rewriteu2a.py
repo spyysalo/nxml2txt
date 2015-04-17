@@ -136,9 +136,14 @@ def parent_index(e, parent):
     return None
 
 def replace_mapped_tail(e, mapping, missing, parent, options=None):
-    # TODO: inefficient, improve
-    for i, c in enumerate(e.tail):
-        if wide_ord(c) >= 128:
+    while True:
+        replaced = False
+        # TODO: inefficient, improve
+        for i, c in enumerate(e.tail):
+            # skip ASCII
+            if wide_ord(c) < 128:
+                continue
+
             s = mapchar(c, mapping, missing, options)
 
             # if the character is unchanged, just skip
@@ -159,10 +164,13 @@ def replace_mapped_tail(e, mapping, missing, parent, options=None):
             r.tail = e.tail[i+1:]
             e.tail = e.tail[:i]
 
-            # process the rest in the new element
-            replace_mapped_tail(r, mapping, missing, parent, options)
+            # process the rest in the new element, avoiding tail
+            # recursion
+            replaced = True
+            e = r
+            break
 
-            # terminate search; done in recursion.
+        if not replaced:
             break
 
 def replace_mapped(e, mapping, missing, parent=None, options=None):
