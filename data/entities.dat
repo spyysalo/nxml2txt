@@ -622,7 +622,7 @@
 02DC	~
 02DD	"
 #02DE	<MODIFIER LETTER RHOTIC HOOK>
-#02DF	<MODIFIER LETTER CROSS ACCENT>
+02DF	x
 02E0	gamma
 02E1	l
 02E2	s
@@ -1053,6 +1053,8 @@
 # 05F3 <HEBREW PUNCTUATION GERSHAYIM>
 05F4	"
 # ...
+066B	,
+066C	,
 066D	*
 # ...
 # 115F <HANGUL CHOSEONG FILLER>
@@ -1692,17 +1694,27 @@
 # 22A5	<UP TACK>
 22A5	_|_
 # ...
-3001	,
 3000	 
+3001	,
+3002	.
 # ...
+3007	0
 3008	<
 3009	>
+300A	<<
+300B	>>
 # ...
 3010	[
 3011	]
 301A	[
 301B	]
 30FB	.
+# ...
+338D	ug
+338E	mg
+3395	ul
+3396	Ml
+339B	um
 # 2100-214F: Letterlike Symbols
 # Mapping for range originally generated in part using NLM LVG toAscii.
 2100	a/c
@@ -1836,6 +1848,8 @@
 # ...
 21A4	<-|
 21A6	|->
+21A9	<-
+21AA	->
 # ...
 #21B0	Lsh
 21B0	<-
@@ -1891,6 +1905,11 @@
 21D2	=>
 21D3	v
 21D4	<=>
+# ...
+21DA	<=
+21DB	=>
+21DC	<~
+21DD	~>
 # ...
 21E2	->
 21E6	<=
@@ -2210,6 +2229,7 @@
 2738	*
 2739	*
 # ...
+274F	[]
 2750	[]
 2751	[]
 2752	[]
@@ -2239,6 +2259,17 @@
 2792	(9)
 2793	(10)
 2794	->
+2795	+
+2796	-
+# 2797	<HEAVY DIVISION SIGN>
+2798	->
+2799	->
+279A	->
+279B	->
+279C	->
+279D	->
+279E	->
+279F	->
 27A0	->
 27A1	->
 # 27A2	<THREE-D TOP-LIGHTED RIGHTWARDS ARROWHEAD>
@@ -2340,6 +2371,8 @@
 2467	(8)
 2468	(9)
 2469	(10)
+# ...
+24C7	(R)
 # 2600-26FF: Miscellaneous Symbols (very partial coverage)
 2600	*
 2605	*
